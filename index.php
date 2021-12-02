@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	Hello!
+	Hello! HipHopCenter is up ! LETS GOOOOO 
 </body>
 
 </html>
