@@ -9,6 +9,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
 
     <link rel="stylesheet" type="text/css" href="assets/index.css">
@@ -75,20 +78,49 @@
 
     </section>
         
+
+    
+    <section id="typeOfuser">
+        <div class="slogan">
+            <h1 class="titulo">
+                Deixa que o Hip-hop Center seja a banda sonora da tua <br> vida.
+            </h1>
+        </div>
+
+        <main class="cards">
         
+            <section class="card standard">
+                <div class="icon">
+                    <img src="assets/images/user2.png" alt="user">
+                </div>
+                <h3>Standard</h3>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                <button>Saiba mais</button>
+            </section>
+            <section class="card premium">
+                <div class="icon">
+                    <img src="assets/images/user.png" alt="user">
+                </div>
+                <h3>Premium</h3>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                <button>Saiba mais</button>
+            </section>
+        </main>
+
+    </section>
         
         
 
 
 
-        <script>
+    <script>
          $(".slider").owlCarousel({
            loop: true,
            autoplay: true,
            autoplayTimeout: 2000, //2000ms = 2s;
            autoplayHoverPause: true,
          });
-      </script> 
+    </script> 
 
 </body>
 </html>
