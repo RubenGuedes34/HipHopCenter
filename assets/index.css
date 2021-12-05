@@ -45,22 +45,57 @@ height: 190px;
    text-decoration: none;
  }
 
- .homepage .titulo{
+.slogan {
+  margin-bottom: 100px; /* espaçamento entre slogan e carousel */
+  
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ .slogan .titulo{
   font-size: 25px;
   text-align: center;
  }
- 
- /* Donut apagado, lel
- #svgg{
-   position: absolute;
-  transform:translate(-50%,-50%);
-  top:57%;
-	left:50%;
-  
- }
 
- .homepage svg{
-  padding: 50px 0;
+ #carousel{
+  display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
 }
-*/
+
+ .slider{
+  max-width: 1100px;
+  display: flex;
+}
+.slider .card{
+  flex: 1;
+  margin: 0 10px;
+  background: #CDC776;
+  height: 655px;
+  border-radius: 4%;
+}
+.slider .card .img{
+  height: 400px;
+  height: 400px;
+  width: 100%;
+}
+.slider .card .img img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 4%;
+}
+.slider .card .content{
+  padding: 10px 20px;
+}
+.card .content .title{
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.card .content p{
+  text-align: justify;
+  margin: 10px 0;
+}
 
