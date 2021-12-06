@@ -1,6 +1,11 @@
 body{
-    background-color: #f5e689;
     font-family: "Poppins", sans-serif;
+}
+
+#navSection, #mainContent{
+  height: 50vh;
+  width: 100%;
+  background-color: #f5e689;
 }
 
 .topBar{
@@ -46,6 +51,7 @@ height: 190px;
    text-decoration: none;
  }
 
+
 .slogan {
   margin-bottom: 50px; /* espaçamento entre slogan e carousel -> esta merda ta mal tenho que mudar : Problemas! estou a usar o .slogan embaixo tambem.... e ao alterar aqui altero lá tambem lel*/
   
@@ -59,6 +65,8 @@ height: 190px;
  }
 
  #carousel{
+  margin-top: 25px;
+  background-color: #fff;
   display: grid;
   height: 660px;
   place-items: center;
@@ -72,9 +80,9 @@ height: 190px;
 .slider .card{
   flex: 1;
   margin: 0 10px;
-  background: #CDC776;
+  background: #fff;
   height: 678px;
-  border-radius: 4%;
+  border-radius: 4%;  
 }
 .slider .card .img{
   height: 400px;
@@ -102,6 +110,7 @@ height: 190px;
 
 
 #typeOfuser{
+  background-color: #fff;
   height: 800px;
   margin-top: 80px;
 }

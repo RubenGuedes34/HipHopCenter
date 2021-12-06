@@ -20,7 +20,7 @@
 </head>
 <body>
 
-    <section>
+    <section id="navSection">
         <div class="topBar">
             
             <div class="logo-hiphopcenter">
@@ -34,7 +34,7 @@
         </div>
     </section>
    
-    <section>
+    <section id="mainContent">
         <div class="slogan">
         <h1 class="titulo">
             Obtenha o entretenimento de áudio
