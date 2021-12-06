@@ -59,8 +59,16 @@ height: 190px;
   margin-right: auto;
 }
 
+.slogan .tituloSlogan{
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+  margin-right: 45%;
+}
+
  .slogan .titulo{
-  font-size: 25px;
+  font-size: 35px;
+
   text-align: center;
  }
 
@@ -111,8 +119,8 @@ height: 190px;
 
 #typeOfuser{
   background-color: #fff;
-  height: 800px;
-  margin-top: 80px;
+  height: 750px;
+  margin-top: 100px;
 }
 
 #typeOfuser .cards{
@@ -128,6 +136,7 @@ height: 190px;
 main.cards {
   display: flex;
   padding: 32px;
+  
 }
 
 main.cards section.card {
@@ -138,7 +147,7 @@ main.cards section.card {
   background: white;
   padding: 1rem 1.5rem;
   border-radius: 8px;
-  max-height: 468px;
+  max-height: 900px;
   margin-left: 32px;
 }
 
@@ -194,6 +203,11 @@ main.cards section.card.standard {
 main.cards section.card.premium {
   box-shadow: 20px 20px 50px -30px #FFC1D5;
 }
+
+#FAQ{
+  background-color: #000;
+}
+
 
 @media screen and (max-width: 720px) {
   main.cards {

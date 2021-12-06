@@ -36,7 +36,7 @@
    
     <section id="mainContent">
         <div class="slogan">
-        <h1 class="titulo">
+        <h1 class="tituloSlogan">
             Obtenha o entretenimento de áudio
             <br>
             que não requer qualquer esforço.
@@ -94,7 +94,7 @@
                     <img src="assets/images/user2.png" alt="user">
                 </div>
                 <h3>Standard</h3>
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe magnam ducimus architecto dolorum qui, recusandae quisquam fugit quo eveniet nulla accusantium? Est corporis magnam magni voluptate maiores atque exercitationem saepe.</span>
                 <button>Saiba mais</button>
             </section>
             <section class="card premium">
@@ -102,14 +102,16 @@
                     <img src="assets/images/user.png" alt="user">
                 </div>
                 <h3>Premium</h3>
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod sint architecto quas fugiat, quis corporis consequuntur nihil. Voluptatum, odio ipsa nihil, aut, cupiditate quam explicabo ipsum veritatis saepe tenetur deleniti.</span>
                 <button>Saiba mais</button>
             </section>
         </main>
 
     </section>
         
-        
+    <section id="FAQ">
+aaaaaaa
+    </section>
 
 
 
