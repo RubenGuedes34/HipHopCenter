@@ -87,30 +87,65 @@
             </h1>
         </div>
 
-        <main class="cards">
-        
-            <section class="card standard">
-                <div class="icon">
-                    <img src="assets/images/user2.png" alt="user">
-                </div>
-                <h3>Standard</h3>
-                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe magnam ducimus architecto dolorum qui, recusandae quisquam fugit quo eveniet nulla accusantium? Est corporis magnam magni voluptate maiores atque exercitationem saepe.</span>
-                <button>Saiba mais</button>
-            </section>
-            <section class="card premium">
-                <div class="icon">
-                    <img src="assets/images/user.png" alt="user">
-                </div>
-                <h3>Premium</h3>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod sint architecto quas fugiat, quis corporis consequuntur nihil. Voluptatum, odio ipsa nihil, aut, cupiditate quam explicabo ipsum veritatis saepe tenetur deleniti.</span>
-                <button>Saiba mais</button>
-            </section>
-        </main>
-
+      
     </section>
         
-    <section id="FAQ">
-aaaaaaa
+    <section id="FAQS">
+        <h2 class="title">FAQs</h2>
+
+        <div class="faq">
+            <div class="question">
+                <h3>Posso experimentar o Hip-hop Center gratuitamente?</h3>
+
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+
+            </div>
+
+            <div class="answer">
+                <p>
+                É gratuito inscrever-se e usar a aplicação! Pode desbloquear mais funcionalidades subscrevendo a nossa assinatura com um valor de 6,99 €/mês.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="faq">
+            <div class="question">
+                <h3>Como uso o Hip-hop Center?</h3>
+
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+
+            </div>
+
+            <div class="answer">
+                <p>
+                Depois de abrir o Hip-hop Center inscreva-se gratuitamente. Depois de iniciar sessão na sua conta nova, pode fazer streaming da sua música preferida!
+                </p>
+            </div>
+
+        </div>
+
+        <div class="faq">
+            <div class="question">
+                <h3>Onde posso ouvir o Hip-hop Center?</h3>
+
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+
+            </div>
+
+            <div class="answer">
+                <p>
+                O Hip-hop Center é suportado no computador e na maioria dos equipamentos móveis e tablets.
+                </p>
+            </div>
+
+        </div>
     </section>
 
 
@@ -123,6 +158,8 @@ aaaaaaa
            autoplayHoverPause: true,
          });
     </script> 
+
+    <script src="assets/indexfaq.js"> </script>
 
 </body>
 </html>
