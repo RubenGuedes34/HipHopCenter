@@ -10,6 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -87,6 +89,28 @@
             </h1>
         </div>
 
+        <div class="containerCard">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="table">
+                        <h3 class="title">Standard</h3>
+                        <div class="">
+                            10.00 paus
+                            <span>/Mês</span>
+                        </div>
+                        <ul>
+                            <li>Tomás</li>
+                            <li>Tomás</li>
+                            <li>Tomás</li>
+                            <li>Tomás</li>
+                            <li>Tomás</li>
+                            <li>Tomás</li>
+                        </ul>
+                        <a href="#">Experimenta Grátis</a>
+                    </div>
+                </div>
+            </div>
+        </div>
       
     </section>
         
