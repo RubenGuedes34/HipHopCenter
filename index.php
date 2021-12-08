@@ -27,17 +27,28 @@
 
 
     <section id="navSection">
-        <!--
-        <header>
-            <div class="logo">
-                <img src="assets/images/HipHopCenterLogo1.png" alt="HipHopCenter">
-                <a href="" class="header__logo">HipHopCenter</a>
-            </div>
-            <nav class="nav" id="nav-menu">
-
+        <nav class="navbar navbar-expand-lg navbar-light ">
+                <div class="container-fluid">
+                    <img src="assets/images/HipHopCenterLogo1.png" alt="HipHopCenter" class="navbar-brand">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Premium</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">FAQs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link autenticacao" href="#">Iniciar Sessão</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
             </nav>
-        </header>
-        -->   
     </section>
 
    
@@ -207,7 +218,6 @@
          });
     </script> 
 
-    <script src="assets/indexnavbar.js"></script>
     <script src="assets/indexfaq.js"> </script>
 
 </body>
