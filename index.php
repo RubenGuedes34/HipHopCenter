@@ -25,19 +25,21 @@
 </head>
 <body>
 
+
     <section id="navSection">
-        <div class="topBar">
-            
-            <div class="logo-hiphopcenter">
-                <img src="assets/images/HipHopCenterLogo1.png" alt="HipHopCenterLogo">    
+        <!--
+        <header>
+            <div class="logo">
+                <img src="assets/images/HipHopCenterLogo1.png" alt="HipHopCenter">
+                <a href="" class="header__logo">HipHopCenter</a>
             </div>
-        
-            <div class="btn-grad">
-                Iniciar Sessão
-            </div>
-        
-        </div>
+            <nav class="nav" id="nav-menu">
+
+            </nav>
+        </header>
+        -->   
     </section>
+
    
     <section id="mainContent">
         <div class="slogan">
@@ -205,6 +207,7 @@
          });
     </script> 
 
+    <script src="assets/indexnavbar.js"></script>
     <script src="assets/indexfaq.js"> </script>
 
 </body>
