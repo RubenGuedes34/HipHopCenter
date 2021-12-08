@@ -127,7 +127,7 @@ height: 190px;
   padding: 30px 0;
 }
 
-#typeOfuser .table{
+#typeOfuser .containerCard .table{
   padding-bottom: 20px;
   position: relative;
   text-align: center;
@@ -136,10 +136,95 @@ height: 190px;
   transition: all .3s ease 0s;
 }
 
-#typeOfuser .title{
-  
+#typeOfuser .containerCard .title{
+  background: linear-gradient(to bottom right, #fa6fe6, #ffef65);
+  padding: 40px 20px 170px;
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+  position: relative;
+  text-transform: uppercase;
+  color: #fff;
+  overflow: hidden;
 }
 
+#typeOfuser .containerCard .title::before{
+  content: "";
+  height: 200px;
+  width: 280px;
+  position: absolute;
+  bottom: -175px;
+  left: -46px;
+  background: #fff;
+  border-radius: 80px;
+  transform: rotate(-85deg);
+}
+
+#typeOfuser .containerCard .title::after{
+  content: "";
+  height: 200px;
+  width: 280px;
+  position: absolute;
+  top: 150px;
+  right: -70px;
+  bottom: auto;
+  left: auto;
+  background: #fff;
+  border-radius: 100px;
+  transform: rotate(-40deg);
+}
+
+#typeOfuser .containerCard .price{
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  background: #fff;
+  color: #404040;
+  display: inline-block;
+  padding: 30px 0;
+  font-size: 30px;
+  line-height: 50px;
+  font-weight: 600;
+  border-radius: 50%;
+  transform: translate(-50%);
+  transition: all .3s ease 0s;
+  box-shadow: 0 0 0 8px rgba(0, 0, 0,  .3);
+}
+
+#typeOfuser .containerCard .table:hover .price{
+  background: linear-gradient(to bottom right, #fa6fe6, #ffef65);
+  color: #fff;
+}
+
+#typeOfuser .containerCard .month{
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 0;
+}
+
+#typeOfuser .containerCard .content{
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+  text-align: left;
+  transition: all .3s ease 0s;
+}
+
+#typeOfuser .containerCard .content li{
+  padding: 7px 0 7px 50px;
+  position: relative;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+#typeOfuser .containerCard .content li::before{
+
+}
 
 #FAQS{
   background-color: #1c1c1c;
