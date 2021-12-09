@@ -1,4 +1,3 @@
-alert("Hey bro");
 const faqs= document.querySelectorAll(".faq");
 
 faqs.forEach(faq => {

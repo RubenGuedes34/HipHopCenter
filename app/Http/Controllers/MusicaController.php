@@ -69,7 +69,7 @@ class MusicaController extends Controller
      */
     public function update(Request $request, Musica $musica)
     {
-        //
+     
     }
 
     /**

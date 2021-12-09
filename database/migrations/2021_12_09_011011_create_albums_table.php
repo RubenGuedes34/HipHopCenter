@@ -15,8 +15,18 @@ class CreateAlbumsTable extends Migration
     {
         Schema::create('albums', function (Blueprint $table) {
             $table->id();
+            $table->string('nome', 100);
+            $table->integer('Likes');
+            $table->unsignedBigInteger('id_artista');
             $table->timestamps();
-        });
+
+
+            $table->foreign('id_artista', 'id_artista_fk')
+                ->references('id')
+                ->on('artists')
+                ->onUpdate('CASCADE')
+                ->onDelete('RESTRICT');
+         });
     }
 
     /**

@@ -83,7 +83,7 @@
     </section>
         
 
-    <!-- hey bro --->
+    
     <section id="typeOfuser">
         <div class="slogan">
             <h1 class="titulo">
