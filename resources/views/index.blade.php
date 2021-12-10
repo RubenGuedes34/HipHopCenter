@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -21,25 +21,40 @@
     <link rel="stylesheet" type="text/css" href="{{url('css/index.css')}}">
 
     <title>Hip-hop Center</title>
+    
 </head>
 <body>
 
+
     <section id="navSection">
-        <div class="topBar">
-            
-            <div class="logo-hiphopcenter">
-                <img src="{{url('images/HipHopCenterLogo1.png')}}" alt="HipHopCenterLogo">    
-            </div>
-        
-            <div class="btn-grad">
-                Iniciar Sessão
-            </div>
-        
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-light ">
+                <div class="container-fluid">
+                    <img src="{{url('images/HipHopCenterLogo1.png')}}" alt="HipHopCenterLogo" class="navbar-brand">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Premium</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">FAQs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link autenticacao" href="autenticacao.php">Iniciar Sessão</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
     </section>
+
    
     <section id="mainContent">
         <div class="slogan">
+        
         <h1 class="tituloSlogan">
             Obtenha o entretenimento de áudio
             <br>
@@ -55,7 +70,7 @@
     
         <div class="slider owl-carousel">
             <div class="card">
-                <div class="img"><img src="{{url('images/2pac.jpg')}}"alt="2PAC"></div>
+                <div class="img"><img src="{{url('images/2pac.jpg')}}" alt="2PAC"></div>
                 <div class="content">
                     <div class="title">Diversas músicas dos teus artistas de HipHop preferidos.</div>
                     <p>Com milhares de músicas, lançamentos exclusivos e diversos géneros de Rap, o HipHopCenter aproxima-te dos teus rappers favoritos. Completamente sem anúncios. </p>          
@@ -63,7 +78,7 @@
             </div>
 
             <div class="card">
-                <div class="img"><img src="{{url('images/biggie.jpg')}}" alt="2PAC"></div>
+                <div class="img"><img src="{{url('images/biggie.jpg')}}" alt="Biggie"></div>
                 <div class="content">
                     <div class="title">A qualquer momento. Em qualquer lugar.</div>
                     <p>Ouve quando quiseres e em qualquer dispositivo, quer estejas na rua, em casa ou no carro.</p>          
@@ -71,7 +86,7 @@
             </div>
 
             <div class="card">
-                <div class="img"><img src="{{url('images/mobbdeep.webp')}}" alt="2PAC"></div>
+                <div class="img"><img src="{{url('images/mobbdeep.webp')}}" alt="Mobb Deep"></div>
                 <div class="content">
                     <div class="title">Playlists exclusivas.</div>
                     <p>Ouve playlists originais escolhidas a dedo pela nossa equipa de especialistas e playlists especiais criadas pelos artistas de HipHop que mais gostas.</p>          
@@ -97,7 +112,26 @@
                     <div class="table">
                         <h3 class="title">Standard</h3>
                         <div class="price">
-                            10.00 paus
+                            $10.00
+                            <span class="month">/Mês</span>
+                        </div>
+                        <ul class="content">
+                            <li>Tomás</li>
+                            <li>Tomás</li>
+                            <li>Tomás</li>
+                            <li>Tomás</li>
+                            <li class="disable">Tomás</li>
+                            <li class="disable">Tomás</li>
+                        </ul>
+                        <a href="#" class="signup">Experimenta Grátis</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="table table2">
+                        <h3 class="title">Premium</h3>
+                        <div class="price">
+                            $30.00
                             <span class="month">/Mês</span>
                         </div>
                         <ul class="content">
@@ -108,11 +142,11 @@
                             <li>Tomás</li>
                             <li>Tomás</li>
                         </ul>
-                        <a href="#">Experimenta Grátis</a>
+                        <a href="#" class="signup">Experimenta Grátis</a>
                     </div>
                 </div>
-            </div>
-        </div>
+
+            
       
     </section>
         
