@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Basic_user;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class BasicUserController extends Controller
+class AlbumController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class BasicUserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Basic_user  $basic_user
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Basic_user $basic_user)
+    public function show(User $user)
     {
         //
     }
@@ -52,10 +52,10 @@ class BasicUserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Basic_user  $basic_user
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Basic_user $basic_user)
+    public function edit(User $user)
     {
         //
     }
@@ -64,10 +64,10 @@ class BasicUserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Basic_user  $basic_user
+     * @param  \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Basic_user $basic_user)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -75,10 +75,10 @@ class BasicUserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Basic_user  $basic_user
+     * @param  \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Basic_user $basic_user)
+    public function destroy(User $user)
     {
         //
     }

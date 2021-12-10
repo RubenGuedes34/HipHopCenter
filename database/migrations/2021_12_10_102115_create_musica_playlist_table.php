@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBasicUsersTable extends Migration
+class CreateMusicaPlaylistTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateBasicUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('basic_users', function (Blueprint $table) {
+        Schema::create('musica_playlist', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->BigInteger('id_musica');
+            $table->BigInteger('id_playlist');
         });
     }
 
@@ -26,6 +27,6 @@ class CreateBasicUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('basic_users');
+        Schema::dropIfExists('musica_playlist');
     }
 }

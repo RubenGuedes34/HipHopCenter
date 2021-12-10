@@ -26,7 +26,13 @@ class Musica extends Model
 
     public function genero()
     {
-        return $this->belongsTo(Artist::class, 'id_genero', 'id');
+        return $this->belongsTo(Genero::class, 'id_genero', 'id');
+    }
+
+
+    public function playlist()
+    {
+        return $this->belongsToMany(Playlist::class);
     }
 }
 
