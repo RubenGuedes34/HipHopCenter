@@ -62,7 +62,39 @@
         </div>
     </section>
 
+    <section id="carousel">
+
     
+        <div class="slider owl-carousel">
+            <div class="card">
+                <div class="img"><img src="{{url('images/2pac.jpg')}}" alt="2PAC"></div>
+                <div class="content">
+                    <div class="title">Diversas músicas dos teus artistas de HipHop preferidos.</div>
+                    <p>Com milhares de músicas, lançamentos exclusivos e diversos géneros de Rap, o HipHopCenter aproxima-te dos teus rappers favoritos. Completamente sem anúncios. </p>          
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"><img src="{{url('images/biggie.jpg')}}" alt="Biggie"></div>
+                <div class="content">
+                    <div class="title">A qualquer momento. Em qualquer lugar.</div>
+                    <p>Ouve quando quiseres e em qualquer dispositivo, quer estejas na rua, em casa ou no carro.</p>          
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"><img src="{{url('images/mobbdeep.webp')}}" alt="Mobb Deep"></div>
+                <div class="content">
+                    <div class="title">Playlists exclusivas.</div>
+                    <p>Ouve playlists originais escolhidas a dedo pela nossa equipa de especialistas e playlists especiais criadas pelos artistas de HipHop que mais gostas.</p>          
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+        
+
     
     <section id="typeOfuser">
         <div class="slogan">
