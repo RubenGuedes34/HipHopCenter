@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Musica;
+use App\Models\Album;
 use App\Models\Artist;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,8 @@ class ArtistController extends Controller
      */
     public function index()
     {
-        //
+        $artists = Artist::all();
+        return view('artists.index', compact('artists'));
     }
 
     /**
@@ -24,7 +27,7 @@ class ArtistController extends Controller
      */
     public function create()
     {
-        //
+        return view('artist.create');
     }
 
     /**
@@ -35,7 +38,16 @@ class ArtistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'Data_de_nascimento' => 'required',
+            'Likes' => 'required',
+        ]);
+
+        Airport::create($request->all());
+
+        return redirect()->route('airports.index')
+            ->with('success', 'Airport created successfully.');
     }
 
     /**
