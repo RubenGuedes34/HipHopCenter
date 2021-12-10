@@ -21,5 +21,6 @@ Route::get('/', function () {
 
 Route::get('/index',[HipHopCenterController::class,'index']);
 
+Route::get('/autenticacao',[HipHopCenterController::class,'autenticacao']);
 
 Route::get('/homepage',[HipHopCenterController::class,'homepage']);

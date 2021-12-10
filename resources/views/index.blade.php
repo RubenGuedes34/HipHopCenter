@@ -42,7 +42,7 @@
                                 <a class="nav-link" href="#">FAQs</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link autenticacao" href="autenticacao.php">Iniciar Sessão</a>
+                                <a class="nav-link autenticacao" href="autenticacao">Iniciar Sessão</a>
                             </li>
                             
                         </ul>
