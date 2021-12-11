@@ -21,7 +21,11 @@
 <body>
     <div id="aTocarAgora">
 
-        </div>
+    <div id="nowPlayingBar">
+
+	</div>
+
+    </div>
 </body>
 
 </html>
