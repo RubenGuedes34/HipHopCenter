@@ -19,13 +19,9 @@
     <title>Hip-hop Center</title>
 </head>
 <body>
-   <h2>
-
-        <div id="aTocarAgora">
+    <div id="aTocarAgora">
 
         </div>
-
-   </h2>
 </body>
 
 </html>

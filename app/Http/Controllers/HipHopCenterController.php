@@ -15,6 +15,6 @@ class HipHopCenterController extends Controller
    }
 
    public function homepage(){
-    return "i dont fucking know";
+    return view("homepage");
 }
 }

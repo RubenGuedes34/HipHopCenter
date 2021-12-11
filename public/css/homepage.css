@@ -1,4 +1,8 @@
 #aTocarAgora{
     width: 100%;
-    background-color: #aaa;
+    background-color: #f5e689;
+    bottom: 0;
+    position: fixed;
+    min-width: 620px;
+    height: 100px;
 }
