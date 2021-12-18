@@ -19,11 +19,25 @@
     <title>Hip-hop Center</title>
 </head>
 <body>
-    <div id="aTocarAgora">
+    <div id="aTocarAgoraContainer">
 
-    <div id="nowPlayingBar">
+        <div id="aTocarAgoraBar">
 
-	</div>
+            <div id="aTocarAgoraEsquerda">
+
+            </div>
+
+            <div id="aTocarAgoraCentro">
+
+            </div>
+
+            <div id="aTocarAgoraDireita">
+
+            </div>
+
+	    </div>
+
+
 
     </div>
 </body>

@@ -4,11 +4,30 @@ html, body{
     height: 100%;
 }
 
-#aTocarAgora{
+#aTocarAgoraContainer{
     width: 100%;
     background-color: #f5e689;
     bottom: 0;
     position: fixed;
     min-width: 620px;
-    height: 100px;
+}
+
+#aTocarAgoraBar{
+    display: flex;
+    height: 90px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+#aTocarAgoraEsquerda, #aTocarAgoraDireita{
+    width: 30%;
+    min-width: 180px;
+}
+
+#aTocarAgoraCentro{
+    width: 40%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
