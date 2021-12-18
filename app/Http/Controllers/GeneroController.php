@@ -14,7 +14,8 @@ class GeneroController extends Controller
      */
     public function index()
     {
-        //
+        $generos = Genero::all();
+        return view('generos.index', compact('generos'));
     }
 
     /**
@@ -24,7 +25,7 @@ class GeneroController extends Controller
      */
     public function create()
     {
-        //
+        return view('generos.create');
     }
 
     /**
@@ -35,7 +36,14 @@ class GeneroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nome' => 'required',
+           ]);
+
+        Genero::create($request->all());
+
+        return redirect()->route('generos.index')
+            ->with('success', 'Genero created successfully.');
     }
 
     /**
@@ -46,7 +54,7 @@ class GeneroController extends Controller
      */
     public function show(Genero $genero)
     {
-        //
+        return view('generos.show', compact('genero'));
     }
 
     /**
@@ -57,7 +65,7 @@ class GeneroController extends Controller
      */
     public function edit(Genero $genero)
     {
-        //
+        return view('generos.edit', compact('genero'));
     }
 
     /**
@@ -69,7 +77,10 @@ class GeneroController extends Controller
      */
     public function update(Request $request, Genero $genero)
     {
-        //
+        $genero->update($request->all());
+
+        return redirect()->route('generos.index')
+            ->with('success', 'Genero updated successfully');
     }
 
     /**
@@ -80,6 +91,9 @@ class GeneroController extends Controller
      */
     public function destroy(Genero $genero)
     {
-        //
+        $genero->delete();
+
+        return redirect()->route('generos.index')
+            ->with('success', 'Genero deleted successfully');
     }
 }

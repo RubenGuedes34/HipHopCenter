@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Musica;
+use App\Models\Artist;
 use Illuminate\Http\Request;
 
 class MusicaController extends Controller
@@ -14,7 +15,9 @@ class MusicaController extends Controller
      */
     public function index()
     {
-        //
+        $musicas = Musica::all();
+        $artistas = Artist::all();
+        return view('musicas.index', compact('musicas','artistas'));
     }
 
     /**
@@ -24,7 +27,7 @@ class MusicaController extends Controller
      */
     public function create()
     {
-        //
+        return view('musicas.create');
     }
 
     /**
@@ -35,7 +38,20 @@ class MusicaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nome' => 'required',
+            'path' => 'required',
+            'Likes' => 'required',
+            'duracao' => 'required',
+            'id_artista' => 'required',
+            //'id_album' => 'required',
+            'id_genero' => 'required',
+        ]);
+
+        Musica::create($request->all());
+
+        return redirect()->route('musicas.index')
+            ->with('success', 'Musica created successfully.');
     }
 
     /**
@@ -46,7 +62,7 @@ class MusicaController extends Controller
      */
     public function show(Musica $musica)
     {
-        //
+        return view('musicas.show', compact('musica'));
     }
 
     /**
@@ -57,7 +73,7 @@ class MusicaController extends Controller
      */
     public function edit(Musica $musica)
     {
-        //
+        return view('musicas.edit', compact('musica'));
     }
 
     /**
@@ -69,7 +85,10 @@ class MusicaController extends Controller
      */
     public function update(Request $request, Musica $musica)
     {
-     
+        $musica->update($request->all());
+
+        return redirect()->route('musicas.index')
+            ->with('success', 'Musica updated successfully');
     }
 
     /**
@@ -80,6 +99,9 @@ class MusicaController extends Controller
      */
     public function destroy(Musica $musica)
     {
-        //
+        $musica->delete();
+
+        return redirect()->route('musicas.index')
+            ->with('success', 'Musica deleted successfully');
     }
 }

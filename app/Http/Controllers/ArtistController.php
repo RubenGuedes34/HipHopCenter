@@ -27,7 +27,7 @@ class ArtistController extends Controller
      */
     public function create()
     {
-        return view('artist.create');
+        return view('artists.create');
     }
 
     /**
@@ -39,15 +39,15 @@ class ArtistController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'nome' => 'required',
             'Data_de_nascimento' => 'required',
             'Likes' => 'required',
         ]);
 
-        Airport::create($request->all());
+        Artist::create($request->all());
 
-        return redirect()->route('airports.index')
-            ->with('success', 'Airport created successfully.');
+        return redirect()->route('artists.index')
+            ->with('success', 'Artist created successfully.');
     }
 
     /**
@@ -58,7 +58,7 @@ class ArtistController extends Controller
      */
     public function show(Artist $artist)
     {
-        //
+        return view('artists.show', compact('artist'));
     }
 
     /**
@@ -69,7 +69,7 @@ class ArtistController extends Controller
      */
     public function edit(Artist $artist)
     {
-        //
+        return view('artists.edit', compact('artist'));
     }
 
     /**
@@ -81,7 +81,10 @@ class ArtistController extends Controller
      */
     public function update(Request $request, Artist $artist)
     {
-        //
+        $artist->update($request->all());
+
+        return redirect()->route('artists.index')
+            ->with('success', 'Artist updated successfully');
     }
 
     /**
@@ -92,6 +95,9 @@ class ArtistController extends Controller
      */
     public function destroy(Artist $artist)
     {
-        //
+        $artist->delete();
+
+        return redirect()->route('artists.index')
+            ->with('success', 'Artist deleted successfully');
     }
 }

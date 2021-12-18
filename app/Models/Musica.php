@@ -11,7 +11,7 @@ class Musica extends Model
 
 
     protected $fillable = [
-        'nome','Likes', 'path', 'duracao',
+        'nome','Likes', 'path', 'duracao','id_artista','id_album','id_genero',
     ];
 
     public function album()

@@ -4,10 +4,10 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Add New Artist</h2>
+            <h2>Edit Genero</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('artists.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('generos.index') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -23,26 +23,15 @@
 </div>
 @endif
 
-<form action="{{ route('artists.store') }}" method="POST">
+<form action="{{ route('generos.update',$genero->id) }}" method="POST">
     @csrf
+    @method('PUT')
 
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                <input type="text" name="nome" class="form-control" placeholder="Name">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Data de Nascimento:</strong>
-                <input type="date" name="Data_de_nascimento" class="form-control" >
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Likes:</strong>
-                <input type="number" name="Likes" class="form-control" placeholder="Likes">
+                <input type="text" name="nome" value="{{ $genero->nome }}" class="form-control" placeholder="Name">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
