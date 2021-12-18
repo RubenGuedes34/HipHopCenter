@@ -29,6 +29,44 @@
 
             <div id="aTocarAgoraCentro">
 
+                <div class="content playerControls">   
+                    <div class="buttons">
+                        <button class="controlButton shuffle" title="Shuffle button">
+                            <img src="{{url('images/shuffle.png')}}" alt="shuffle">
+                        </button>
+
+                        <button class="controlButton previous" title="Previous button">
+                            <img src="{{url('images/previous.png')}}" alt="previous">
+                        </button>
+
+                        <button class="controlButton play" title="Play button">
+                            <img src="{{url('images/play.png')}}" alt="play">
+                        </button>
+
+                        <button class="controlButton pause" title="Pause button" style="display:none">
+                            <img src="{{url('images/pause.png')}}" alt="pause">
+                        </button>
+
+                        <button class="controlButton next" title="Next button">
+                            <img src="{{url('images/next.png')}}" alt="next">
+                        </button>
+
+                        <button class="controlButton repeat" title="Repeat button">
+                            <img src="{{url('images/repeat.png')}}" alt="repeat">
+                        </button>
+                    </div>
+
+                    <div class="playbackBar">
+                        <span class="progressTime current">0.00</span>
+                        <div class="progressBar">
+                            <div class="progressBarbackground">
+
+                            </div>
+                        </div>
+                        <span class="progressTime remaining">0.00</span>
+                    </div>
+                </div>
+
             </div>
 
             <div id="aTocarAgoraDireita">

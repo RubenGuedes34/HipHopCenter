@@ -32,6 +32,14 @@
               <input type="text" placeholder="Username" />
             </div>
             <div class="input-field">
+              <i class="far fa-user"></i>
+              <input type="text" placeholder="Primeiro Nome" />
+            </div>
+            <div class="input-field">
+              <i class="far fa-user"></i>
+              <input type="text" placeholder="Último Nome" />
+            </div>
+            <div class="input-field">
               <i class="fas fa-envelope"></i>
               <input type="email" placeholder="Email" />
             </div>

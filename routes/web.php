@@ -81,3 +81,7 @@ Route::get('/generos/{genero}', 'App\Http\Controllers\GeneroController@show')->n
 Route::get('/generos/{genero}/edit', 'App\Http\Controllers\GeneroController@edit')->name('generos.edit');
 Route::put('/generos/{genero}', 'App\Http\Controllers\GeneroController@update')->name('generos.update');
 Route::delete('/generos/{genero}', 'App\Http\Controllers\GeneroController@destroy')->name('generos.destroy');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
