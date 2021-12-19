@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HipHopCenterController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\AlbumController;
@@ -84,4 +85,6 @@ Route::delete('/generos/{genero}', 'App\Http\Controllers\GeneroController@destro
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/index', [HomeController::class, 'index'])->name('index');
+Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+
