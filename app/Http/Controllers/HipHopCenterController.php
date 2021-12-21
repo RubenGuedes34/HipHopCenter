@@ -11,7 +11,7 @@ class HipHopCenterController extends Controller
    }
 
    public function autenticacao(){
-    return view("autenticacao");
+    return view("auth/autenticacao");
    }
 
    public function homepage(){

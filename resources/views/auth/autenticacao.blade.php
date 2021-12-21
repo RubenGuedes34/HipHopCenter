@@ -13,39 +13,40 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="#" class="sign-in-form">
+          <form method="POST" action="{{ route('login') }}" class="sign-in-form">
+            @csrf
             <h2 class="title">Iniciar Sessão</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input id="email" type="email" name="email" placeholder="Email" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input id="password" type="password" name="password" placeholder="Password" />
             </div>
             <input type="submit" value="Iniciar Sessão" class="btn solid" />
           </form>
-          <form action="#" class="sign-up-form">
+
+
+
+          <form method="POST" action="{{ route('register') }}"class="sign-up-form">
+          @csrf
             <h2 class="title">Regista-te</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
-            <div class="input-field">
-              <i class="far fa-user"></i>
-              <input type="text" placeholder="Primeiro Nome" />
-            </div>
-            <div class="input-field">
-              <i class="far fa-user"></i>
-              <input type="text" placeholder="Último Nome" />
+              <input id="name" type="text" name="name" placeholder="Name" required  />
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+              <input id="email" type="email" name="email" placeholder="Email"  required />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input id="password" type="password" name="password" placeholder="Password" required/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input id="password-confirm" type="password" placeholder="Confirm Password" name="password_confirmation" required/>
             </div>
             <input type="submit" class="btn" value="Registar" />    
           </form>
