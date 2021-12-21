@@ -47,7 +47,7 @@
                         </div>
 
                         <div class="navItem">
-                            <a href="profile.php" class="navItemLink">McLawyer</a>
+                            <a href="profile.php" class="navItemLink">{{ auth()->user()->name }}</a>
                         </div>
 
                         <div class="navItem">
