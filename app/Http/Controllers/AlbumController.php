@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Musica;
 use App\Models\Album;
+use App\Models\Artist;
 use Illuminate\Http\Request;
 
 class AlbumController extends Controller
@@ -14,7 +16,9 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        //
+        $albuns = Album::all();
+        $artists = Artist::all();
+        return view('albuns.index', compact('artists','albuns'));
     }
 
     /**
@@ -24,7 +28,7 @@ class AlbumController extends Controller
      */
     public function create()
     {
-        //
+        return view('albuns.create');
     }
 
     /**
@@ -35,7 +39,16 @@ class AlbumController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nome' => 'required',
+            'id_artista' => 'required',
+            'Likes' => 'required',
+        ]);
+
+        Album::create($request->all());
+
+        return redirect()->route('albuns.index')
+            ->with('success', 'Album created successfully.');
     }
 
     /**
@@ -46,7 +59,7 @@ class AlbumController extends Controller
      */
     public function show(Album $album)
     {
-        //
+        return view('albuns.show', compact('album'));
     }
 
     /**
@@ -57,7 +70,7 @@ class AlbumController extends Controller
      */
     public function edit(Album $album)
     {
-        //
+        return view('albuns.edit', compact('album'));
     }
 
     /**
@@ -69,7 +82,10 @@ class AlbumController extends Controller
      */
     public function update(Request $request, Album $album)
     {
-        //
+        $album->update($request->all());
+
+        return redirect()->route('albuns.index')
+            ->with('success', 'Album updated successfully');
     }
 
     /**
@@ -80,6 +96,9 @@ class AlbumController extends Controller
      */
     public function destroy(Album $album)
     {
-        //
+        $album->delete();
+
+        return redirect()->route('albuns.index')
+            ->with('success', 'Album deleted successfully');
     }
 }

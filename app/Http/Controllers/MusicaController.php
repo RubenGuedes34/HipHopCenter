@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Musica;
+use App\Models\Album;
 use App\Models\Artist;
 use Illuminate\Http\Request;
 
@@ -15,9 +16,10 @@ class MusicaController extends Controller
      */
     public function index()
     {
+        $albuns = Album::all();
         $musicas = Musica::all();
         $artistas = Artist::all();
-        return view('musicas.index', compact('musicas','artistas'));
+        return view('musicas.index', compact('musicas','artistas','albuns'));
     }
 
     /**
@@ -44,7 +46,7 @@ class MusicaController extends Controller
             'Likes' => 'required',
             'duracao' => 'required',
             'id_artista' => 'required',
-            //'id_album' => 'required',
+            'id_album' => 'required',
             'id_genero' => 'required',
         ]);
 
