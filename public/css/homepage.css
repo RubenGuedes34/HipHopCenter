@@ -176,12 +176,22 @@ html, body{
     position: relative;
 }
 
+
 .navItemLink {
     color: #a0a0a0;
     text-decoration: none;
 }
 
 .navItemLink:hover{
+    color: #fff;
+}
+
+.navItem .logout{
+    color: #a0a0a0;
+    text-decoration: none;
+}
+
+.navItem .logout:hover{
     color: #fff;
 }
 

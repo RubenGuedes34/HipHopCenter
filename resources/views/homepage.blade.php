@@ -1,4 +1,4 @@
-@extends('layouts.app')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,6 +49,23 @@
                         <div class="navItem">
                             <a href="profile.php" class="navItemLink">McLawyer</a>
                         </div>
+
+                        <div class="navItem">
+                        
+                            <a class="logout"  href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">                                      
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </nav>
