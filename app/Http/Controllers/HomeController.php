@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Artist;
 
 class HomeController extends Controller
 {
@@ -21,13 +22,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('home');
+
+    public function homepage(){
+        return view("homepage");
     }
 
-    public function adminHome(){
-        return view('adminHome');
+    public function ajax(){
+        return Artist::all();
     }
 
 }
