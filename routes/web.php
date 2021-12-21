@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HipHopCenterController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\AlbumController;
@@ -9,6 +8,8 @@ use App\Http\Controllers\MusicaController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GeneroController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,16 +22,17 @@ use App\Http\Controllers\GeneroController;
 |
 */
 
+
 Route::get('/', function () {
-    return view("index");
+    return view('index');
 });
 
+Route::get('/autenticacao',[HipHopCenterController::class,'autenticacao'])->name('autenticacao');
+Route::get('/homepage',[HipHopCenterController::class,'homepage'])->name('home');
 
-Route::get('/index',[HipHopCenterController::class,'index']);
-Route::get('/autenticacao',[HipHopCenterController::class,'autenticacao']);
-Route::get('/homepage',[HipHopCenterController::class,'homepage']);
+Auth::routes();
 
-
+//->name('admin.home')->middleware('is_admin')
 
 
 
@@ -82,9 +84,4 @@ Route::get('/generos/{genero}', 'App\Http\Controllers\GeneroController@show')->n
 Route::get('/generos/{genero}/edit', 'App\Http\Controllers\GeneroController@edit')->name('generos.edit');
 Route::put('/generos/{genero}', 'App\Http\Controllers\GeneroController@update')->name('generos.update');
 Route::delete('/generos/{genero}', 'App\Http\Controllers\GeneroController@destroy')->name('generos.destroy');
-
-Auth::routes();
-
-Route::get('/index', [HomeController::class, 'index'])->name('index');
-Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
