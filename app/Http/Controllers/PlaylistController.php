@@ -1,20 +1,31 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Musica;
+use App\Models\Album;
+use App\Models\Artist;
 use App\Models\Playlist;
 use Illuminate\Http\Request;
 
 class PlaylistController extends Controller
 {
+
+
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   
+        $albuns = Album::all();
+        $playlists = Playlist::all();
+        return view('playlists.index', compact('playlists','albuns'));
     }
 
     /**
