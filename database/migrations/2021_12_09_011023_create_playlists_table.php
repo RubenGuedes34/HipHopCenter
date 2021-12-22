@@ -17,10 +17,20 @@ class CreatePlaylistsTable extends Migration
             $table->id();
             $table->string('nome', 100);
             $table->integer('Likes');
+            $table->unsignedBigInteger('id_user');
             $table->timestamps();
+
+
+            $table->foreign('id_user', 'id_user_fk')
+            ->references('id')
+            ->on('users')
+            ->onUpdate('CASCADE')
+            ->onDelete('RESTRICT');
         });
     }
 
+    
+    
     /**
      * Reverse the migrations.
      *
@@ -30,4 +40,6 @@ class CreatePlaylistsTable extends Migration
     {
         Schema::dropIfExists('playlists');
     }
+
+    
 }
