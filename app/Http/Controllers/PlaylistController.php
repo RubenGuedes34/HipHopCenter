@@ -47,14 +47,28 @@ class PlaylistController extends Controller
     {
         $request->validate([
             'nome' => 'required',
-            'id_artista' => 'required',
+            'id_user' => 'required',
             'Likes' => 'required',
         ]);
 
         Playlist::create($request->all());
 
-        return redirect()->route('albuns.index')
-            ->with('success', 'Album created successfully.');
+        return redirect()->route('playlists.index')
+            ->with('success', 'Playlist created successfully.');
+    }
+
+    public function add(Request $request)
+    {
+        $request->validate([
+            'playlist' => 'required',
+        ]);
+        $playlist=$request['playlist'];
+        $musica=$request['musica'];
+
+        $playlist->musica()->attach($musica);
+        
+        return redirect()->route('playlists.show', compact('playlist'))
+            ->with('success', 'Music added successfully.');
     }
     
 
@@ -102,7 +116,7 @@ class PlaylistController extends Controller
     {
         $playlist->delete();
 
-        return redirect()->route('playlist.index')
+        return redirect()->route('playlists.index')
             ->with('success', 'Playlist deleted successfully');
     }
 }

@@ -62,7 +62,7 @@ Route::get('/musicas/{musica}/edit', [MusicaController::class,'edit'])->name('mu
 Route::put('/musicas/{musica}', [MusicaController::class,'update'])->name('musicas.update')->middleware('is_admin');
 Route::delete('/musicas/{musica}', [MusicaController::class,'destroy'])->name('musicas.destroy')->middleware('is_admin');
 
-
+Route::get('/playlists/{playlist}/add', [PlaylistController::class,'add_music'])->name('playlists.add');
 
 Route::get('/playlists', [PlaylistController::class,'index'])->name('playlists.index');
 Route::get('/playlists/create', [PlaylistController::class,'create'])->name('playlists.create');

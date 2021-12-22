@@ -32,7 +32,7 @@ class Musica extends Model
 
     public function playlist()
     {
-        return $this->belongsToMany(Playlist::class);
+        return $this->belongsToMany(Playlist::class,'musica_playlist','id_musica','id_playlist');
     }
 }
 
