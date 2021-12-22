@@ -9,6 +9,12 @@ html, body{
     color: #000;
 }
 
+body{
+    background-color: #fef9e3;
+    font-size: 16px;
+    min-width: 720px;
+}
+
 #aTocarAgoraContainer{
     width: 100%;
     background-color: #f5e689;
@@ -147,7 +153,7 @@ html, body{
 
 
 #navBarContainer{
-    background-color: #ffd480;
+    background-color: #faf1bb;
     width: 220px;
     height: 100vh;
     position: fixed;
@@ -200,4 +206,14 @@ html, body{
     right: 0;
     top: 6px;
     width: 25px;
+}
+
+#mainViewContainer {
+    margin-left: 220px;
+    padding-bottom: 90px;
+    width: calc(100% - 220px);
+}
+
+#mainContent {
+    padding: 0 20px;
 }
