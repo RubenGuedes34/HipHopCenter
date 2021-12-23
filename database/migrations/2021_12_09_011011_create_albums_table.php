@@ -18,6 +18,7 @@ class CreateAlbumsTable extends Migration
             $table->string('nome', 100);
             $table->integer('Likes');
             $table->unsignedBigInteger('id_artista');
+            $table->string('capa');
             $table->timestamps();
 
 

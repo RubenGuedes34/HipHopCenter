@@ -107,4 +107,7 @@ class AlbumController extends Controller
         return redirect()->route('albuns.index')
             ->with('success', 'Album deleted successfully');
     }
+
+ 
 }
+    

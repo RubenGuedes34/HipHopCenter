@@ -74,7 +74,16 @@
 
         <div id="mainViewContainer">
             <div id="mainContent">
-                Tomás
+                Tomas
+                
+
+                @foreach($albuns as $album)
+
+                
+                <img src="{{ asset('storage/capa/'.$album->capa) }}" alt="Illmatic">
+                
+                @endforeach
+        
             </div>
         </div>
 

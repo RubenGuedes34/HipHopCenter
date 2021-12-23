@@ -16,7 +16,7 @@ class CreateMusicasTable extends Migration
         Schema::create('musicas', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 100);
-            $table->string('path', 100);
+            $table->string('path');
             $table->integer('Likes');
             $table->double('duracao', 3, 2);
             $table->unsignedBigInteger('id_artista');

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Artist;
+use App\Models\Album;
+use App\Models\Musica;
 
 class HomeController extends Controller
 {
@@ -24,7 +26,9 @@ class HomeController extends Controller
      */
 
     public function homepage(){
-        return view("homepage");
+        $albuns= Album::all();
+        
+        return view("homepage", compact('albuns'));
     }
 
     public function ajax(){
