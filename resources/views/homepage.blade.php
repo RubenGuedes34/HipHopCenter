@@ -80,7 +80,8 @@
                 @foreach($albuns as $album)
 
                 
-                <img src="{{ asset('storage/capa/'.$album->capa) }}" alt="Illmatic">
+                <img src="{{ asset('storage/capa/'.$album->capa) }}" alt="Album artwork">
+
                 
                 @endforeach
         
