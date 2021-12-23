@@ -74,16 +74,23 @@
 
         <div id="mainViewContainer">
             <div id="mainContent">
-                Tomas
                 
+                <h1 class="recomenda">O Hip-hop Center recomenda</h1>
 
-                @foreach($albuns as $album)
+                <div class="gridViewContainer">
+                    @foreach($albuns as $album)         
+                       <div class="gridViewItem">                           
+                            <img src="{{ asset('storage/capa/'.$album->capa) }}" alt="Album artwork">                     
+                            
+                            <div class="gridViewInfo">
+                                {{ $album->nome }}
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
 
-                
-                <img src="{{ asset('storage/capa/'.$album->capa) }}" alt="Album artwork">
-
-                
-                @endforeach
+                  
+                        
         
             </div>
         </div>
