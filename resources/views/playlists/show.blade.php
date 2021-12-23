@@ -1,18 +1,27 @@
 @extends('layouts.layout')
 @section('content')
+<?php   
+if(isset($_GET['id'])){
+$musica=$_GET['id'];
+$playlist->musica()->attach($musica);   
+}
+
+if(isset($_GET['remid'])){
+    $musica=$_GET['remid'];
+    $playlist->musica()->detach($musica);   
+    }
+?>
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2> Show PLaylist</h2>
+            <h2> Show Playlist</h2>
         </div>
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('playlists.index') }}"> Back</a>
         </div>
     </div>
 </div>
-<div class="pull-right">
-            <a class="btn btn-success" href="{{ route('musicas.add',$playlist) }}"> Add New Music to this playlist</a>
-</div>
+
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
@@ -35,5 +44,68 @@
 </div>
 
 <h1>Musicas da Playlist {{ $playlist->nome }}:</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>Nome</th>
+        <th>Likes</th>
+        <th>Duração</th>
+        <th>Artista</th>
+        <th>Album</th>
+        <th>Genero</th>
+        <th width="280px">Action</th>
+    </tr>    
+      @foreach ($playlist->musica as $musica)
+    <tr>
+        <td>{{ $musica->nome }}</td>
+        <td>{{ $musica->Likes }}</td>
+        <td>{{ $musica->duracao }}</td>
+        <td>{{ $musica->artista->nome }}</td>
+        <td>{{ $musica->album->nome }}</td>
+        <td>{{ $musica->genero->nome }}</td>
+        <td>
+            <form method="GET">
+                @csrf                
+                <button type="submit" value="{{ $musica->id }}" class="btn btn-danger" name="remid">REMOVE</button>
+            </form>    
+        </td>
+    </tr>
+    @endforeach
+</table>
+
+<h1>Musicas para adicionar a Playlist {{ $playlist->nome }}:</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>Nome</th>
+        <th>Likes</th>
+        <th>Duração</th>
+        <th>Artista</th>
+        <th>Album</th>
+        <th>Genero</th>
+        <th width="280px">Action</th>
+    </tr>    
+    
+    
+    
+    @foreach ($musicas as $musica)
+    <tr>
+        <td>{{ $musica->nome }}</td>
+        <td>{{ $musica->Likes }}</td>
+        <td>{{ $musica->duracao }}</td>
+        <td>{{ $musica->artista->nome }}</td>
+        <td>{{ $musica->album->nome }}</td>
+        <td>{{ $musica->genero->nome }}</td>
+        <td>
+            <form method="GET">
+                @csrf                
+                <button type="submit" value="{{ $musica->id }}" class="btn btn-danger" name="id">ADD</button>
+            </form>    
+        </td>
+    </tr>
+    @endforeach
+</table>
+   
+   
+
+
 
 @endsection

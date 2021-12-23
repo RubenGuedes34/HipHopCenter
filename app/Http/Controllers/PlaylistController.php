@@ -57,19 +57,8 @@ class PlaylistController extends Controller
             ->with('success', 'Playlist created successfully.');
     }
 
-    public function add(Request $request)
-    {
-        $request->validate([
-            'playlist' => 'required',
-        ]);
-        $playlist=$request['playlist'];
-        $musica=$request['musica'];
-
-        $playlist->musica()->attach($musica);
-        
-        return redirect()->route('playlists.show', compact('playlist'))
-            ->with('success', 'Music added successfully.');
-    }
+    
+    
     
 
     /**
@@ -80,7 +69,8 @@ class PlaylistController extends Controller
      */
     public function show(Playlist $playlist)
     {
-        return view('playlists.show', compact('playlist'));    }
+        $musicas = Musica::all();
+        return view('playlists.show', compact('playlist','musicas'));    }
 
     /**
      * Show the form for editing the specified resource.

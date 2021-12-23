@@ -61,8 +61,15 @@ Route::get('/musicas/{musica}', [MusicaController::class,'show'])->name('musicas
 Route::get('/musicas/{musica}/edit', [MusicaController::class,'edit'])->name('musicas.edit')->middleware('is_admin');
 Route::put('/musicas/{musica}', [MusicaController::class,'update'])->name('musicas.update')->middleware('is_admin');
 Route::delete('/musicas/{musica}', [MusicaController::class,'destroy'])->name('musicas.destroy')->middleware('is_admin');
+////////////////////////////////////////////////////
+Route::get('/playlists/{playlist}/add', [PlaylistController::class,'add'])->name('playlists.add');
 
-Route::get('/playlists/{playlist}/add', [PlaylistController::class,'add_music'])->name('playlists.add');
+Route::get('/playlists/{playlist}/associate', [PlaylistController::class,'associate'])->name('playlists.associate');
+
+///////////////////////////////////////////////
+
+
+
 
 Route::get('/playlists', [PlaylistController::class,'index'])->name('playlists.index');
 Route::get('/playlists/create', [PlaylistController::class,'create'])->name('playlists.create');
