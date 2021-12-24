@@ -43,6 +43,12 @@
             <div class="form-group">
                 <strong>Id do Artista:</strong>
                 <input type="number" name="id_artista" class="form-control" placeholder="Artist">
+            </div>    
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Capa:</strong>
+                <input type="text" name="capa" class="form-control" placeholder="Photo">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

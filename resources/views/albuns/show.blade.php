@@ -19,13 +19,14 @@ use App\Models\Artist;
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{{url('css/homepage.css')}}">
-    
+    <script src="{{url('js/script.js')}}"> </script> 
+   
 
     <title>Hip-hop Center</title>
 </head>
 <body>
-
-    <div id="mainContainer">
+          
+     <div id="mainContainer">
 
 
         <div id="topContainer">
@@ -36,7 +37,7 @@ use App\Models\Artist;
                         <div class="group">
                             <div class="navItem">
                                 <a href="search.php" class="navItemLink">Search
-                                    <img src="{{url('images/search.png')}}" class="icon" alt="Search">
+                                <img src="{{ url('images/search.png') }}" class="icon" alt="Search">
                                 </a>
                             </div>
 
@@ -76,7 +77,6 @@ use App\Models\Artist;
                     </nav>
                 </div>
         </div>
-
         <div id="mainViewContainer">
             <div id="mainContent">          
                 <div class="entityInfo">
@@ -101,7 +101,7 @@ use App\Models\Artist;
                         @foreach($album->musicas as $musica)
                         <li class="tracklistRow">
                             <div class="trackCount">
-                                <img src="{{url('images/play-white.png')}}" alt="Play" class="play">
+                                <img src="{{ url('images/play-white.png') }}" alt="Play" class="play">
                                <span class="trackNumber">
                                     <?php echo $aux; ?>
                                </span> 
@@ -112,7 +112,7 @@ use App\Models\Artist;
                             </div>
 
                             <div class="trackOptions">
-                                <img src="{{url('images/more.png')}}" alt="Opções" class="optionsButton">
+                                <img src="{{ url('images/more.png') }}" alt="Opções" class="optionsButton">
                             </div>
 
                             <div class="trackDuration">
@@ -122,7 +122,8 @@ use App\Models\Artist;
                             </div>
 
                         </li>  
-                        <?php $aux++; ?>            
+                        <?php $aux++; ?> 
+                               
                         @endforeach
                         
 
@@ -164,27 +165,27 @@ use App\Models\Artist;
                     <div class="content playerControls">   
                         <div class="buttons">
                             <button class="controlButton shuffle" title="Shuffle button">
-                                <img src="{{url('images/shuffle.png')}}" alt="shuffle">
+                                <img src="{{ url('images/shuffle.png') }}" alt="shuffle">
                             </button>
 
                             <button class="controlButton previous" title="Previous button">
-                                <img src="{{url('images/previous.png')}}" alt="previous">
+                                <img src="{{ url('images/previous.png') }}" alt="previous">
                             </button>
 
                             <button class="controlButton play" title="Play button">
-                                <img src="{{url('images/play.png')}}" alt="play">
+                                <img src="{{ url('images/play.png') }}" alt="play">
                             </button>
 
                             <button class="controlButton pause" title="Pause button" style="display:none">
-                                <img src="{{url('images/pause.png')}}" alt="pause">
+                                <img src="{{ url('images/pause.png') }}" alt="pause">
                             </button>
 
                             <button class="controlButton next" title="Next button">
-                                <img src="{{url('images/next.png')}}" alt="next">
+                                <img src="{{ url('images/next.png') }}" alt="next">
                             </button>
 
                             <button class="controlButton repeat" title="Repeat button">
-                                <img src="{{url('images/repeat.png')}}" alt="repeat">
+                                <img src="{{ url('images/repeat.png') }}" alt="repeat">
                             </button>
                         </div>
 
@@ -204,7 +205,7 @@ use App\Models\Artist;
                 <div id="aTocarAgoraDireita">
                     <div class="volumeBar">
                         <button class="controlButton volume" title="Volume button">
-                            <img src="{{url('images/volume.png')}}" alt="volume">
+                            <img src="{{ url('images/volume.png') }}" alt="volume">
                         </button>
 
                         <div class="progressBar">
@@ -221,7 +222,13 @@ use App\Models\Artist;
 
         </div>
 
-
+        <script src="{{ asset('js/script.js')   }}"> </script> 
+        <script>
+	    var audioElement = new Audio();
+	    audioElement.setTrack("{{ asset('storage/path/freelawyer.mp3') }}");
+	    audioElement.audio.play();
+        </script>
+       
 </body>
 
 </html>
