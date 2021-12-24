@@ -132,6 +132,35 @@ use App\Models\Artist;
 
             </div>      
         </div>
+        
+        <?php
+        $resultArray= array();
+        ?>
+        @foreach($album->musicas as $musica)
+        <?php 
+        $resultArray[]=$musica->id;
+        ?>
+        @endforeach
+
+        <?php
+        $jsonArray = json_encode($resultArray);
+        print_r($jsonArray);
+        ?>
+
+        <script>
+
+                $(document).ready(function() {
+                    currentPlaylist = <?php echo $jsonArray; ?>;
+                    audioElement = new Audio();
+                    setTrack(currentPlaylist[0], currentPlaylist, false);
+                });
+
+
+                function setTrack(trackId, newPlaylist, play) {
+
+                }
+
+        </script>
 
 
         <div id="aTocarAgoraContainer">
@@ -222,12 +251,9 @@ use App\Models\Artist;
 
         </div>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="{{ asset('js/script.js')   }}"> </script> 
-        <script>
-	    var audioElement = new Audio();
-	    audioElement.setTrack("{{ asset('storage/path/freelawyer.mp3') }}");
-	    audioElement.audio.play();
-        </script>
+     
        
 </body>
 
