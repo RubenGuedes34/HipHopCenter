@@ -79,12 +79,14 @@
 
                 <div class="gridViewContainer">
                     @foreach($albuns as $album)         
-                       <div class="gridViewItem">                           
-                            <img src="{{ asset('storage/capa/'.$album->capa) }}" alt="Album artwork">                     
+                       <div class="gridViewItem">
+                            <a href="{{ route('albuns.show',$album->id)}}">                          
+                            <img src="{{ asset('storage/capa/'.$album->capa) }}" alt="Capa de Album">                     
                             
                             <div class="gridViewInfo">
                                 {{ $album->nome }}
                             </div>
+                            </a> 
                         </div>
                     @endforeach
                 </div>
