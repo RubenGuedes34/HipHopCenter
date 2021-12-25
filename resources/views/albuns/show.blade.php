@@ -165,8 +165,7 @@ use App\Models\Artist;
                     });
 
                     $(".playbackBar .progressBar").mousemove(function(e) {
-                        if(mouseDown == true) {
-                            //Set time of song, depending on position of mouse
+                        if(mouseDown) {
                             timeFromOffset(e, this);
                         }
                     });
@@ -181,7 +180,7 @@ use App\Models\Artist;
                     });
 
                     $(".volumeBar .progressBar").mousemove(function(e) {
-                        if(mouseDown == true) {
+                        if(mouseDown) {
                             var percentage=e.offsetX / $(this).width();
                             if(percentage >=0 && percentage<=1){
                                 audioElement.audio.volume=percentage; 
@@ -209,10 +208,23 @@ use App\Models\Artist;
                     audioElement.setTime(seconds);
                 }
 
+                function nextSong(){
+                    if(currentIndex == currentPlaylist.lenght - 1){
+                        currentIndex = 0;
+                    }
+                    else{
+                        currentIndex++;
+                    }
 
+                    var trackToPlay = currentPlaylist[currentIndex];
+                    setTrack(trackToPlay, currentPlaylist, true);
+                }
 
                 function setTrack(trackId, newPlaylist, play) {
                     $.post("{{url('ajax/getSongJson.php')}}",{songId:trackId},function(data){
+
+                        currentIndex= currentPlaylist.indexOf(trackId);
+
                         var track=JSON.parse(data);
 
                         $(".nomeMusica span").text(track.nome);
