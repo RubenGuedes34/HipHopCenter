@@ -154,6 +154,12 @@ use App\Models\Artist;
                     currentPlaylist = <?php echo $jsonArray; ?>;
                     audioElement = new Audio();
                     setTrack(currentPlaylist[0], currentPlaylist, false);
+                    updateVolumeProgressBar(audioElement.audio);
+                    
+                    $("#aTocarAgoraContainer").on("mousedown touchstart mousemove touchmove",function(e){
+                         e.preventDefault();
+                    });
+                   
                     $(".playbackBar .progressBar").mousedown(function() {
                             mouseDown = true;
                     });
@@ -169,6 +175,28 @@ use App\Models\Artist;
                         timeFromOffset(e, this);
                     });
 
+
+                    $(".volumeBar .progressBar").mousedown(function() {
+                            mouseDown = true;
+                    });
+
+                    $(".volumeBar .progressBar").mousemove(function(e) {
+                        if(mouseDown == true) {
+                            var percentage=e.offsetX / $(this).width();
+                            if(percentage >=0 && percentage<=1){
+                                audioElement.audio.volume=percentage; 
+                            }
+                            
+                        }
+                    });
+
+                    $(".volumeBar .progressBar").mouseup(function(e) {
+                        var percentage=e.offsetX / $(this).width();
+                            if(percentage >=0 && percentage<=1){
+                                audioElement.audio.volume=percentage; 
+                            }
+                    });
+
                     $(document).mouseup(function() {
                         mouseDown = false;
                     });
@@ -177,6 +205,7 @@ use App\Models\Artist;
                 function timeFromOffset(mouse, progressBar) {
                     var percentage = mouse.offsetX / $(progressBar).width() * 100;
                     var seconds = audioElement.audio.duration * (percentage / 100);
+                    console.log(seconds);
                     audioElement.setTime(seconds);
                 }
 
@@ -199,10 +228,9 @@ use App\Models\Artist;
                          });
 
                         
-                         track=track.path;
-                        
-                        
-                        audioElement.setTrack(`{{ asset('storage/path/${track}')}}`);
+                       
+                         
+ 	 	                audioElement.setTrack(`{{ asset('storage/path/${track.path}')}}`,track);
                         playSong();
                     });
 
@@ -313,10 +341,10 @@ use App\Models\Artist;
 
         </div>
 
-        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="{{ asset('js/script.js')   }}"> </script> 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        
      
        
 </body>
