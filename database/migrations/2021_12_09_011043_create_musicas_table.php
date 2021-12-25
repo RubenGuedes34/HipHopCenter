@@ -18,7 +18,7 @@ class CreateMusicasTable extends Migration
             $table->string('nome', 100);
             $table->string('path');
             $table->integer('Likes');
-            $table->double('duracao', 3, 2);
+            $table->string('duracao');
             $table->unsignedBigInteger('id_artista');
             $table->unsignedBigInteger('id_album');
             $table->unsignedBigInteger('id_genero');
