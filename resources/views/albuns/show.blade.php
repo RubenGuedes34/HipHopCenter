@@ -6,13 +6,12 @@ use App\Models\Artist;
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
@@ -20,7 +19,7 @@ use App\Models\Artist;
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{{url('css/homepage.css')}}">
-   
+    <script src="{{url('js/script.js')}}"> </script> 
    
 
     <title>Hip-hop Center</title>
@@ -154,6 +153,7 @@ use App\Models\Artist;
                     currentPlaylist = <?php echo $jsonArray; ?>;
                     audioElement = new Audio();
                     setTrack(currentPlaylist[0], currentPlaylist, false);
+<<<<<<< HEAD
                     updateVolumeProgressBar(audioElement.audio);
                     $(".playbackBar .progressBar").mousedown(function() {
                             mouseDown = true;
@@ -193,55 +193,15 @@ use App\Models\Artist;
                         mouseDown = false;
                     });
                     
+=======
+>>>>>>> parent of dd04cb0 (4.3)
                 });
-                function timeFromOffset(mouse, progressBar) {
-                    var percentage = mouse.offsetX / $(progressBar).width() * 100;
-                    var seconds = audioElement.audio.duration * (percentage / 100);
-                    audioElement.setTime(seconds);
-                }
-
 
 
                 function setTrack(trackId, newPlaylist, play) {
-                    $.post("{{url('ajax/getSongJson.php')}}",{songId:trackId},function(data){
-                        var track=JSON.parse(data);
 
-                        $(".nomeMusica span").text(track.nome);
-                        
-                        $.post("{{url('ajax/getArtistJson.php')}}",{artistId:track.id_artista},function(data){
-                            var artist=JSON.parse(data);
-                            $(".artistaMusica span").text(artist.nome);
-                         });
-                        $.post("{{url('ajax/getAlbunsJson.php')}}",{albunsId:track.id_album},function(data){
-                            var album=JSON.parse(data);
-                            var capa=`{{ asset('storage/capa/${album.capa}')}}`;
-                            $(".albumLink img").attr("src",capa);
-                         });
-
-                        
-                         track=track.path;
-                        
-                        
-                        audioElement.setTrack(`{{ asset('storage/path/${track}')}}`);
-                        playSong();
-                    });
-
-                    if(play){
-                        audioElement.play();
-                    }
-                   
                 }
-                function playSong() {
 
-                        $(".controlButton.play").hide();
-                        $(".controlButton.pause").show();
-                        audioElement.play();
-                }
-                function pauseSong(){
-                    $(".controlButton.pause").hide();
-                    $(".controlButton.play").show();
-                    audioElement.pause();
-                }
         </script>
 
 
@@ -252,17 +212,17 @@ use App\Models\Artist;
                 <div id="aTocarAgoraEsquerda">
                     <div class="content"> 
                         <span class="albumLink">
-                            <img src="" alt="album" class="albumArtwork">
+                            <img src="https://media-exp1.licdn.com/dms/image/C4D03AQHMSBaUrwLY5w/profile-displayphoto-shrink_800_800/0/1605460001084?e=1645660800&v=beta&t=H5mcF-mMZFrjJ1CLvQjMQ3O1Nb_EnF_xsYBmcKFLYKE" alt="album" class="albumArtwork">
                         </span>
 
                         <div class="infoMusica">
 
                             <span class="nomeMusica">
-                                <span></span>
+                                <span>Xerecrazy Castle VC</span>
                             </span>
 
                             <span class="artistaMusica">
-                                <span></span>
+                                <span>McLawyer</span>
                             </span>
 
                         </div>
@@ -283,11 +243,11 @@ use App\Models\Artist;
                                 <img src="{{ url('images/previous.png') }}" alt="previous">
                             </button>
 
-                            <button class="controlButton play" title="Play button" onclick="playSong()">
+                            <button class="controlButton play" title="Play button">
                                 <img src="{{ url('images/play.png') }}" alt="play">
                             </button>
 
-                            <button class="controlButton pause" title="Pause button" style="display:none" onclick="pauseSong()">
+                            <button class="controlButton pause" title="Pause button" style="display:none">
                                 <img src="{{ url('images/pause.png') }}" alt="pause">
                             </button>
 
@@ -335,10 +295,8 @@ use App\Models\Artist;
 
         </div>
 
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="{{ asset('js/script.js')   }}"> </script> 
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
      
        
 </body>

@@ -117,7 +117,7 @@
                             </span>
 
                             <span class="artistaMusica">
-                                <span>Marega</span>
+                                <span>McLawyer</span>
                             </span>
 
                         </div>

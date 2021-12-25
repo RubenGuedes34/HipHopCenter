@@ -1,8 +1,8 @@
-var currentPlaylist = [];
+var currentPlaylist = array();
 var audioElement;
-var mouseDown = false;
 
 
+<<<<<<< HEAD
 
 function formatTime(seconds) {
 	var time = Math.round(seconds);
@@ -27,11 +27,14 @@ function updateVolumeProgressBar(audio){
 	$(".volumeBar .progress").css("width", volume + "%");
 }
 
+=======
+>>>>>>> parent of dd04cb0 (4.3)
 function Audio() {
 
 	this.currentlyPlaying;
 	this.audio = document.createElement('audio');
 
+<<<<<<< HEAD
 	this.audio.addEventListener("canplay", function() {
 		//'this' refers to the object that the event was called on
 		var duration = formatTime(this.duration);
@@ -48,20 +51,10 @@ function Audio() {
 		updateVolumeProgressBar(this);
 	});
 
+=======
+>>>>>>> parent of dd04cb0 (4.3)
 	this.setTrack = function(src) {
 		this.audio.src = src;
-	}
-
-	this.play = function() {
-		this.audio.play();
-	}
-
-	this.pause = function() {
-		this.audio.pause();
-	}
-
-	this.setTime = function(seconds) {
-		this.audio.currentTime = seconds;
 	}
 
 }
