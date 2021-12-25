@@ -312,7 +312,9 @@ use App\Models\Artist;
                             <span class="progressTime current">0.00</span>
                             <div class="progressBar">
                                 <div class="progressBarbackground">
+                                    <div class="progress">
 
+                                    </div>
                                 </div>
                             </div>
                             <span class="progressTime remaining">0.00</span>
@@ -329,7 +331,9 @@ use App\Models\Artist;
 
                         <div class="progressBar">
                             <div class="progressBarbackground">
-
+                                <div class="progress">
+                                    
+                                </div>
                             </div>
                         </div>
 
