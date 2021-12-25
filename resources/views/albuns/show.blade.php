@@ -100,9 +100,10 @@ use App\Models\Artist;
                        $aux=1;
                        ?>                     
                         @foreach($album->musicas as $musica)
+                        <?php $songIdArray = $album->musicas; ?>
                         <li class="tracklistRow">
                             <div class="trackCount">
-                                <img src="{{ url('images/play-white.png') }}" alt="Play" class="play">
+                                <img src="{{ url('images/play-white.png') }}" alt="Play" class="play" onclick="setTrack({{$musica->id}}, tempPlaylist,true)">
                                <span class="trackNumber">
                                     <?php echo $aux; ?>
                                </span> 
@@ -127,6 +128,10 @@ use App\Models\Artist;
                                
                         @endforeach
                         
+                        <script>
+                            var tempSongIds = "<?php echo json_encode($songIdArray); ?>";
+                            tempPlaylist = JSON.parse(tempSongIds);
+                        </script>
 
                    </ul> 
                 </div>
