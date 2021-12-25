@@ -209,6 +209,13 @@ use App\Models\Artist;
                 }
 
                 function nextSong(){
+
+                    if(repeat){
+                        audioElement.setTime(0);
+                        playSong();
+                        return;
+                    }
+
                     if(currentIndex == currentPlaylist.lenght - 1){
                         currentIndex = 0;
                     }
@@ -220,10 +227,24 @@ use App\Models\Artist;
                     setTrack(trackToPlay, currentPlaylist, true);
                 }
 
-                function setTrack(trackId, newPlaylist, play) {
-                    $.post("{{url('ajax/getSongJson.php')}}",{songId:trackId},function(data){
+                function setRepeat(){
+                    if(repeat){
+                        repeat = false;                  
+                        var imageName= "{{ url('images/repeat.png')}}"
+                    }else{
+                        repeat = true;
+                        var imageName= "{{ url('images/repeat-active.png')}}"
+                    }
 
-                        currentIndex= currentPlaylist.indexOf(trackId);
+                    $(".controlButton.repeat img").attr("src", imageName);
+                }
+
+                function setTrack(trackId, newPlaylist, play) {
+
+                    currentIndex= currentPlaylist.indexOf(trackId);
+                    pauseSong();
+
+                    $.post("{{url('ajax/getSongJson.php')}}",{songId:trackId},function(data){
 
                         var track=JSON.parse(data);
 
@@ -311,11 +332,11 @@ use App\Models\Artist;
                                 <img src="{{ url('images/pause.png') }}" alt="pause">
                             </button>
 
-                            <button class="controlButton next" title="Next button">
+                            <button class="controlButton next" title="Next button" onclick="nextSong()">
                                 <img src="{{ url('images/next.png') }}" alt="next">
                             </button>
 
-                            <button class="controlButton repeat" title="Repeat button">
+                            <button class="controlButton repeat" title="Repeat button" onclick="setRepeat()">
                                 <img src="{{ url('images/repeat.png') }}" alt="repeat">
                             </button>
                         </div>

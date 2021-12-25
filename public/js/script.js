@@ -2,6 +2,7 @@ var currentPlaylist = [];
 var audioElement;
 var mouseDown = false;
 var currentIndex= 0;
+var repeat= false;
 
 
 function formatTime(seconds) {
@@ -62,8 +63,6 @@ function Audio() {
 
 	this.setTime = function(seconds) {
 		this.audio.currentTime = seconds;
-		console.log(this.audio.currentTime);
-		
 	}
 
 }
