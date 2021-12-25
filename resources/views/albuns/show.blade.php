@@ -208,6 +208,15 @@ use App\Models\Artist;
                     audioElement.setTime(seconds);
                 }
 
+                function prevSong(){
+                    if(audioElement.audio.currentTime >= 3 || currentIndex == 0){
+                        audioElement.setTime(0);
+                    }else{
+                        currentIndex = currentIndex - 1;
+                        setTrack(currentPlaylist[currentIndex], currentPlaylist, true);
+                    }
+                }
+
                 function nextSong(){
 
                     if(repeat){
@@ -237,6 +246,18 @@ use App\Models\Artist;
                     }
 
                     $(".controlButton.repeat img").attr("src", imageName);
+                }
+
+                function setMute(){
+                    if(audioElement.audio.muted){
+                        audioElement.audio.muted = false;                  
+                        var imageName= "{{ url('images/volume.png')}}"
+                    }else{
+                        audioElement.audio.muted = true;
+                        var imageName= "{{ url('images/volume-mute.png')}}"
+                    }
+
+                    $(".controlButton.volume img").attr("src", imageName);
                 }
 
                 function setTrack(trackId, newPlaylist, play) {
@@ -320,7 +341,7 @@ use App\Models\Artist;
                                 <img src="{{ url('images/shuffle.png') }}" alt="shuffle">
                             </button>
 
-                            <button class="controlButton previous" title="Previous button">
+                            <button class="controlButton previous" title="Previous button" onclick="prevSong()">
                                 <img src="{{ url('images/previous.png') }}" alt="previous">
                             </button>
 
@@ -358,7 +379,7 @@ use App\Models\Artist;
 
                 <div id="aTocarAgoraDireita">
                     <div class="volumeBar">
-                        <button class="controlButton volume" title="Volume button">
+                        <button class="controlButton volume" title="Volume button" onclick="setMute()">
                             <img src="{{ url('images/volume.png') }}" alt="volume">
                         </button>
 
