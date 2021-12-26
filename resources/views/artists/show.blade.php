@@ -98,11 +98,55 @@ use App\Models\Artist;
                             <h1 class="artistName">{{$artist->nome}}</h1>
 
                             <div class="headerButtons">
-                                <button class="button">PLAY</button>
+                                <button class="button green" onclick="playFirstSong()">OUVIR</button>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="tracklistContainer">
+                   <ul class="tracklist">  
+                       <?php
+                       $aux=1;
+                       ?>                     
+                        @foreach($artist->musicas as $musica)
+
+                        <?php $songIdArray = $artist->musicas; ?>
+                        <li class="tracklistRow">
+                            <div class="trackCount">
+                                <img src="{{ url('images/play-white.png') }}" alt="Play" class="play" onclick="setTrack({{$musica->id}}, tempPlaylist,true)">
+                               <span class="trackNumber">
+                                    <?php echo $aux; ?>
+                               </span> 
+                            </div>
+
+                            <div class="trackInfo">
+                                <span class="nomeMusica">{{$musica->nome}}</span>
+                            </div>
+
+                            <div class="trackOptions">
+                                <img src="{{ url('images/more.png') }}" alt="Opções" class="optionsButton">
+                            </div>
+
+                            <div class="trackDuration">
+                                <span class="duration">
+                                    {{$musica->duracao}}
+                                </span>
+                            </div>
+
+                        </li>  
+                        <?php $aux++; ?> 
+                               
+                        @endforeach
+                        
+                        <script>
+                            var tempSongIds = "<?php echo json_encode($songIdArray); ?>";
+                            tempPlaylist = JSON.parse(tempSongIds);
+                        </script>
+
+                   </ul> 
+                </div>
+
             </div>
         </div>
 
