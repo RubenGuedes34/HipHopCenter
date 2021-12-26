@@ -27,27 +27,38 @@
 
             <div id="navBarContainer">
                 <nav class="navBar">
+        
+                <div class="group">
 
-                    <div class="group">
-                        <div class="navItem">
-                            <a href="search.php" class="navItemLink">Search
-                                <img src="{{url('images/search.png')}}" class="icon" alt="Search">
+                    <div class="navItem">
+                            <a href="homepage" class="logo">
+                                <img src="{{url('images/HipHopCenter.gif')}}" alt="Logo">
                             </a>
-                        </div>
-
+                            
                     </div>
 
-                    <div class="group">
-                        <div class="navItem">
-                            <a href="browse.php" class="navItemLink">Browse</a>
+                    <div class="navItem">
+                            <a href="search.php" class="navItemLink">
+                            <i class="fas fa-search"></i>
+                            Search</a>
+                        </div>
+
+                        <div class="navItem">  
+                            <a href="homepage" class="navItemLink">
+                                <i class="fas fa-check"> </i>
+                                Recomendações</a>
                         </div>
 
                         <div class="navItem">
-                            <a href="yourMusic.php" class="navItemLink">Your Music</a>
+                            <a href="yourMusic.php" class="navItemLink">
+                                <i class="fas fa-music"></i>
+                                Your Music</a>
                         </div>
 
                         <div class="navItem">
-                            <a href="profile.php" class="navItemLink">{{ auth()->user()->name }}</a>
+                            <a href="profile.php" class="navItemLink">
+                                <i class="fas fa-user"></i>
+                                 {{ auth()->user()->name }}</a>
                         </div>
 
                         <div class="navItem">
@@ -55,6 +66,7 @@
                             <a class="logout"  href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
+                                                        <i class="fas fa-sign-out-alt"></i>
                                             {{ __('Logout') }}
                             </a>
 
@@ -90,12 +102,7 @@
                         </div>
                     @endforeach
                 </div>
-
-                  
-                        
-
-                
-                
+  
             </div>
         </div>
 
