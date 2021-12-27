@@ -329,11 +329,14 @@ use App\Models\Artist;
                         $.post("{{url('ajax/getArtistJson.php')}}",{artistId:track.id_artista},function(data){
                             var artist=JSON.parse(data);
                             $(".artistaMusica span").text(artist.nome);
-                         });
+                      
+                           });
                         $.post("{{url('ajax/getAlbunsJson.php')}}",{albunsId:track.id_album},function(data){
                             var album=JSON.parse(data);
                             var capa=`{{ asset('storage/capa/${album.capa}')}}`;
                             $(".albumLink img").attr("src",capa);
+                            $(".albumLink img").attr("onclick", "openPage('album.php?id=" + album.id + "')");
+			                $(".trackName span").attr("onclick", "openPage('album.php?id=" + album.id + "')");
                          });
 
                         
@@ -373,11 +376,10 @@ use App\Models\Artist;
                         </span>
 
                         <div class="infoMusica">
-
+                             
                             <span class="nomeMusica">
                                 <span></span>
                             </span>
-
                             <span class="artistaMusica">
                                 <span></span>
                             </span>

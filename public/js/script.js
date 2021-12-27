@@ -42,7 +42,7 @@ function Audio() {
 	this.audio.addEventListener("ended", function(){
 		nextSong();
 	});
-
+	playFirstSong;
 	this.audio.addEventListener("canplay", function() {
 		
 		var duration = formatTime(this.duration);

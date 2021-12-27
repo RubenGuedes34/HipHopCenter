@@ -98,13 +98,14 @@ use App\Models\Artist;
                             <h1 class="artistName">{{$artist->nome}}</h1>
 
                             <div class="headerButtons">
-                                <button class="button green" onclick="playFirstSong()">OUVIR</button>
+                                <button class="button green">OUVIR</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="tracklistContainer">
+                    <h2>SONGS</h2>
                    <ul class="tracklist">  
                        <?php
                        $aux=1;
@@ -116,7 +117,7 @@ use App\Models\Artist;
                             <div class="trackCount">
                                 <img src="{{ url('images/play-white.png') }}" alt="Play" class="play" onclick="setTrack({{$musica->id}}, tempPlaylist,true)">
                                <span class="trackNumber">
-                                    <?php echo $aux; ?>
+                                    
                                </span> 
                             </div>
 
@@ -146,24 +147,36 @@ use App\Models\Artist;
 
                    </ul> 
                 </div>
+                <div class="gridViewContainer">
+	        <h2>ALBUMS</h2>
+	        <?php
+		    foreach($artist->albuns as $album) {
+			echo "<div class='gridViewItem'>
+                    <a href='" . route('albuns.show',$album->id) ."'>    
+						<img src='" . asset('storage/capa/'.$album->capa) . "'>
+
+						<div class='gridViewInfo'>"
+							.  $album->nome .
+						"</div>
+					</span>
+
+				</div>";
+             }
+	        ?>
 
             </div>
+
+            </div>
+          
         </div>
 
-        <?php
+      
+      <?php
         $resultArray= array();
-        ?>
-        @foreach($artist->musicas as $musica)
-        <?php 
         $resultArray[]=$artist->id;
-        ?>
-        @endforeach
-
-        <?php
         $jsonArray = json_encode($resultArray);
         print_r($jsonArray);
         ?>
-
         <script>
 
                 $(document).ready(function() {
