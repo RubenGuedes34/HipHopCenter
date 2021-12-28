@@ -31,6 +31,7 @@ Route::get('/autenticacao',[HipHopCenterController::class,'autenticacao'])->name
 Route::get('/homepage',[HomeController::class,'homepage'])->name('home');
 Route::get('/artistas',[HomeController::class,'artistas'])->name('artistas');
 Route::get('/searchpage',[HomeController::class,'search'])->name('search');
+Route::get('/yourmusic',[HomeController::class,'music'])->name('yourmusic');
 
 
 Auth::routes();

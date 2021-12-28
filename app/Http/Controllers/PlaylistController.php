@@ -53,7 +53,7 @@ class PlaylistController extends Controller
 
         Playlist::create($request->all());
 
-        return redirect()->route('playlists.index')
+        return redirect()->route('yourmusic')
             ->with('success', 'Playlist created successfully.');
     }
 
@@ -106,7 +106,7 @@ class PlaylistController extends Controller
     {
         $playlist->delete();
 
-        return redirect()->route('playlists.index')
+        return redirect()->route('yourmusic')
             ->with('success', 'Playlist deleted successfully');
     }
 }

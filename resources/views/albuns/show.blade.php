@@ -63,7 +63,7 @@ use App\Models\Artist;
                         </div>
 
                         <div class="navItem">
-                            <a href="yourMusic.php" class="navItemLink">
+                            <a href="{{ route('yourmusic') }}" class="navItemLink">
                                 <i class="fas fa-music"></i>
                                 Your Music</a>
                         </div>

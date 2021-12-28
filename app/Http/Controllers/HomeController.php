@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use App\Models\Artist;
-use App\Models\Album;
 use App\Models\Musica;
+use App\Models\Album;
+use App\Models\Artist;
+use App\Models\Playlist;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -36,6 +36,13 @@ class HomeController extends Controller
         $musicas= Musica::all();
         
         return view("search", compact('albuns','artists','musicas'));
+    }
+    public function music(){
+        $albuns= Album::all();
+        $artists= Artist::all();
+        $musicas= Musica::all();
+        $playlists = Playlist::all();
+        return view("yourmusic", compact('albuns','artists','musicas','playlists'));
     }
 
     public function artistas(){

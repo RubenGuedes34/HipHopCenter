@@ -7,7 +7,7 @@
             <h2>Add New Playlist</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('playlists.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('yourmusic') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -36,7 +36,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Likes:</strong>
-                <input type="number" name="Likes" class="form-control" placeholder="Likes">
+                <input type="number" name="Likes" class="form-control" placeholder="Likes" value="0" readonly>
             </div>
         </div>
         <?php $user= auth()->user(); ?>

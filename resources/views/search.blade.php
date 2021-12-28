@@ -51,13 +51,13 @@ use App\Models\Album;
                         </div>
 
                         <div class="navItem">  
-                            <a href="artistas" class="navItemLink">
+                            <a href="{{ route('artistas') }}" class="navItemLink">
                             <i class="fas fa-microphone"></i>
                                 Artistas</a>
                         </div>
 
                         <div class="navItem">
-                            <a href="yourMusic.php" class="navItemLink">
+                            <a href="{{ route('yourmusic') }}" class="navItemLink">
                                 <i class="fas fa-music"></i>
                                 Your Music</a>
                         </div>

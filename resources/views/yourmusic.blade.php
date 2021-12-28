@@ -1,3 +1,10 @@
+<?php
+use App\Models\Musica;
+use App\Models\Artist;
+use App\Models\Album;
+use App\Models\Playlist;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{{url('css/homepage.css')}}">
-    
 
-    <title>Hip-hop Center</title>
 </head>
 <body>
 
@@ -30,7 +35,7 @@
                 <div class="group">
 
                     <div class="navItem">
-                            <a href="{{ route('home') }}" class="logo">
+                            <a href="homepage" class="logo">
                                 <img src="{{url('images/HipHopCenter.gif')}}" alt="Logo">
                             </a>
                             
@@ -88,50 +93,64 @@
                 </nav>
             </div>
         </div>
-
         <div id="mainViewContainer">
             <div id="mainContent">
-                
-                <h1 class="recomenda">Artistas do Hip-hop center</h1>
+                    <div class="playlistsContainer">
 
-                <div class="header_fixed">
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Nome do Artista</td>
-                                <td>Data de Nascimento</td>
-                                <td>Likes</td>
-                                <td>Visualizar</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        @foreach ($artists as $artist)
-                        <tr>
-                            <td>{{ $artist->nome }}</td>
-                            <td>{{ $artist->Data_de_nascimento }}</td>
-                            <td>{{ $artist->Likes }}</td>
-                            <td><a href="{{ route('artists.show',$artist->id)}}"> 
-                                <div class="headerButtons">
-                                <button class="button green">OUVIR</button>
-                                </div> </a></td>
-                  
-                        </tr>
-                        @endforeach
-                            
-                        </tbody>
-                    </table>
-                </div>
-  
-            </div>
-        </div>
+                    <div class="gridViewContainer">
+                        <h2>PLAYLISTS</h2>
+                        <div class="buttonItems">
+                            <form action="{{ route('playlists.create') }}">
+                            <button type="submit" class="button green" >NEW PLAYLIST</button>
+                            </form>
+                        </div>
 
 
-        
-    </div>
 
-    
+                        <?php
+                            $id=auth()->user()->id; 
 
-    
+                            $user_playlists= Playlist::where('id_user', '=', $id)->get();
+                        
+                            ?>
+                        
+
+                            @foreach($user_playlists as $playlist)
+                            <div class='gridViewItem' role='link' tabindex='0'>
+
+                                <div class='playlistImage'>
+                                <img src="{{ asset('storage/playlist/HipHopCenterLogo1.png') }}">
+                                </div>
+                                
+                                <div class='gridViewInfo'>
+                                {{$playlist->nome}} 
+                                </div>
+                            <div class='actions'>
+                            <form action="{{ route('playlists.destroy',$playlist->id) }}"        method="POST">
+
+                                <a class="btn btn-info" href="{{ route('playlists.edit',$playlist->id) }}">Play</a>
+
+                                <a class="btn btn-primary" href="{{ route('playlists.show',$playlist->id) }}">Add Songs</a>
+                                
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+
+                            </div>
+                            @endforeach
+		
+
+
+
+                        </div>
+
+                    </div>
+
+
+	</div>
+
+</div>
 </body>
-
-</html>
