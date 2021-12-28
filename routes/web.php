@@ -30,6 +30,7 @@ Route::get('/', function () {
 Route::get('/autenticacao',[HipHopCenterController::class,'autenticacao'])->name('autenticacao');
 Route::get('/homepage',[HomeController::class,'homepage'])->name('home');
 Route::get('/artistas',[HomeController::class,'artistas'])->name('artistas');
+Route::get('/searchpage',[HomeController::class,'search'])->name('search');
 
 
 Auth::routes();

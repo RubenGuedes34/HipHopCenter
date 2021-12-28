@@ -30,6 +30,13 @@ class HomeController extends Controller
         
         return view("homepage", compact('albuns'));
     }
+    public function search(){
+        $albuns= Album::all();
+        $artists= Artist::all();
+        $musicas= Musica::all();
+        
+        return view("search", compact('albuns','artists','musicas'));
+    }
 
     public function artistas(){
         $artists= Artist::all();

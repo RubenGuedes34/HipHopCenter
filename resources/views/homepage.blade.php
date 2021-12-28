@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="navItem">
-                            <a href="search.php" class="navItemLink">
+                            <a href="{{ route('search') }}" class="navItemLink">
                             <i class="fas fa-search"></i>
                             Search</a>
                         </div>

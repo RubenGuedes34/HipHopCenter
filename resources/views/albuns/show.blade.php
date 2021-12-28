@@ -45,7 +45,7 @@ use App\Models\Artist;
                     </div>
 
                     <div class="navItem">
-                            <a href="search.php" class="navItemLink">
+                            <a href="{{ route('search') }}" class="navItemLink">
                             <i class="fas fa-search"></i>
                             Search</a>
                         </div>
@@ -335,8 +335,6 @@ use App\Models\Artist;
                             var album=JSON.parse(data);
                             var capa=`{{ asset('storage/capa/${album.capa}')}}`;
                             $(".albumLink img").attr("src",capa);
-                            $(".albumLink img").attr("onclick", "openPage('album.php?id=" + album.id + "')");
-			                $(".trackName span").attr("onclick", "openPage('album.php?id=" + album.id + "')");
                          });
 
                         
