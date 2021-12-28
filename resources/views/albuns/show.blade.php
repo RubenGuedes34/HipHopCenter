@@ -51,9 +51,15 @@ use App\Models\Artist;
                         </div>
 
                         <div class="navItem">  
-                            <a href="../homepage" class="navItemLink">
+                            <a href="{{ route('home') }}" class="navItemLink">
                                 <i class="fas fa-check"> </i>
                                 Recomendações</a>
+                        </div>
+
+                        <div class="navItem">  
+                            <a href="{{ route('artistas') }}" class="navItemLink">
+                            <i class="fas fa-microphone"></i>
+                                Artistas</a>
                         </div>
 
                         <div class="navItem">

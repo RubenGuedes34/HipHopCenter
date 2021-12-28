@@ -55,6 +55,12 @@ use App\Models\Artist;
                                     Recomendações</a>
                             </div>
 
+                            <div class="navItem">  
+                            <a href="artistas" class="navItemLink">
+                            <i class="fas fa-microphone"></i>
+                                Artistas</a>
+                            </div>  
+
                             <div class="navItem">
                                 <a href="yourMusic.php" class="navItemLink">
                                     <i class="fas fa-music"></i>
@@ -97,9 +103,7 @@ use App\Models\Artist;
                         <div class="artistInfo">
                             <h1 class="artistName">{{$artist->nome}}</h1>
 
-                            <div class="headerButtons">
-                                <button class="button green">OUVIR</button>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

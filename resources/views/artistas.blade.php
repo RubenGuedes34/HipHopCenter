@@ -30,26 +30,26 @@
                 <div class="group">
 
                     <div class="navItem">
-                            <a href="homepage" class="logo">
+                            <a href="{{ route('home') }}" class="logo">
                                 <img src="{{url('images/HipHopCenter.gif')}}" alt="Logo">
                             </a>
                             
                     </div>
 
                     <div class="navItem">
-                            <a href="search.php" class="navItemLink">
+                            <a href="{{ route('search') }}" class="navItemLink">
                             <i class="fas fa-search"></i>
                             Search</a>
                         </div>
 
                         <div class="navItem">  
-                            <a href="homepage" class="navItemLink">
+                            <a href="{{ route('home') }}" class="navItemLink">
                                 <i class="fas fa-check"> </i>
                                 Recomendações</a>
                         </div>
 
                         <div class="navItem">  
-                            <a href="artistas" class="navItemLink">
+                            <a href="{{ route('artistas') }}" class="navItemLink">
                             <i class="fas fa-microphone"></i>
                                 Artistas</a>
                         </div>
@@ -110,7 +110,10 @@
                             <td>{{ $artist->nome }}</td>
                             <td>{{ $artist->Data_de_nascimento }}</td>
                             <td>{{ $artist->Likes }}</td>
-                            <td><a href="{{ route('artists.show',$artist->id)}}"> Ver </a></td>
+                            <td><a href="{{ route('artists.show',$artist->id)}}"> 
+                                <div class="headerButtons">
+                                <button class="button green">OUVIR</button>
+                                </div> </a></td>
                   
                         </tr>
                         @endforeach
