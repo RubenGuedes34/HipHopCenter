@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,20 +92,31 @@
         <div id="mainViewContainer">
             <div id="mainContent">
                 
-                <h1 class="recomenda">O Hip-hop Center recomenda</h1>
+                <h1 class="recomenda">Artistas do Hip-hop center</h1>
 
-                <div class="gridViewContainer">
-                    @foreach($albuns as $album)         
-                       <div class="gridViewItem">
-                            <a href="{{ route('albuns.show',$album->id)}}">                          
-                            <img src="{{ asset('storage/capa/'.$album->capa) }}" alt="Capa de Album">                     
+                <div class="header_fixed">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Nome do Artista</td>
+                                <td>Data de Nascimento</td>
+                                <td>Likes</td>
+                                <td>Visualizar</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach ($artists as $artist)
+                        <tr>
+                            <td>{{ $artist->nome }}</td>
+                            <td>{{ $artist->Data_de_nascimento }}</td>
+                            <td>{{ $artist->Likes }}</td>
+                            <td><a href="{{ route('artists.show',$artist->id)}}"> Ver </a></td>
+                  
+                        </tr>
+                        @endforeach
                             
-                            <div class="gridViewInfo">
-                                {{ $album->nome }}
-                            </div>
-                            </a> 
-                        </div>
-                    @endforeach
+                        </tbody>
+                    </table>
                 </div>
   
             </div>

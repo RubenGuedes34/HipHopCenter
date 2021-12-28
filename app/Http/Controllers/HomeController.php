@@ -31,6 +31,12 @@ class HomeController extends Controller
         return view("homepage", compact('albuns'));
     }
 
+    public function artistas(){
+        $artists= Artist::all();
+        
+        return view("artistas", compact('artists'));
+    }
+
     public function ajax(){
         return Artist::all();
     }

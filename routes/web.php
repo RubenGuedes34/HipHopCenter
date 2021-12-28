@@ -29,6 +29,7 @@ Route::get('/', function () {
 
 Route::get('/autenticacao',[HipHopCenterController::class,'autenticacao'])->name('autenticacao');
 Route::get('/homepage',[HomeController::class,'homepage'])->name('home');
+Route::get('/artistas',[HomeController::class,'artistas'])->name('artistas');
 
 
 Auth::routes();
