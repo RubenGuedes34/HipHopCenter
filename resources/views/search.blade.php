@@ -97,22 +97,48 @@ else {
 
 
 <div id="mainViewContainer">
-            <div id="mainContent">
+ <div id="mainContent">
 
 
 
 
 <div class="searchContainer">
-
 	<h4>Search for an artist, album or song</h4>
     <form Method="GET">
     <input type="text" name="term" class="searchInput" value="<?php echo $term; ?>" placeholder="Start typing...">
     <input type="Submit" value="Search">
     </form>
-	
+</div>
+<div class="tracklistContainer">
+                    <h2>SONGS</h2>
+                   <ul class="tracklist">                   
+                        @foreach($musicas as $musica)
+
+                        <?php $songIdArray = $musicas; ?>
+                        <li class="tracklistRow">
+                          <div class="trackInfo">
+                                <span class="nomeMusica">{{$musica->nome}}</span>
+                            </div>
+
+                            <div class="trackDuration">
+                                <span class="duration">
+                                    {{$musica->duracao}}
+                                </span>
+                            </div>
+
+                        </li>  
+                       
+                               
+                        @endforeach
+
+                   </ul> 
+                </div>
 
 </div>
+
 </div>
-</div>
+
+
+
 
 </body>
