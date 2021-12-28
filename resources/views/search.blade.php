@@ -1,3 +1,8 @@
+<?php
+use App\Models\Musica;
+use App\Models\Artist;
+use App\Models\Album;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,15 +114,24 @@ else {
     <input type="Submit" value="Search">
     </form>
 </div>
-<div class="tracklistContainer">
+        <div class="tracklistContainer">
                     <h2>SONGS</h2>
-                   <ul class="tracklist">                   
-                        @foreach($musicas as $musica)
-
-                        <?php $songIdArray = $musicas; ?>
+                   <ul class="tracklist"> 
+                        <?php
+                          $musicas_array=array();
+                        if($term!=""){
+                            $musicas_array=Musica::Where('nome', 'ilike', $term . '%')->get();
+                            if($musicas_array->isEmpty()) {
+                                echo "<span class='noResults'>No songs found matching</span>";  
+                            } 
+                        }else{
+                           echo "<span class='noResults'>No songs found matching</span>";  
+                        }
+                        ?>                
+                        @foreach($musicas_array as $musica)
                         <li class="tracklistRow">
                           <div class="trackInfo">
-                                <span class="nomeMusica">{{$musica->nome}}</span>
+                                <span class="nomeMusica">{{$musica->nome}} from {{$musica->artista->nome}}</span>
                             </div>
 
                             <div class="trackDuration">
@@ -132,7 +146,61 @@ else {
                         @endforeach
 
                    </ul> 
+        </div>
+                 <div class="gridViewContainer">
+                 <h2>Albuns</h2>
+                 <?php
+                        $albuns_array=array();
+                         if($term!=""){
+                            $albuns_array=Album::Where('nome', 'ilike',$term . '%')->get();
+                            if($albuns_array->isEmpty()) {
+                                echo "<span class='noResults'>No albuns found matching</span>";  
+                            } 
+                         }else{
+                            echo "<span class='noResults'>No albuns found matching</span>";   
+                         }
+                       
+                ?>   
+        
+                    @foreach($albuns_array as $album)         
+                       <div class="gridViewItem">
+                            <a href="{{ route('albuns.show',$album->id)}}">                          
+                            <img src="{{ asset('storage/capa/'.$album->capa) }}" alt="Capa de Album">                     
+                            
+                            <div class="gridViewInfo">
+                                {{ $album->nome }}
+                            </div>
+                            </a> 
+                        </div>
+                    @endforeach
                 </div>
+                <div class="tracklistContainer">
+                    <h2>Artists</h2>
+                   <ul class="tracklist"> 
+                        <?php
+                        $artists_array=array();
+                         if($term!=""){
+                            $artists_array=Artist::Where('nome', 'ilike', $term . '%')->get();
+                            if($artists_array->isEmpty()) {
+                                echo "<span class='noResults'>No artists found matching</span>";  
+                            }      
+                         }else{
+                            echo "<span class='noResults'>No artists found matching</span>";   
+                         }
+                        ?>                
+                        @foreach($artists_array as $artist)
+                        <li class="tracklistRow">
+                          <div class="trackInfo">
+                                <span class="nomeMusica">{{$artist->nome}}</span>
+                            </div>
+                        </li>  
+                       
+                               
+                        @endforeach
+
+                   </ul> 
+        </div>    
+
 
 </div>
 
