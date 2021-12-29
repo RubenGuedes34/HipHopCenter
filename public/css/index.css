@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
 *{
   margin: 0;
   padding: 0;
@@ -13,7 +15,7 @@ section{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #161616;
+  background: #FEF9E3;
 }
 
 section .circle{
@@ -24,4 +26,124 @@ section .circle{
   height: 100%;
   background: #f5e689;
   clip-path: circle(70% at right -20%);
+}
+
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo{
+  position: relative;
+  max-width: 150px;
+}
+
+header .navigation{
+  position: relative;
+  display: flex;
+}
+
+header .navigation li{
+  list-style: none;
+}
+
+header .navigation li a{
+  display: inline-block;
+  color: #074F0C;
+  font-weight: 500;
+  text-decoration: none;
+  /*margin-left: 40px;         CASO PRETENDA ADICIONAR MAIS ELEMENTOS à NAVBAR */
+}
+
+.content{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content .textBox{
+  position: relative;
+  max-width: 600px;
+  margin-right: 20px;
+}
+
+.content .textBox h2{
+  color: #074F0C;
+  font-size: 3em;
+  margin-bottom: 10px;
+  line-height: 1.4em;
+  font-weight: 700;
+}
+
+.content .textBox p{
+  color: #074F0C;
+}
+
+.content .textBox a{
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: #074F0C;
+  color: #fff;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.content .imgBox{
+  width: 700px;
+  display: flex;
+}
+
+.content .imgBox img{
+  max-width: 150px;
+}
+
+@media (max-width: 991px){
+  header{
+    padding: 40px;
+  }
+
+  section{
+    padding: 150px 40px;
+  }
+
+  .content{
+    flex-direction: column;
+  }
+
+  .content .textBox,
+  .content .imgBox{
+    max-width: 100%;
+  }
+
+  header .navigation{
+    display: none;
+  }
+
+  .toggle{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url('../images/menu.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  .toggle.active{
+    
+  }
+
 }

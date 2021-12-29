@@ -66,6 +66,17 @@
                                 <i class="fas fa-user"></i>
                                  {{ auth()->user()->name }}</a>
                         </div>
+                        <?php 
+                        if(auth()->user()->type==2){
+                        ?>
+                        <div class="navItem">
+                            <a href="profile.php" class="navItemLink">
+                                <i class="fas fa-user"></i>
+                                 Admin Page</a>
+                        </div>
+                        <?php
+                        }
+                        ?>
 
                         <div class="navItem">
                         
