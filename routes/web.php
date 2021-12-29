@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,7 @@ Route::get('/homepage',[HomeController::class,'homepage'])->name('home');
 Route::get('/artistas',[HomeController::class,'artistas'])->name('artistas');
 Route::get('/searchpage',[HomeController::class,'search'])->name('search');
 Route::get('/yourmusic',[HomeController::class,'music'])->name('yourmusic');
+Route::get('/adminpage',[AdminController::class,'adminpage'])->name('adminpage');
 
 
 Auth::routes();

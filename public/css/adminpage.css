@@ -1,0 +1,59 @@
+*{
+    background-color: #FEF9E3;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.admin{
+    color: #074F0C;
+    padding: 20px;
+    text-align: center;
+}
+
+.header_fixed{
+    height: 150px;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+}
+
+.table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header_fixed td{
+    border: 1px solid #dddddd;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.header_fixed thead td{
+    background-color: #FAF1BB;
+    color: #074F0C;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.header_fixed tr td a{
+    text-decoration: none;
+}
+.myButton a{
+    text-decoration: none;
+}
+
+.myButton {
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-weight: 500;
+    border: 2px solid #2ebd59;
+    border-radius: 500px;
+    padding: 15px;
+    min-width: 130px;
+    background-color: #2ebd59;
+    color: #fff;
+    position: absolute;
+    top: 40px;
+    right: 30px;
+}
+
