@@ -26,6 +26,7 @@ class Musica extends Model
 
     public function genero()
     {
+        
         return $this->belongsTo(Genero::class, 'id_genero', 'id');
     }
 

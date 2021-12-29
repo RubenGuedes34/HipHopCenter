@@ -3,6 +3,7 @@ use App\Models\Musica;
 use App\Models\Artist;
 use App\Models\Album;
 use App\Models\Playlist;
+use App\Models\Genero;
 ?>
 
 <!DOCTYPE html>
@@ -90,6 +91,7 @@ use App\Models\Playlist;
                                             <i class="fas fa-sign-out-alt"></i>
                                 {{ __('Logout') }}
                 </a>
+
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">                                      
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

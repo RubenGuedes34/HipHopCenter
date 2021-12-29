@@ -10,6 +10,7 @@ if(isset($_GET['remid'])){
     $musica=$_GET['remid'];
     $playlist->musica()->detach($musica);   
     }
+    
 ?>
 <div class="row">
     <div class="col-lg-12 margin-tb">
