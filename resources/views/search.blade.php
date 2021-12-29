@@ -23,73 +23,83 @@ use App\Models\Album;
 <body>
 
     <div id="mainContainer">
+    <div id="topContainer">
 
-        <div id="topContainer">
+<div id="navBarContainer">
+    <nav class="navBar">
 
-            <div id="navBarContainer">
-                <nav class="navBar">
-        
-                <div class="group">
+    <div class="group">
 
-                    <div class="navItem">
-                            <a href="homepage" class="logo">
-                                <img src="{{url('images/HipHopCenter.gif')}}" alt="Logo">
-                            </a>
-                            
-                    </div>
-
-                    <div class="navItem">
-                            <a href="{{ route('search') }}" class="navItemLink">
-                            <i class="fas fa-search"></i>
-                            Search</a>
-                        </div>
-
-                        <div class="navItem">  
-                            <a href="homepage" class="navItemLink">
-                                <i class="fas fa-check"> </i>
-                                Recomendações</a>
-                        </div>
-
-                        <div class="navItem">  
-                            <a href="{{ route('artistas') }}" class="navItemLink">
-                            <i class="fas fa-microphone"></i>
-                                Artistas</a>
-                        </div>
-
-                        <div class="navItem">
-                            <a href="{{ route('yourmusic') }}" class="navItemLink">
-                                <i class="fas fa-music"></i>
-                                Your Music</a>
-                        </div>
-
-                        <div class="navItem">
-                            <a href="profile.php" class="navItemLink">
-                                <i class="fas fa-user"></i>
-                                 {{ auth()->user()->name }}</a>
-                        </div>
-
-                        <div class="navItem">
-                        
-                            <a class="logout"  href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
-                                                        <i class="fas fa-sign-out-alt"></i>
-                                            {{ __('Logout') }}
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">                                      
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </nav>
-            </div>
+        <div class="navItem">
+                <a href="homepage" class="logo">
+                    <img src="{{url('images/HipHopCenter.gif')}}" alt="Logo">
+                </a>
+                
         </div>
+
+        <div class="navItem">
+                <a href="{{ route('search') }}" class="navItemLink">
+                <i class="fas fa-search"></i>
+                Search</a>
+            </div>
+
+            <div class="navItem">  
+                <a href="{{ route('home') }}" class="navItemLink">
+                    <i class="fas fa-music"> </i>
+                    Albuns</a>
+            </div>
+
+            <div class="navItem">  
+                <a href="{{ route('artistas') }}" class="navItemLink">
+                <i class="fas fa-microphone"></i>
+                    Artistas</a>
+            </div>
+
+            <div class="navItem">
+                <a href="{{ route('yourmusic') }}" class="navItemLink">
+                    <i class="fas fa-music"></i>
+                    Your Music</a>
+            </div>
+
+            <div class="navItem">
+                <a href="profile.php" class="navItemLink">
+                    <i class="fas fa-user"></i>
+                     {{ auth()->user()->name }}</a>
+            </div>
+            <?php 
+            if(auth()->user()->type==2){
+            ?>
+            <div class="navItem">
+                <a href="profile.php" class="navItemLink">
+                    <i class="fas fa-user"></i>
+                     Admin Page</a>
+            </div>
+            <?php
+            }
+            ?>
+
+            <div class="navItem">
+            
+                <a class="logout"  href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                            <i class="fas fa-sign-out-alt"></i>
+                                {{ __('Logout') }}
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">                                      
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+</div>
+</div>
 
 <?php
 if(isset($_GET['term'])) {
@@ -191,7 +201,13 @@ else {
                         @foreach($artists_array as $artist)
                         <li class="tracklistRow">
                           <div class="trackInfo">
-                                <span class="nomeMusica">{{$artist->nome}}</span>
+                                
+                        <span class="nomeMusica"> 
+                        <a href="{{ route('artists.show',$artist->id)}}">{{$artist->nome}}</a>
+                        </span>
+                        
+                                
+                                
                             </div>
                         </li>  
                        
