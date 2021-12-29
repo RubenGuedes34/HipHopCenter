@@ -128,7 +128,7 @@ use App\Models\Playlist;
                             <div class='actions'>
                             <form action="{{ route('playlists.destroy',$playlist->id) }}"        method="POST">
 
-                                <a class="btn btn-info" href="{{ route('playlists.edit',$playlist->id) }}">Play</a>
+                                <a class="btn btn-info" href="{{ route('playlists.play',$playlist->id) }}">Play</a>
 
                                 <a class="btn btn-primary" href="{{ route('playlists.show',$playlist->id) }}">Add Songs</a>
                                 

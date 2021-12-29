@@ -78,6 +78,7 @@ Route::get('/playlists', [PlaylistController::class,'index'])->name('playlists.i
 Route::get('/playlists/create', [PlaylistController::class,'create'])->name('playlists.create');
 Route::post('/playlists', [PlaylistController::class,'store'])->name('playlists.store');
 Route::get('/playlists/{playlist}', [PlaylistController::class,'show'])->name('playlists.show');
+Route::get('/playlists/{playlist}/play', [PlaylistController::class,'play'])->name('playlists.play');
 Route::get('/playlists/{playlist}/edit', [PlaylistController::class,'edit'])->name('playlists.edit');
 Route::put('/playlists/{playlist}', [PlaylistController::class,'update'])->name('playlists.update');
 Route::delete('/playlists/{playlist}', [PlaylistController::class,'destroy'])->name('playlists.destroy');

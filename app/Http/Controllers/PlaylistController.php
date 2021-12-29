@@ -70,7 +70,8 @@ class PlaylistController extends Controller
     public function show(Playlist $playlist)
     {
         $musicas = Musica::all();
-        return view('playlists.show', compact('playlist','musicas'));    }
+        return view('playlists.show', compact('playlist','musicas'));    
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -108,5 +109,11 @@ class PlaylistController extends Controller
 
         return redirect()->route('yourmusic')
             ->with('success', 'Playlist deleted successfully');
+    }
+
+    public function play(Playlist $playlist)
+    {
+        $musicas = Musica::all();
+        return view('playlists.play', compact('playlist','musicas'));    
     }
 }
