@@ -31,7 +31,7 @@
     <div class="group">
 
         <div class="navItem">
-                <a href="homepage" class="logo">
+                <a href="{{ route('home') }}" class="logo">
                     <img src="{{url('images/HipHopCenter.gif')}}" alt="Logo">
                 </a>
                 
@@ -45,7 +45,7 @@
 
             <div class="navItem">  
                 <a href="{{ route('home') }}" class="navItemLink">
-                    <i class="fas fa-music"> </i>
+                    <i class="fas fa-compact-disc"></i>
                     Albuns</a>
             </div>
 
@@ -95,8 +95,6 @@
                             </div>
 
             
-
-           
 
             </div>
 
