@@ -50,6 +50,9 @@ class HomeController extends Controller
         
         return view("artistas", compact('artists'));
     }
+    public function pagamentos(){
+        return view("pagamentos");
+    }
 
     public function ajax(){
         return Artist::all();

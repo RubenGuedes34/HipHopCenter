@@ -30,6 +30,7 @@ Route::get('/', function () {
 
 Route::get('/autenticacao',[HipHopCenterController::class,'autenticacao'])->name('autenticacao');
 Route::get('/homepage',[HomeController::class,'homepage'])->name('home');
+Route::get('/pagamentos',[HomeController::class,'pagamentos'])->name('pagamentos');
 Route::get('/artistas',[HomeController::class,'artistas'])->name('artistas');
 Route::get('/searchpage',[HomeController::class,'search'])->name('search');
 Route::get('/yourmusic',[HomeController::class,'music'])->name('yourmusic');
@@ -77,7 +78,7 @@ Route::get('/playlists/{playlist}/associate', [PlaylistController::class,'associ
 
 
 Route::get('/playlists', [PlaylistController::class,'index'])->name('playlists.index');
-Route::get('/playlists/create', [PlaylistController::class,'create'])->name('playlists.create');
+Route::get('/playlists/create', [PlaylistController::class,'create'])->name('playlists.create')->middleware('is_premium');
 Route::post('/playlists', [PlaylistController::class,'store'])->name('playlists.store');
 Route::get('/playlists/{playlist}', [PlaylistController::class,'show'])->name('playlists.show');
 Route::get('/playlists/{playlist}/play', [PlaylistController::class,'play'])->name('playlists.play');

@@ -117,7 +117,7 @@ use App\Models\Artist;
                     <div class="rightSection">
                     {{ $playlist->nome }}
                     <br>
-                    <p>{{ auth()->user()->name }}</p>
+                    <p>{{ $playlist->user->name }}</p>
                     <p><?php $count = $playlist->musica->count();
                         echo $count; ?> songs</p>
                     </div>

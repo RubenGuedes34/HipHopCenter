@@ -124,12 +124,10 @@ use App\Models\Genero;
 
                         <?php
                             $id=auth()->user()->id; 
-
-                            $user_playlists= Playlist::where('id_user', '=', $id)->get();
-                        
+                           $user_playlists= Playlist::where('id_user', '=', $id)->get();
                             ?>
                         
-
+                        <h2>Your Playlists</h2>
                             @foreach($user_playlists as $playlist)
                             <div class='gridViewItem' role='link' tabindex='0'>
 
@@ -153,6 +151,32 @@ use App\Models\Genero;
                                 <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
                             </div>
+
+                            </div>
+                            @endforeach
+                            <?php
+                           
+                            if(count($user_playlists)==0){
+                                echo "<h4>You Dont have Playlists created!</h4>";
+                            }  ?>
+                            <h2>Community Playlists</h2>
+                            @foreach($playlists as $playlist)
+                            <div class='gridViewItem' role='link' tabindex='0'>
+
+                                <div class='playlistImage'>
+                                <img src="{{ asset('storage/playlist/HipHopCenterLogo1.png') }}">
+                                </div>
+                                
+                                <div class='gridViewInfo'>
+                                {{$playlist->nome}} 
+                                </div>
+                            <div class='actions'>
+                            <form method="POST">
+
+                                <a class="btn btn-info" href="{{ route('playlists.play',$playlist->id) }}">Play</a>
+
+                                <a class="btn btn-primary">Owner:{{$playlist->user->name}}</a>
+                         </div>
 
                             </div>
                             @endforeach
