@@ -22,8 +22,6 @@
 
     <div id="mainContainer">
 
-    <div id="topContainer">
-
     <div id="navBarContainer">
     <nav class="navBar">
 
@@ -69,10 +67,15 @@
                         <?php 
                         if(auth()->user()->type==2){
                         ?>
-                        <div class="navItem">
+                     <div class="navItem">
                             <a href="{{ route('adminpage') }}" class="navItemLink">
                                 <i class="fas fa-user"></i>
                                  Admin Page</a>
+                        </div>
+                        <div class="navItem">
+                            <a href="{{ route('usersOnline') }}" class="navItemLink">
+                                <i class="fas fa-user"></i>
+                                Users Status</a>
                         </div>
                         <?php
                         }
@@ -100,6 +103,13 @@
         </div>
 
     </nav>
+
+
+
+
+
+
+
 </div>
 </div>
         <div id="mainViewContainer">

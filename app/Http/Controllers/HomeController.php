@@ -5,6 +5,7 @@ use App\Models\Musica;
 use App\Models\Album;
 use App\Models\Artist;
 use App\Models\Playlist;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -50,6 +51,7 @@ class HomeController extends Controller
         
         return view("artistas", compact('artists'));
     }
+
     public function pagamentos(){
         return view("pagamentos");
     }

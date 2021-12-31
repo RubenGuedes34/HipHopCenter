@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Cache;
 
 class UserController extends Controller
 {
@@ -19,6 +20,20 @@ class UserController extends Controller
     {
         $this->middleware('auth');
     }
+    
+     /**
+     * Show user online status.
+     *
+     */
+    public function userOnlineStatus()
+    {
+        $users= User::all();
+        return view('usersOnline', compact('users'));
+    }
+
+
+
+
     /**
      * Display a listing of the resource.
      *

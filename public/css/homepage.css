@@ -228,9 +228,12 @@ body{
     display: inline-block;
     margin-right: 20px;
     width: 29%;
+    text-align: center;
     max-width: 200px;
     min-width: 150px;
     margin-bottom: 20px;
+   
+    
 }
 
 .gridViewItem img{
@@ -442,4 +445,3 @@ input:focus {
     display: block;
     margin: 0 auto 20px auto;
 }
-

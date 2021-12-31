@@ -39,7 +39,7 @@ Route::get('/adminpage',[AdminController::class,'adminpage'])->name('adminpage')
 
 Auth::routes();
 
-
+Route::get('/usersOnline',[UserController::class,'userOnlineStatus'])->name('usersOnline')->middleware('last_user_activity');
 Route::get('/users', [UserController::class,'index'])->name('users.index')->middleware('is_admin');
 Route::get('/users/create', [UserController::class,'create'])->name('users.create')->middleware('is_admin');
 Route::post('/users', [UserController::class,'store'])->name('users.store')->middleware('is_admin');

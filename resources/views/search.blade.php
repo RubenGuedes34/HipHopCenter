@@ -23,8 +23,6 @@ use App\Models\Album;
 <body>
 
     <div id="mainContainer">
-    <div id="topContainer">
-
     <div id="navBarContainer">
     <nav class="navBar">
 
@@ -70,10 +68,15 @@ use App\Models\Album;
                         <?php 
                         if(auth()->user()->type==2){
                         ?>
-                        <div class="navItem">
+                     <div class="navItem">
                             <a href="{{ route('adminpage') }}" class="navItemLink">
                                 <i class="fas fa-user"></i>
                                  Admin Page</a>
+                        </div>
+                        <div class="navItem">
+                            <a href="{{ route('usersOnline') }}" class="navItemLink">
+                                <i class="fas fa-user"></i>
+                                Users Status</a>
                         </div>
                         <?php
                         }
@@ -101,6 +104,13 @@ use App\Models\Album;
         </div>
 
     </nav>
+
+
+
+
+
+
+
 </div>
 </div>
 

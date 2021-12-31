@@ -27,9 +27,6 @@ use App\Models\Genero;
 <body>
 
     <div id="mainContainer">
-
-    <div id="topContainer">
-
     <div id="navBarContainer">
     <nav class="navBar">
 
@@ -75,10 +72,15 @@ use App\Models\Genero;
                         <?php 
                         if(auth()->user()->type==2){
                         ?>
-                        <div class="navItem">
+                     <div class="navItem">
                             <a href="{{ route('adminpage') }}" class="navItemLink">
                                 <i class="fas fa-user"></i>
                                  Admin Page</a>
+                        </div>
+                        <div class="navItem">
+                            <a href="{{ route('usersOnline') }}" class="navItemLink">
+                                <i class="fas fa-user"></i>
+                                Users Status</a>
                         </div>
                         <?php
                         }
@@ -106,6 +108,13 @@ use App\Models\Genero;
         </div>
 
     </nav>
+
+
+
+
+
+
+
 </div>
 </div>
         <div id="mainViewContainer">
@@ -160,6 +169,9 @@ use App\Models\Genero;
                                 echo "<h4>You Dont have Playlists created!</h4>";
                             }  ?>
                             <h2>Community Playlists</h2>
+                            <br>
+                            <br>
+                            <br>
                             @foreach($playlists as $playlist)
                             <div class='gridViewItem' role='link' tabindex='0'>
 
@@ -168,15 +180,15 @@ use App\Models\Genero;
                                 </div>
                                 
                                 <div class='gridViewInfo'>
-                                {{$playlist->nome}} 
+                                {{$playlist->nome}}
                                 </div>
                             <div class='actions'>
                             <form method="POST">
-
+                            <a class="btn btn-primary">
+                                Owner:{{$playlist->user->name}}
+                                </a>
                                 <a class="btn btn-info" href="{{ route('playlists.play',$playlist->id) }}">Play</a>
-
-                                <a class="btn btn-primary">Owner:{{$playlist->user->name}}</a>
-                         </div>
+                            </div>
 
                             </div>
                             @endforeach
