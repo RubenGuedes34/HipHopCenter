@@ -30,6 +30,7 @@ use App\Models\Artist;
      <div id="mainContainer">
 
 
+     
 
      <div id="navBarContainer">
     <nav class="navBar">

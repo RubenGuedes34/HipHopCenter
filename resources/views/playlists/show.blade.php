@@ -63,6 +63,7 @@ if(isset($_GET['remid'])){
         <td>{{ $musica->artista->nome }}</td>
         <td>{{ $musica->album->nome }}</td>
         <td>{{ $musica->genero->nome }}</td>
+    
         <td>
             <form method="GET">
                 @csrf                

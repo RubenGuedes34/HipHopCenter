@@ -22,6 +22,8 @@ use App\Models\Album;
 </head>
 <body>
 
+
+
     <div id="mainContainer">
     <div id="navBarContainer">
     <nav class="navBar">

@@ -30,6 +30,8 @@ use App\Models\Genero;
     <div id="navBarContainer">
     <nav class="navBar">
 
+
+    
     <div class="group">
 
         <div class="navItem">

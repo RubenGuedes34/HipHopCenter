@@ -11,7 +11,9 @@
 <body>
     
 <div id="mainContent">
-                
+              
+
+
                 <h1 class="admin">Admin Page</h1>
 
                 <a href="{{ route('home') }}"><button class="myButton">Back to HomePage</button></a>
