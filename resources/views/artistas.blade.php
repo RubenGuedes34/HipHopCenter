@@ -74,14 +74,16 @@
                                 <i class="fas fa-user"></i>
                                  Admin Page</a>
                         </div>
+                        <?php
+                        }
+                        ?>
+                        
                         <div class="navItem">
                             <a href="{{ route('usersOnline') }}" class="navItemLink">
                                 <i class="fas fa-user"></i>
                                 Users Status</a>
                         </div>
-                        <?php
-                        }
-                        ?>
+                        
 
                         <div class="navItem">
                         
@@ -113,7 +115,8 @@
 
 
 </div>
-</div>
+
+    </div>
         <div id="mainViewContainer">
             <div id="mainContent">
                 

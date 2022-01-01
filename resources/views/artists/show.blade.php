@@ -76,7 +76,7 @@ use App\Models\Artist;
                         <?php 
                         if(auth()->user()->type==2){
                         ?>
-                        <div class="navItem">
+                     <div class="navItem">
                             <a href="{{ route('adminpage') }}" class="navItemLink">
                                 <i class="fas fa-user"></i>
                                  Admin Page</a>
@@ -84,6 +84,13 @@ use App\Models\Artist;
                         <?php
                         }
                         ?>
+                        
+                        <div class="navItem">
+                            <a href="{{ route('usersOnline') }}" class="navItemLink">
+                                <i class="fas fa-user"></i>
+                                Users Status</a>
+                        </div>
+                        
 
                         <div class="navItem">
                         
@@ -107,7 +114,15 @@ use App\Models\Artist;
         </div>
 
     </nav>
+
+
+
+
+
+
+
 </div>
+    
 </div>
 
         <div id="mainViewContainer">
