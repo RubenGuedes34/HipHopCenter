@@ -449,4 +449,10 @@ input:focus {
 .actions a{
     width: 200px;
     max-width: 200px;
+    margin-bottom: 2px;
+}
+
+.actions button{
+    width: 200px;
+    max-width: 200px;
 }
