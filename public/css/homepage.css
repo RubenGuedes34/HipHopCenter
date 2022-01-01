@@ -445,3 +445,8 @@ input:focus {
     display: block;
     margin: 0 auto 20px auto;
 }
+
+.actions a{
+    width: 200px;
+    max-width: 200px;
+}
