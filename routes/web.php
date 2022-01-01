@@ -29,7 +29,7 @@ Route::get('/', function () {
 });
 
 Route::get('/autenticacao',[HipHopCenterController::class,'autenticacao'])->name('autenticacao');
-Route::get('/homepage',[HomeController::class,'homepage'])->name('home');
+Route::get('/homepage',[HomeController::class,'homepage'])->name('home')->middleware('last_user_activity');
 Route::get('/pagamentos',[HomeController::class,'pagamentos'])->name('pagamentos');
 Route::get('/artistas',[HomeController::class,'artistas'])->name('artistas');
 Route::get('/searchpage',[HomeController::class,'search'])->name('search');
