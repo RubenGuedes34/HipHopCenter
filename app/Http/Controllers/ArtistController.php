@@ -7,11 +7,9 @@ use App\Models\Album;
 use App\Models\Artist;
 use Illuminate\Http\Request;
 
-class ArtistController extends Controller
-{
+class ArtistController extends Controller{
 
-    public function __construct()
-    {
+    public function __construct(){
         $this->middleware('auth');
     }
     /**
@@ -19,8 +17,7 @@ class ArtistController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(){
         $artists = Artist::all();
         return view('artists.index', compact('artists'));
     }
@@ -30,8 +27,7 @@ class ArtistController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create(){
         return view('artists.create');
     }
 
@@ -41,8 +37,7 @@ class ArtistController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $request->validate([
             'nome' => 'required',
             'Data_de_nascimento' => 'required',
@@ -61,8 +56,7 @@ class ArtistController extends Controller
      * @param  \App\Models\Artist  $artist
      * @return \Illuminate\Http\Response
      */
-    public function show(Artist $artist)
-    {
+    public function show(Artist $artist){
         return view('artists.show', compact('artist'));
     }
 
@@ -72,8 +66,7 @@ class ArtistController extends Controller
      * @param  \App\Models\Artist  $artist
      * @return \Illuminate\Http\Response
      */
-    public function edit(Artist $artist)
-    {
+    public function edit(Artist $artist){
         return view('artists.edit', compact('artist'));
     }
 
@@ -84,8 +77,7 @@ class ArtistController extends Controller
      * @param  \App\Models\Artist  $artist
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Artist $artist)
-    {
+    public function update(Request $request, Artist $artist){
         $artist->update($request->all());
 
         return redirect()->route('artists.index')
@@ -98,8 +90,7 @@ class ArtistController extends Controller
      * @param  \App\Models\Artist  $artist
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Artist $artist)
-    {
+    public function destroy(Artist $artist){
         $artist->delete();
 
         return redirect()->route('artists.index')

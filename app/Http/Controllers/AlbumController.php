@@ -7,12 +7,9 @@ use App\Models\Album;
 use App\Models\Artist;
 use Illuminate\Http\Request;
 
-class AlbumController extends Controller
-{
+class AlbumController extends Controller{
 
-
-    public function __construct()
-    {
+    public function __construct(){
         $this->middleware('auth');
     }
     /**
@@ -20,8 +17,7 @@ class AlbumController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(){
         $albuns = Album::all();
         $artists = Artist::all();
         return view('albuns.index', compact('artists','albuns'));
@@ -32,8 +28,7 @@ class AlbumController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create(){
         return view('albuns.create');
     }
 
@@ -43,8 +38,7 @@ class AlbumController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $request->validate([
             'nome' => 'required',
             'id_artista' => 'required',
@@ -63,8 +57,7 @@ class AlbumController extends Controller
      * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function show(Album $album)
-    {
+    public function show(Album $album){
         return view('albuns.show', compact('album'));
     }
 
@@ -74,8 +67,7 @@ class AlbumController extends Controller
      * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function edit(Album $album)
-    {
+    public function edit(Album $album){
         return view('albuns.edit', compact('album'));
     }
 
@@ -86,8 +78,7 @@ class AlbumController extends Controller
      * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Album $album)
-    {
+    public function update(Request $request, Album $album){
         $album->update($request->all());
 
         return redirect()->route('albuns.index')
@@ -100,14 +91,11 @@ class AlbumController extends Controller
      * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Album $album)
-    {
+    public function destroy(Album $album){
         $album->delete();
 
         return redirect()->route('albuns.index')
             ->with('success', 'Album deleted successfully');
     }
 
- 
 }
-    

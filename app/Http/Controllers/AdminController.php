@@ -13,8 +13,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
-class AdminController extends Controller
-{
+class AdminController extends Controller{
     public function adminpage(){
         return view("adminpage");
        }

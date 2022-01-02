@@ -8,15 +8,13 @@ use App\Models\Playlist;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
-{
+class HomeController extends Controller{
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct(){
         $this->middleware('auth');
     }
 
@@ -31,6 +29,7 @@ class HomeController extends Controller
         
         return view("homepage", compact('albuns'));
     }
+    
     public function search(){
         $albuns= Album::all();
         $artists= Artist::all();
@@ -38,6 +37,7 @@ class HomeController extends Controller
         
         return view("search", compact('albuns','artists','musicas'));
     }
+
     public function music(){
         $albuns= Album::all();
         $artists= Artist::all();

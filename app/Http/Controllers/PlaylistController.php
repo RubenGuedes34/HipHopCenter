@@ -7,13 +7,11 @@ use App\Models\Artist;
 use App\Models\Playlist;
 use Illuminate\Http\Request;
 
-class PlaylistController extends Controller
-{
+class PlaylistController extends Controller{
 
 
 
-    public function __construct()
-    {
+    public function __construct(){
         $this->middleware('auth');
     }
     /**
@@ -21,8 +19,7 @@ class PlaylistController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {   
+    public function index(){   
         $albuns = Album::all();
         $playlists = Playlist::all();
         return view('playlists.index', compact('playlists','albuns'));
@@ -33,8 +30,7 @@ class PlaylistController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create(){
         return view('playlists.create');    }
 
     /**
@@ -43,8 +39,7 @@ class PlaylistController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $request->validate([
             'nome' => 'required',
             'id_user' => 'required',
@@ -57,9 +52,6 @@ class PlaylistController extends Controller
             ->with('success', 'Playlist created successfully.');
     }
 
-    
-    
-    
 
     /**
      * Display the specified resource.
@@ -67,8 +59,7 @@ class PlaylistController extends Controller
      * @param  \App\Models\Playlist  $playlist
      * @return \Illuminate\Http\Response
      */
-    public function show(Playlist $playlist)
-    {
+    public function show(Playlist $playlist){
         $musicas = Musica::all();
         return view('playlists.show', compact('playlist','musicas'));    
     }
@@ -79,8 +70,7 @@ class PlaylistController extends Controller
      * @param  \App\Models\Playlist  $playlist
      * @return \Illuminate\Http\Response
      */
-    public function edit(Playlist $playlist)
-    {
+    public function edit(Playlist $playlist){
         return view('playlists.edit', compact('playlist'));    }
 
     /**
@@ -90,8 +80,7 @@ class PlaylistController extends Controller
      * @param  \App\Models\Playlist  $playlist
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Playlist $playlist)
-    {
+    public function update(Request $request, Playlist $playlist){
         $playlist->update($request->all());
 
         return redirect()->route('playlists.index')
@@ -103,16 +92,14 @@ class PlaylistController extends Controller
      * @param  \App\Models\Playlist  $playlist
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Playlist $playlist)
-    {
+    public function destroy(Playlist $playlist){
         $playlist->delete();
 
         return redirect()->route('yourmusic')
             ->with('success', 'Playlist deleted successfully');
     }
 
-    public function play(Playlist $playlist)
-    {
+    public function play(Playlist $playlist){
         $musicas = Musica::all();
         return view('playlists.play', compact('playlist','musicas'));    
     }

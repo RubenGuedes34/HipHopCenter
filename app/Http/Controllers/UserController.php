@@ -14,10 +14,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Cache;
 
-class UserController extends Controller
-{
-    public function __construct()
-    {
+class UserController extends Controller{
+    public function __construct(){
         $this->middleware('auth');
     }
     
@@ -25,8 +23,7 @@ class UserController extends Controller
      * Show user online status.
      *
      */
-    public function userOnlineStatus()
-    {
+    public function userOnlineStatus(){
         $users= User::all();
         return view('usersOnline', compact('users'));
     }
@@ -39,8 +36,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(){
         $users = User::all();
         return view('users.index', compact('users'));
     }
@@ -50,8 +46,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create(){
         return view('users.create');
     }
 
@@ -61,8 +56,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -85,8 +79,7 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
-    {
+    public function show(User $user){
         return view('users.show', compact('user'));
     }
 
@@ -96,8 +89,7 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
-    {
+    public function edit(User $user){
         return view('users.edit', compact('user'));
     }
 
@@ -108,8 +100,7 @@ class UserController extends Controller
      * @param  \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
-    {
+    public function update(Request $request, User $user){
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
@@ -133,8 +124,7 @@ class UserController extends Controller
      * @param  \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
-    {
+    public function destroy(User $user){
         $user->delete();
 
         return redirect()->route('users.index')

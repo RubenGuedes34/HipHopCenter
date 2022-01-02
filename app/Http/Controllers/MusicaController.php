@@ -7,11 +7,9 @@ use App\Models\Album;
 use App\Models\Artist;
 use Illuminate\Http\Request;
 
-class MusicaController extends Controller
-{
+class MusicaController extends Controller{
 
-    public function __construct()
-    {
+    public function __construct(){
         $this->middleware('auth');
     }
     /**
@@ -19,8 +17,7 @@ class MusicaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(){
         $albuns = Album::all();
         $musicas = Musica::all();
         $artistas = Artist::all();
@@ -32,8 +29,7 @@ class MusicaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create(){
         return view('musicas.create');
     }
 
@@ -43,8 +39,7 @@ class MusicaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $request->validate([
             'nome' => 'required',
             'path' => 'required',
@@ -67,8 +62,7 @@ class MusicaController extends Controller
      * @param  \App\Models\Musica  $musica
      * @return \Illuminate\Http\Response
      */
-    public function show(Musica $musica)
-    {
+    public function show(Musica $musica){
         return view('musicas.show', compact('musica'));
     }
 
@@ -78,8 +72,7 @@ class MusicaController extends Controller
      * @param  \App\Models\Musica  $musica
      * @return \Illuminate\Http\Response
      */
-    public function edit(Musica $musica)
-    {
+    public function edit(Musica $musica){
         return view('musicas.edit', compact('musica'));
     }
 
@@ -90,8 +83,7 @@ class MusicaController extends Controller
      * @param  \App\Models\Musica  $musica
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Musica $musica)
-    {
+    public function update(Request $request, Musica $musica){
         $musica->update($request->all());
 
         return redirect()->route('musicas.index')
@@ -104,8 +96,7 @@ class MusicaController extends Controller
      * @param  \App\Models\Musica  $musica
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Musica $musica)
-    {
+    public function destroy(Musica $musica){
         $musica->delete();
 
         return redirect()->route('musicas.index')

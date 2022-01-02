@@ -5,12 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Genero;
 use Illuminate\Http\Request;
 
-class GeneroController extends Controller
-{
+class GeneroController extends Controller{
 
-
-    public function __construct()
-    {
+    public function __construct()   {
         $this->middleware('auth');
     }
     /**
@@ -18,8 +15,7 @@ class GeneroController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index()    {
         $generos = Genero::all();
         return view('generos.index', compact('generos'));
     }
@@ -29,8 +25,7 @@ class GeneroController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create(){
         return view('generos.create');
     }
 
@@ -40,8 +35,7 @@ class GeneroController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $request->validate([
             'nome' => 'required',
            ]);
@@ -58,8 +52,7 @@ class GeneroController extends Controller
      * @param  \App\Models\Genero  $genero
      * @return \Illuminate\Http\Response
      */
-    public function show(Genero $genero)
-    {
+    public function show(Genero $genero){
         return view('generos.show', compact('genero'));
     }
 
@@ -69,8 +62,7 @@ class GeneroController extends Controller
      * @param  \App\Models\Genero  $genero
      * @return \Illuminate\Http\Response
      */
-    public function edit(Genero $genero)
-    {
+    public function edit(Genero $genero) {
         return view('generos.edit', compact('genero'));
     }
 
@@ -81,8 +73,7 @@ class GeneroController extends Controller
      * @param  \App\Models\Genero  $genero
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Genero $genero)
-    {
+    public function update(Request $request, Genero $genero){
         $genero->update($request->all());
 
         return redirect()->route('generos.index')
@@ -95,8 +86,7 @@ class GeneroController extends Controller
      * @param  \App\Models\Genero  $genero
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Genero $genero)
-    {
+    public function destroy(Genero $genero)   {
         $genero->delete();
 
         return redirect()->route('generos.index')

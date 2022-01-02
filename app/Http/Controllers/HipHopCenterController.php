@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HipHopCenterController extends Controller
-{
+class HipHopCenterController extends Controller{
   
 
    public function index(){
@@ -14,7 +13,5 @@ class HipHopCenterController extends Controller
    public function autenticacao(){
     return view("auth/autenticacao");
    }
-  
-
 
 }
