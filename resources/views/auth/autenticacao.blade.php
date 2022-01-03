@@ -10,6 +10,16 @@
     <title>Hip-hop Center</title>
   </head>
   <body>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">

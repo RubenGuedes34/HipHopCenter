@@ -26,14 +26,14 @@ use App\Http\Controllers\AdminController;
 Route::get('/', function () {return view('index');});
 
 Route::get('/autenticacao',[HipHopCenterController::class,'autenticacao'])->name('autenticacao');
-Route::get('/homepage',[HomeController::class,'homepage'])->name('home')->middleware('last_user_activity');
+Route::get('/homepage',[HomeController::class,'homepage'])->name('home')->middleware('last_user_activity')->middleware('verified');
 Route::get('/pagamentos',[HomeController::class,'pagamentos'])->name('pagamentos');
 Route::get('/artistas',[HomeController::class,'artistas'])->name('artistas');
 Route::get('/searchpage',[HomeController::class,'search'])->name('search');
 Route::get('/yourmusic',[HomeController::class,'music'])->name('yourmusic');
 Route::get('/adminpage',[AdminController::class,'adminpage'])->name('adminpage');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/usersOnline',[UserController::class,'userOnlineStatus'])->name('usersOnline')->middleware('last_user_activity');
 Route::get('/users', [UserController::class,'index'])->name('users.index')->middleware('is_admin');
