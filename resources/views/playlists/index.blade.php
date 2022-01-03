@@ -7,7 +7,7 @@
             <h2>Playlists</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('playlists.create') }}"> Add New Playlist</a>
+            <a href="{{ route('adminpage') }}"><button class="myButton">Back to Admin Page</button></a>
         </div>
     </div>
 </div>
@@ -51,7 +51,7 @@
     </tr>
     @endforeach
 </table>
-   
+{{$playlists->appends(['playlists'=> $playlists->currentPage()])->links("pagination::bootstrap-4") }}  
    
 
 @endsection

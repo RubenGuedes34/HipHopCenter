@@ -8,6 +8,7 @@
         </div>
         <div class="pull-right">
             <a class="btn btn-success" href="{{ route('users.create') }}"> Add New User</a>
+            <a href="{{ route('adminpage') }}"><button class="myButton">Back to Admin Page</button></a>
         </div>
     </div>
 </div>
@@ -53,6 +54,7 @@
     </tr>
     @endforeach
 </table>
+{{$users->appends(['users'=> $users->currentPage()])->links("pagination::bootstrap-4") }}
    
    
 

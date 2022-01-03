@@ -22,7 +22,9 @@ class PlaylistController extends Controller{
     public function index(){   
         $albuns = Album::all();
         $playlists = Playlist::all();
-        return view('playlists.index', compact('playlists','albuns'));
+        return view('playlists.index', compact('playlists','albuns'))->with([
+            'playlists' => Playlist::paginate(5,['*'],'playlists')
+         ]);
     }
 
     /**
@@ -61,7 +63,9 @@ class PlaylistController extends Controller{
      */
     public function show(Playlist $playlist){
         $musicas = Musica::all();
-        return view('playlists.show', compact('playlist','musicas'));    
+        return view('playlists.show', compact('playlist','musicas'))->with([
+            'musicas' => Musica::paginate(5,['*'],'musicas')
+         ]);   
     }
 
     /**
@@ -70,8 +74,11 @@ class PlaylistController extends Controller{
      * @param  \App\Models\Playlist  $playlist
      * @return \Illuminate\Http\Response
      */
-    public function edit(Playlist $playlist){
-        return view('playlists.edit', compact('playlist'));    }
+  
+    public function edit(Playlist $playlist)
+    {
+        return view('playlists.edit', compact('playlist'));    
+    }
 
     /**
      * Update the specified resource in storage.

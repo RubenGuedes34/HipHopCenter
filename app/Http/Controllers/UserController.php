@@ -25,7 +25,9 @@ class UserController extends Controller{
      */
     public function userOnlineStatus(){
         $users= User::all();
-        return view('usersOnline', compact('users'));
+        return view('usersOnline', compact('users'))->with([
+           'users' => User::paginate(5,['*'],'users')
+        ]);
     }
 
 
@@ -38,7 +40,9 @@ class UserController extends Controller{
      */
     public function index(){
         $users = User::all();
-        return view('users.index', compact('users'));
+        return view('users.index', compact('users'))->with([
+            'users' => User::paginate(5,['*'],'users')
+         ]);;
     }
 
     /**
@@ -111,7 +115,7 @@ class UserController extends Controller{
             'name' => $request['name'],
             'email' => $request['email'],
             'type' => $request['type'],
-            'password' => Hash::make($request['password']),
+            'password' =>$request['password'],
         ]);
 
         return redirect()->route('users.index')

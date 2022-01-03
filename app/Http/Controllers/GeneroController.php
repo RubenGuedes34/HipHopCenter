@@ -17,7 +17,9 @@ class GeneroController extends Controller{
      */
     public function index()    {
         $generos = Genero::all();
-        return view('generos.index', compact('generos'));
+        return view('generos.index', compact('generos'))->with([
+            'generos' => Genero::paginate(5,['*'],'generos')
+         ]);
     }
 
     /**

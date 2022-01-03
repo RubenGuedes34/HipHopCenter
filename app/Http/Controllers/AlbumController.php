@@ -20,7 +20,9 @@ class AlbumController extends Controller{
     public function index(){
         $albuns = Album::all();
         $artists = Artist::all();
-        return view('albuns.index', compact('artists','albuns'));
+        return view('albuns.index', compact('artists','albuns'))->with([
+            'albuns' => Album::paginate(5,['*'],'albuns')
+         ]);
     }
 
     /**

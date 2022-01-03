@@ -47,6 +47,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
+                            {{$users->appends(['users'=> $users->currentPage()])->links("pagination::bootstrap-4") }}
                         </div>
 
                     </div>

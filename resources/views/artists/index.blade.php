@@ -8,6 +8,7 @@
         </div>
         <div class="pull-right">
             <a class="btn btn-success" href="{{ route('artists.create') }}"> Create New artist</a>
+            <a href="{{ route('adminpage') }}"><button class="myButton">Back to Admin Page</button></a>
         </div>
     </div>
 </div>
@@ -51,7 +52,7 @@
     </tr>
     @endforeach
 </table>
-   
+{{$artists->appends(['artists'=> $artists->currentPage()])->links("pagination::bootstrap-4") }}  
    
 
 @endsection

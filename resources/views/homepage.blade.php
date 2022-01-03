@@ -125,7 +125,7 @@
         <div id="mainViewContainer">
             <div id="mainContent">
                 
-                <h1 class="recomenda">O Hip-hop Center recomenda</h1>
+                <h1 class="recomenda">Hip-hop Center recomends</h1>
 
                 <div class="gridViewContainer">
                     @foreach($albuns as $album)         

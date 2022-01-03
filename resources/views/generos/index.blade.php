@@ -8,6 +8,7 @@
         </div>
         <div class="pull-right">
             <a class="btn btn-success" href="{{ route('generos.create') }}"> Create New genero</a>
+            <a href="{{ route('adminpage') }}"><button class="myButton">Back to Admin Page</button></a>
         </div>
     </div>
 </div>
@@ -32,7 +33,6 @@
         <td>
             <form action="{{ route('generos.destroy',$genero->id) }}" method="POST">
 
-                <a class="btn btn-info" href="{{ route('generos.show',$genero->id) }}">Show</a>
 
                 <a class="btn btn-primary" href="{{ route('generos.edit',$genero->id) }}">Edit</a>
 
@@ -45,4 +45,5 @@
     </tr>
     @endforeach
 </table>
+{{$generos->appends(['generos'=> $generos->currentPage()])->links("pagination::bootstrap-4") }}
 @endsection

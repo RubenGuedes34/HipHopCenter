@@ -54,8 +54,9 @@ if(isset($_GET['remid'])){
         <th>Album</th>
         <th>Genero</th>
         <th width="280px">Action</th>
-    </tr>    
+    </tr>
       @foreach ($playlist->musica as $musica)
+      
     <tr>
         <td>{{ $musica->nome }}</td>
         <td>{{ $musica->Likes }}</td>
@@ -73,6 +74,7 @@ if(isset($_GET['remid'])){
     </tr>
     @endforeach
 </table>
+
 
 <h1>Musicas para adicionar a Playlist {{ $playlist->nome }}:</h1>
 <table class="table table-bordered">
@@ -105,6 +107,7 @@ if(isset($_GET['remid'])){
     </tr>
     @endforeach
 </table>
+{{$musicas->appends(['musicas'=> $musicas->currentPage()])->links("pagination::bootstrap-4") }}  
    
    
 

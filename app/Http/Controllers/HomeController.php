@@ -49,7 +49,9 @@ class HomeController extends Controller{
     public function artistas(){
         $artists= Artist::all();
         
-        return view("artistas", compact('artists'));
+        return view("artistas", compact('artists'))->with([
+            'artists' => Artist::paginate(5,['*'],'artists')
+         ]);
     }
 
     public function pagamentos(){

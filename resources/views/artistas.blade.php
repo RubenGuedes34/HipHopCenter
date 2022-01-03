@@ -148,6 +148,7 @@
                             
                         </tbody>
                     </table>
+                    {{$artists->appends(['artists'=> $artists->currentPage()])->links("pagination::bootstrap-4") }}
                 </div>
   
             </div>

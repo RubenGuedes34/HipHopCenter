@@ -19,7 +19,9 @@ class ArtistController extends Controller{
      */
     public function index(){
         $artists = Artist::all();
-        return view('artists.index', compact('artists'));
+        return view('artists.index', compact('artists'))->with([
+            'artists' => Artist::paginate(5,['*'],'artists')
+         ]);
     }
 
     /**

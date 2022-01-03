@@ -51,14 +51,14 @@
             <div class="form-group">
                 <strong>Password:</strong>
                 <input type="password" name="password" class="form-control"
-                    placeholder="Password">
+                    value=" {{auth()->user()->password}}" readonly>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Confirm Password:</strong>
                 <input type="password" name="password_confirmation"  class="form-control"
-                    placeholder="Password">
+                value=" {{auth()->user()->password}}" readonly>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

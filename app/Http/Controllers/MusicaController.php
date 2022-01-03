@@ -21,7 +21,9 @@ class MusicaController extends Controller{
         $albuns = Album::all();
         $musicas = Musica::all();
         $artistas = Artist::all();
-        return view('musicas.index', compact('musicas','artistas','albuns'));
+        return view('musicas.index', compact('musicas','artistas','albuns'))->with([
+            'musicas' => Musica::paginate(5,['*'],'musicas')
+         ]);
     }
 
     /**
