@@ -13,8 +13,7 @@ class IsPremium{
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
-    {
+    public function handle(Request $request, Closure $next){
        if(auth()->user()->type==1 || auth()->user()->type==2){
            return $next($request);
        }
