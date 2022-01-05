@@ -12,6 +12,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChatsController;
+use App\Http\Controllers\PDFController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -116,3 +118,6 @@ Route::get('/generos/{genero}', 'App\Http\Controllers\GeneroController@show')->n
 Route::get('/generos/{genero}/edit', 'App\Http\Controllers\GeneroController@edit')->name('generos.edit')->middleware('is_admin');
 Route::put('/generos/{genero}', 'App\Http\Controllers\GeneroController@update')->name('generos.update')->middleware('is_admin');
 Route::delete('/generos/{genero}', 'App\Http\Controllers\GeneroController@destroy')->name('generos.destroy')->middleware('is_admin');
+
+
+Route::get('generate-pdf', [PDFController::class, 'generatePDF']);     //only admins to generate pdf's
