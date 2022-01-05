@@ -11,6 +11,7 @@ use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ChatsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,10 +24,29 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', function () {return view('index');});
+
+Route::get('/', function () {
+   
+    return view('index');
+});
+Route::get('/chats',[ChatsController::class,'index'])->name('chats');
+Route::get('/messages',[ChatsController::class,'fetchMessages']);
+Route::post('/messages',[ChatsController::class,'sendMessages']);
+
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/autenticacao',[HipHopCenterController::class,'autenticacao'])->name('autenticacao');
-Route::get('/homepage',[HomeController::class,'homepage'])->name('home')->middleware('last_user_activity')->middleware('verified');
+Route::get('/homepage',[HomeController::class,'homepage'])->name('home')->middleware('last_user_activity');
+//->middleware('verified');
 Route::get('/pagamentos',[HomeController::class,'pagamentos'])->name('pagamentos');
 Route::get('/artistas',[HomeController::class,'artistas'])->name('artistas');
 Route::get('/searchpage',[HomeController::class,'search'])->name('search');
