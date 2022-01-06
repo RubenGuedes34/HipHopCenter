@@ -31,9 +31,7 @@ Route::get('/', function () {
    
     return view('index');
 });
-Route::get('/chats',[ChatsController::class,'index'])->name('chats');
-Route::get('/messages',[ChatsController::class,'fetchMessages']);
-Route::post('/messages',[ChatsController::class,'sendMessages']);
+
 
 
 
