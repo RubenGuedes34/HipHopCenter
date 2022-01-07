@@ -63,3 +63,16 @@
     text-align: center;
     margin-bottom: 35px;
 }
+
+.headerStatus{
+    background-color: #FAF1BB;
+    color: #074F0C;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.statusAct{
+    color: #074F0C;
+    font-size: 15px;
+    font-weight: 800;
+}

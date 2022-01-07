@@ -26,7 +26,7 @@
                         <div class="container">
                             <table class="table table-bordered">
                                 <thead>
-                                <tr>
+                                <tr class="headerStatus">
                                     <th>Name</th>
                                     <th>Status</th>
                                     <th>Last Song heard</th>
@@ -35,7 +35,7 @@
                                 <tbody>
                                 @foreach($users as $user)
                                     <tr>
-                                        <td>{{$user->name}}</td>
+                                        <td  class="statusAct">{{$user->name}}</td>
                                         <td>
                                             @if(Cache::has('user-is-online-' . $user->id))
                                                 <span class="text-success">Online</span>
@@ -43,7 +43,7 @@
                                                 <span class="text-secondary">Offline</span>
                                             @endif
                                         </td>
-                                        <td>idk bro</td>
+                                        <td class="statusAct">idk bro</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

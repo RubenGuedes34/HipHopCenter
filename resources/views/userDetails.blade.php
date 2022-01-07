@@ -115,7 +115,9 @@
                     <div class="container borderBottom">
                         <h1>Username</h1>
                         <input type="text" name="name" class="form-control" placeholder="New username">
-                        <span class="message"></span>
+                        @if(!($errors->any()))
+                           <span class="message">Username Updated</span> 
+                        @endif
                         <button class="button green" onclick="">SAVE</button>
                     </div>
             </div>
@@ -131,7 +133,11 @@
                         placeholder="New Password">
                         <input type="password" name="password_confirmation"  class="form-control"
                         placeholder="Confirm Password">
-                        <span class="message"></span>
+                        @if($errors->any())
+                            @foreach($errors->all() as $error)
+                            <span class="message">{{$error}}</span> 
+                            @endforeach
+                        @endif
                         <button class="button green">SAVE</button>
                     </div>        
             </div>
