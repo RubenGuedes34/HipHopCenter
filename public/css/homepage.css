@@ -6,7 +6,7 @@ html, body {
 
 * {
     font-family: "Poppins", sans-serif;
-    color: #000;
+    color: #074F0C;
     letter-spacing: 0.5px;
 }
 
@@ -420,10 +420,14 @@ body{
     width: 100%;
     background-color: transparent;
     border: none;
-    color: #242424;
+    color: #074F0C;
     font-weight: 700;
     font-size: 62px;
     letter-spacing: 2px;
+}
+
+.searchContainer ::placeholder{
+    color: #074F0C;
 }
 
 input:focus {
@@ -518,4 +522,18 @@ input:focus {
     border-color: #2ebd59;
     color: #fff ;
     width: 250px;
+}
+
+.addSongst1{
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.addSongst1head th{
+         border: 1px solid #dddddd;
+        background-color: #FAF1BB;
+        color: #074F0C;
+        font-size: 20px;
+        font-weight: 800;
+        text-align: center;
 }
