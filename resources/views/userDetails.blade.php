@@ -98,9 +98,7 @@
                                 </form>
                             </div>
 
-                            <div class="card-body">
-                                <a href="generate-pdf">PDF</a>
-                            </div>
+                            
                 </div>
             </div>
         </nav>
@@ -110,7 +108,7 @@
     <div id="mainViewContainer">
         <div id="mainContent">
 
-        <form action="{{ route('users.update', auth()->user()->id ) }}" method="POST">
+        <form action="{{ route('update', auth()->user()->id ) }}" method="POST">
         @csrf
         @method('PUT')
             <div class="userDetails">
@@ -120,17 +118,24 @@
                         <span class="message"></span>
                         <button class="button green" onclick="">SAVE</button>
                     </div>
-
+            </div>
+        </form>
+               
+                    <form action="{{ route('updatePassword', auth()->user()->id ) }}" method="POST">
+                     @csrf
+                    @method('PUT')
+                    <div class="userDetails">
                     <div class="container">
                         <h1>Password</h1>
-                        <input type="password" class="newPassword1" name="newPassword1" placeholder="New password">
-                        <input type="password" class="newPassword2" name="newPassword2" placeholder="Confirm password">
+                        <input type="password" name="password" class="form-control"
+                        placeholder="New Password">
+                        <input type="password" name="password_confirmation"  class="form-control"
+                        placeholder="Confirm Password">
                         <span class="message"></span>
                         <button class="button green">SAVE</button>
-                    </div>
+                    </div>        
             </div>
-        </form>                
-
+        </form>
 
         </div>
     </div>

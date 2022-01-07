@@ -114,7 +114,7 @@
                 </div>
 
        <div class="buttonSettings">
-            <button class="button green"><a href="{{ route('userDetails')}}">USER DETAILS</a></button>
+            <button class="button green"><a href="{{route('userDetails')}}">USER DETAILS</a></button>
             <?php 
                         if(auth()->user()->type==0){
                         ?>

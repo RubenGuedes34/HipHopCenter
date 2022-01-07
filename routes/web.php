@@ -54,6 +54,10 @@ Route::get('/yourmusic',[HomeController::class,'music'])->name('yourmusic');
 Route::get('/adminpage',[AdminController::class,'adminpage'])->name('adminpage');
 Route::get('/settings',[HomeController::class,'settings'])->name('settings');
 Route::get('/userDetails',[HomeController::class,'userDetails'])->name('userDetails');
+Route::put('/userDetails/updateUsername/{user}', [HomeController::class,'updateUsername'])->name('update');
+Route::put('/userDetails/updatePassword/{user}', [HomeController::class,'updatePassword'])->name('updatePassword');
+
+
 
 Auth::routes(['verify' => true]);
 
@@ -65,6 +69,7 @@ Route::get('/users/{user}', [UserController::class,'show'])->name('users.show')-
 Route::get('/users/{user}/edit', [UserController::class,'edit'])->name('users.edit')->middleware('is_admin');
 Route::put('/users/{user}', [UserController::class,'update'])->name('users.update')->middleware('is_admin');
 Route::delete('/users/{user}', [UserController::class,'destroy'])->name('users.destroy')->middleware('is_admin');
+
 
 
 Route::get('/artists', [ArtistController::class,'index'])->name('artists.index');

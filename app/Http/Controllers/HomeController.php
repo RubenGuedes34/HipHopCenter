@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 use App\Models\Musica;
 use App\Models\Album;
 use App\Models\Artist;
-use App\Models\Playlist;
 use App\Models\User;
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Cache;
 
 class HomeController extends Controller{
     /**
@@ -36,6 +41,34 @@ class HomeController extends Controller{
         $musicas= Musica::all();
         
         return view("search", compact('albuns','artists','musicas'));
+    }
+
+    public function updateUsername(Request $request, User $user){
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            
+        ]);
+        $user->update([
+            'name' => $request['name'],
+            
+        ]);
+
+        return redirect()->route('userDetails')
+            ->with('success', 'User updated successfully');
+    }
+    public function updatePassword(Request $request, User $user){
+        $request->validate([
+          
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            
+        ]);
+        $user->update([
+           
+            'password' =>Hash::make($request['password']),
+        ]);
+
+        return redirect()->route('userDetails')
+        ->with('success', 'User updated successfully');
     }
 
     public function music(){
