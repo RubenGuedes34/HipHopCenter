@@ -98,9 +98,6 @@
                                 </form>
                             </div>
 
-                            <div class="card-body">
-                                <a href="generate-pdf">PDF</a>
-                            </div>
                 </div>
             </div>
         </nav>
@@ -110,19 +107,19 @@
     
 
         <div class="entityInfo">
-                <h1>{{ auth()->user()->name }}</h1> 
+                <h1>Hello {{ auth()->user()->name }}!</h1> 
                 </div>
 
        <div class="buttonSettings">
-            <button class="button green"><a href="{{route('userDetails')}}">USER DETAILS</a></button>
+            <button class="button settings"><a href="{{ route('userDetails')}}">ACCOUNT DETAILS</a></button>
             <?php 
                         if(auth()->user()->type==0){
                         ?>
-                        <button class="button green"><a href="{{ route('pagamentos') }}"> PAY PREMIUM </a></button>
+                        <button class="button settings"><a href="{{ route('pagamentos') }}"> PAY PREMIUM </a></button>
                         <?php
                         }
                         ?>
-            <button class="button green">
+            <button class="button settings">
             <a class="logout"  href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
