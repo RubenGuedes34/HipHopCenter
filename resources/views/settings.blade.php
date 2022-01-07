@@ -18,7 +18,6 @@
     <title>Hip-hop center</title>
 </head>
 <body>
-    
 <div id="mainContainer">
     <div id="topContainer">
 

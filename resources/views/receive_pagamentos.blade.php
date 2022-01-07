@@ -11,12 +11,21 @@ $zipcode=$_GET['zipcode'];
 $email=$_GET['email'];
 
 if(auth()->user()->type==0){
-    auth()->user()->type=1;
+	$conn =  pg_connect("host=127.0.0.1 port=5432 dbname=HipHopCenter user=postgres password=postgres");
+	$query = 'UPDATE public."users" SET type = 1 WHERE "users"."id"='. auth()->user()->id;
+	$result = pg_query($conn,$query);
+
+    
+	if (!$result){
+		echo "Update failed!!";
+	}
+
 }
 
 
 ?>
 <body>
+<a href="{{ route('settings') }}"><button class="myButton">Back to Settings Page</button></a>
 <div class="receipt-content">
     <div class="container bootstrap snippets bootdey">
 		<div class="row">

@@ -1,6 +1,6 @@
 
-
-Premium Offer 
+<a href="{{ route('settings') }}"><button class="myButton">Back to Settings Page</button></a>
+<p><h2>Premium Offer </h2></p>
 <form method="G" action="{{ route('receive_pagamentos') }}" >
     <div>
         <div>
