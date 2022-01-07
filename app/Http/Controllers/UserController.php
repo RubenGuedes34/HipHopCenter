@@ -107,20 +107,18 @@ class UserController extends Controller{
     public function update(Request $request, User $user){
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'type' => ['required', 'numeric', 'min:0','max:2'],
+            
         ]);
         $user->update([
             'name' => $request['name'],
-            'email' => $request['email'],
-            'type' => $request['type'],
-            'password' =>$request['password'],
+            
         ]);
 
-        return redirect()->route('users.index')
+        return redirect()->route('userDetails')
             ->with('success', 'User updated successfully');
     }
+
+    
 
     /**
      * Remove the specified resource from storage.

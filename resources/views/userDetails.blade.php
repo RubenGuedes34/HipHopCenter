@@ -110,22 +110,28 @@
     <div id="mainViewContainer">
         <div id="mainContent">
 
+        <form action="{{ route('users.update', auth()->user()->id ) }}" method="POST">
+        @csrf
+        @method('PUT')
             <div class="userDetails">
                     <div class="container borderBottom">
-                        <h2>Username</h2>
-                        <input type="text" class="username" name="username" placeholder="New username">
+                        <h1>Username</h1>
+                        <input type="text" name="name" class="form-control" placeholder="New username">
                         <span class="message"></span>
                         <button class="button green" onclick="">SAVE</button>
                     </div>
 
                     <div class="container">
-                        <h2>Password</h2>
+                        <h1>Password</h1>
                         <input type="password" class="newPassword1" name="newPassword1" placeholder="New password">
                         <input type="password" class="newPassword2" name="newPassword2" placeholder="Confirm password">
                         <span class="message"></span>
                         <button class="button green">SAVE</button>
                     </div>
             </div>
+        </form>                
+
+
         </div>
     </div>
                     

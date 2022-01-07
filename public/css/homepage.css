@@ -470,3 +470,41 @@ input:focus {
     color: #fff;
     text-decoration: none;
 }
+
+.userDetails{
+    padding: 20px;
+}
+
+.userDetails .container.borderBottom{
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.userDetails .container h1{
+    color: #074F0C;
+    text-align: center;
+}
+
+.userDetails .container input[type="text"],
+.userDetails .container input[type="password"],
+.userDetails .container .button{
+    display: block;
+    margin: 16px auto;
+}
+
+.userDetails .container input[type="text"],
+.userDetails .container input[type="password"]{
+    height: 50px;
+    width: 70%;
+    background: #FAF1BB;
+    border: none;
+    border-radius: 5rem;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 0 20px;
+}
+
+.userDetails .container .message{
+    color: #2ebd59;
+    font-weight: 600;
+}
