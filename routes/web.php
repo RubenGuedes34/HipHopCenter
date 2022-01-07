@@ -53,7 +53,7 @@ Route::get('/searchpage',[HomeController::class,'search'])->name('search');
 Route::get('/yourmusic',[HomeController::class,'music'])->name('yourmusic');
 Route::get('/adminpage',[AdminController::class,'adminpage'])->name('adminpage');
 Route::get('/settings',[HomeController::class,'settings'])->name('settings');
-
+Route::get('/userDetails',[HomeController::class,'userDetails'])->name('userDetails');
 
 Auth::routes(['verify' => true]);
 

@@ -107,40 +107,28 @@
     </div>
     </div>
 
-    
+    <div id="mainViewContainer">
+        <div id="mainContent">
 
-        <div class="entityInfo">
-                <h1>{{ auth()->user()->name }}</h1> 
-                </div>
+            <div class="userDetails">
+                    <div class="container borderBottom">
+                        <h2>Username</h2>
+                        <input type="text" class="username" name="username" placeholder="New username">
+                        <span class="message"></span>
+                        <button class="button green" onclick="">SAVE</button>
+                    </div>
 
-       <div class="buttonSettings">
-            <button class="button green"><a href="{{ route('userDetails')}}">USER DETAILS</a></button>
-            <?php 
-                        if(auth()->user()->type==0){
-                        ?>
-                        <button class="button green"><a href="{{ route('pagamentos') }}"> PAY PREMIUM </a></button>
-                        <?php
-                        }
-                        ?>
-            <button class="button green">
-            <a class="logout"  href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
-                                            {{ __('LOGOUT') }}
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">                                      
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-
-                            
-            </button>
-       </div>
-        
+                    <div class="container">
+                        <h2>Password</h2>
+                        <input type="password" class="newPassword1" name="newPassword1" placeholder="New password">
+                        <input type="password" class="newPassword2" name="newPassword2" placeholder="Confirm password">
+                        <span class="message"></span>
+                        <button class="button green">SAVE</button>
+                    </div>
+            </div>
+        </div>
     </div>
-
+                    
 </div>
 </body>
 </html>

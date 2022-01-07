@@ -66,4 +66,7 @@ class HomeController extends Controller{
         return view("settings");
     }
 
+    public function userDetails(){
+        return view("userDetails");
+    }
 }
