@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+body{
+    background-color: #fef9e3;
+    color: #074F0C;
+}
+
+.premiumH1{
+    /* superior | direita | inferior | esquerda */
+    padding: 40px 40px 0px 40px;
+    color: #074F0C;
+    text-align: center;
+}
+
+.myButton{
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-weight: 500;
+    border: 2px solid #2ebd59;
+    border-radius: 500px;
+    padding: 15px;
+    min-width: 130px;
+    background-color: #2ebd59;
+    color: #fff;
+    position: absolute;
+    top: 40px;
+    right: 30px;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:25px;
+  min-height: 100vh;
+}
+
+.container form{
+  padding:20px;
+  border: 1px solid #dddddd;
+  background: #fef9e3;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+.container form .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
+
+.container form .row .col{
+  flex:1 1 250px;
+}
+
+.container form .row .col .title{
+  font-size: 20px;
+  color:#333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.container form .row .col .inputBox{
+  margin:15px 0;
+}
+
+.container form .row .col .inputBox span{
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container form .row .col .inputBox input{
+  width: 100%;
+  border:1px solid #ccc;
+  padding:10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.container form .row .col .inputBox input:focus{
+  border:1px solid #000;
+}
+
+.container form .row .col .flex{
+  display: flex;
+  gap:15px;
+}
+
+.container form .row .col .flex .inputBox{
+  margin-top: 5px;
+}
+
+
+.container form .stripe-button-el{
+  width: 100%;
+  font-size: 17px;
+  color:#fff;
+  margin-top: 5px;
+  cursor: pointer;
+  background-image: none;
+}

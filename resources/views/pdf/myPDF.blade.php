@@ -12,10 +12,18 @@ $date = date('m/d/Y h:i:s a', time());
 <!-- Criar front-end fatura -->
 <head>
   <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+*{
+  background-color: #FEF9E3;
+  font-family: "Poppins", sans-serif;
+  color: #074F0C;
+  letter-spacing: 0.5px;
+}
+
 	body {
     height: 100%;
     overflow: auto;
-    background-color: #FEF9E3;
   }
 .receipt-content .logo a:hover {
     text-decoration: none;

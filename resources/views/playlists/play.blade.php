@@ -159,9 +159,7 @@ use App\Models\Artist;
                                 <span class="nomeMusica">{{$musica->nome}}</span>
                             </div>
 
-                            <div class="trackOptions">
-                                <img src="{{ url('images/more.png') }}" alt="Opções" class="optionsButton">
-                            </div>
+                    
 
                             <div class="trackDuration">
                                 <span class="duration">
