@@ -457,9 +457,13 @@ input:focus {
     max-width: 200px;
 }
 
-.entityInfo{
+.entityInfo h1{
     text-align: center;
+    color: #074F0C;
+    margin-top: 40px;
+    margin-bottom: 15px;
 }
+
 
 .buttonSettings .button{
     display: block;
@@ -507,4 +511,11 @@ input:focus {
 .userDetails .container .message{
     color: #2ebd59;
     font-weight: 600;
+}
+
+.button.settings{
+    background-color: #2ebd59;
+    border-color: #2ebd59;
+    color: #fff ;
+    width: 250px;
 }
