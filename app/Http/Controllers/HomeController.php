@@ -62,4 +62,8 @@ class HomeController extends Controller{
         return Artist::all();
     }
 
+    public function settings(){
+        return view("settings");
+    }
+
 }

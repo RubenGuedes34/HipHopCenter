@@ -68,7 +68,7 @@ use App\Models\Artist;
 
 
                         <div class="navItem">
-                            <a href="profile.php" class="navItemLink">
+                            <a href="{{ route('settings') }}" class="navItemLink">
                                 <i class="fas fa-user"></i>
                                  {{ auth()->user()->name }}</a>
                         </div>
