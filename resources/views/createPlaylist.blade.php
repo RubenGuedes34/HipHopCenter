@@ -1,11 +1,3 @@
-<?php
-use App\Models\Musica;
-use App\Models\Artist;
-use App\Models\Album;
-use App\Models\Playlist;
-use App\Models\Genero;
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,10 +15,12 @@ use App\Models\Genero;
 
     <link rel="stylesheet" type="text/css" href="{{url('css/homepage.css')}}">
 
+    <title>Hip-hop center</title>
 </head>
 <body>
-
-    <div id="mainContainer">
+    
+<div id="mainContainer">
+    <div id="topContainer">
 
     <div id="navBarContainer">
     <nav class="navBar">
@@ -104,108 +98,62 @@ use App\Models\Genero;
                                 </form>
                             </div>
 
-            
-
+                            
+                </div>
             </div>
+        </nav>
+    </div>
+    </div>
 
+    <div id="mainViewContainer">
+        <div id="mainContent">
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
+        @endif
 
-    </nav>
+        <form action="{{ route('playlists.store') }}" method="POST">
+    @csrf
 
+    <div class="row">
 
-
-
-
-
-
-</div>
-
-</div>
-        <div id="mainViewContainer">
-            <div id="mainContent">
-                    <div class="playlistsContainer">
-
-                    <div class="gridViewContainer">
-                        <h2>PLAYLISTS</h2>
-                        <div class="buttonItems">
-                            <form action="{{ route('createPlaylist') }}">
-                            <button type="submit" class="button green" >NEW PLAYLIST</button>
-                            </form>
-                        </div>
-
-
-
-                        <?php
-                            $id=auth()->user()->id; 
-                           $user_playlists= Playlist::where('id_user', '=', $id)->get();
-                            ?>
+    <div class="userDetails">
+                    <div class="container borderBottom">
+                        <h1>Create a new playlist</h1>
+                        <input type="text" name="nome" class="form-control" placeholder="Insert a new playlist name">
+                       
+                        <span class="message"></span> 
                         
-                        <h2>Your Playlists</h2>
-                            @foreach($user_playlists as $playlist)
-                            <div class='gridViewItem' role='link' tabindex='0'>
-
-                                <div class='playlistImage'>
-                                <img src="{{ asset('storage/playlist/HipHopCenterLogo1.png') }}">
-                                </div>
-                                
-                                <div class='gridViewInfo'>
-                                {{$playlist->nome}} 
-                                </div>
-                            <div class='actions'>
-                            <form action="{{ route('playlists.destroy',$playlist->id) }}"        method="POST">
-
-                                <a class="btn btn-info" href="{{ route('playlists.play',$playlist->id) }}">Play</a>
-
-                                <a class="btn btn-primary" href="{{ route('playlists.show',$playlist->id) }}">Add Songs</a>
-                                
-                                @csrf
-                                @method('DELETE')
-
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
-                            </div>
-
-                            </div>
-                            @endforeach
-                            <?php
-                           
-                            if(count($user_playlists)==0){
-                                echo "<h4>You Dont have Playlists created!</h4>";
-                            }  ?>
-                            <h2>Community Playlists</h2>
-                            <br>
-                            <br>
-                            <br>
-                            @foreach($playlists as $playlist)
-                            <div class='gridViewItem' role='link' tabindex='0'>
-
-                                <div class='playlistImage'>
-                                <img src="{{ asset('storage/playlist/HipHopCenterLogo1.png') }}">
-                                </div>
-                                
-                                <div class='gridViewInfo'>
-                                {{$playlist->nome}}
-                                </div>
-                            <div class='actions'>
-                            <form method="POST">
-                            <a class="btn btn-primary">
-                                Owner:{{$playlist->user->name}}
-                                </a>
-                                <a class="btn btn-info" href="{{ route('playlists.play',$playlist->id) }}">Play</a>
-                            </div>
-
-                            </div>
-                            @endforeach
-		
-
-
-
-                        </div>
+                        <button type="submit" class="button green" onclick="userUpdated()" >SAVE</button>
 
                     </div>
+            </div>
 
+                <input type="hidden" name="Likes" class="form-control" placeholder="Likes" value="0" readonly>
+                <?php $user= auth()->user(); ?>
+                <input type="hidden"class="form-control" value="{{$user->name}}" readonly>
+                <input type="hidden" name="id_user" class="form-control" value="{{$user->id}}" readonly>       
+            
+    </form>
+               
 
-	</div>
-
+        </div>
+    </div>
+                    
 </div>
 </body>
+</html>
+
+<script>
+    function userUpdated(){
+        var update = document.querySelector(".message");
+        update.innerHTML  = "Playlist created with success";
+    }
+</script>

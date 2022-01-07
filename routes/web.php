@@ -98,7 +98,8 @@ Route::get('/playlists/{playlist}/associate', [PlaylistController::class,'associ
 
 
 Route::get('/playlists', [PlaylistController::class,'index'])->name('playlists.index');
-Route::get('/playlists/create', [PlaylistController::class,'create'])->name('playlists.create')->middleware('is_premium');
+Route::get('/playlists/create', [PlaylistController::class,'create'])->name('playlists.create')->middleware('is_admin');
+Route::get('/createPlaylist', [PlaylistController::class,'createPlaylist'])->name('createPlaylist')->middleware('is_premium');
 Route::post('/playlists', [PlaylistController::class,'store'])->name('playlists.store');
 Route::get('/playlists/{playlist}', [PlaylistController::class,'show'])->name('playlists.show');
 Route::get('/playlists/{playlist}/play', [PlaylistController::class,'play'])->name('playlists.play');

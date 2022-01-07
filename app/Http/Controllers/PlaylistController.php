@@ -41,6 +41,11 @@ class PlaylistController extends Controller{
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    public function createPlaylist(){
+        return view('createPlaylist');
+    }
+
     public function store(Request $request){
         $request->validate([
             'nome' => 'required',

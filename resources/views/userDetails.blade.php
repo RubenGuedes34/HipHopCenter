@@ -115,10 +115,10 @@
                     <div class="container borderBottom">
                         <h1>Username</h1>
                         <input type="text" name="name" class="form-control" placeholder="New username">
-                        @if(!($errors->any()))
-                           <span class="message">Username Updated</span> 
-                        @endif
-                        <button class="button green" onclick="">SAVE</button>
+                       
+                        <span class="message"></span> 
+                        
+                        <button class="button green" onclick="userUpdated()">SAVE</button>
                     </div>
             </div>
         </form>
@@ -149,3 +149,10 @@
 </div>
 </body>
 </html>
+
+<script>
+    function userUpdated(){
+        var update = document.querySelector(".message");
+        update.innerHTML  = "User Updated";
+    }
+</script>
