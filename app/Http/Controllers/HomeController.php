@@ -5,6 +5,7 @@ use App\Models\Musica;
 use App\Models\Album;
 use App\Models\Artist;
 use App\Models\User;
+use App\Models\Playlist;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
