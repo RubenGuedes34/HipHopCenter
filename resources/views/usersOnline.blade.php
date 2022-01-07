@@ -16,11 +16,12 @@
 
 
     <div id="mainContent">
+    <a href="{{ route('home') }}"><button class="myButton">Back to HomePage</button></a>
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">All Users Status</div>
-                    <a href="{{ route('home') }}"><button class="myButton">Back to HomePage</button></a>
+                
+                    <h1 class=titulozin>All Users Status</h1>
+                    
                     <div class="card-body">
                         <div class="container">
                             <table class="table table-bordered">
@@ -51,8 +52,8 @@
                         </div>
 
                     </div>
-                </div>
-            </div>
+                
+            
         </div>
     </div>
 @endsection
