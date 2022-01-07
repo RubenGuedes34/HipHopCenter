@@ -1,19 +1,21 @@
+<head>
+
+<link rel="stylesheet" type="text/css" href="{{url('css/receipt.css')}}">
+
+</head>
 <?php
 $username=$_GET['username'];
 $name=$_GET['name'];
 $streetName=$_GET['streetName'];
 $zipcode=$_GET['zipcode'];
 $email=$_GET['email'];
-date_default_timezone_set('Europe/Lisbon');
-$date = date('m/d/Y h:i:s a', time());
-?>
-<!DOCTYPE html>
-<html>
-<!-- Criar front-end fatura -->
-<head>
-  
-</head>
 
+if(auth()->user()->type==0){
+    auth()->user()->type=1;
+}
+
+
+?>
 <body>
 <div class="receipt-content">
     <div class="container bootstrap snippets bootdey">
@@ -34,7 +36,7 @@ $date = date('m/d/Y h:i:s a', time());
 							</div>
 							<div class="col-sm-6 text-right">
 								<span>Payment Date</span>
-								<strong>{{ $date }}</strong>
+								<strong id='date-time'></strong>
 							</div>
 						</div>
 					</div>
@@ -46,9 +48,6 @@ $date = date('m/d/Y h:i:s a', time());
 								<strong>
                                      {{ $name }}
 								</strong>
-                                <p>
-                                Address:
-                                </p>
 								<p>
                                     {{ $streetName }} <br>
 									{{ $zipcode }} <br>
@@ -61,8 +60,8 @@ $date = date('m/d/Y h:i:s a', time());
 					<div class="line-items">
 						<div class="headers clearfix">
 							<div class="row">
-								<div class="col-xs-4">Description:2 Year Subscription</div>
-								<div class="col-xs-5 text-right">Amount:6.99€</div>
+								<div class="col-xs-4">Description</div>
+								<div class="col-xs-5 text-right">Amount</div>
 							</div>
 						</div>
 						<div class="items">
@@ -86,6 +85,22 @@ $date = date('m/d/Y h:i:s a', time());
 								Total <span>$6.99</span>
 							</div>
 						</div>
+
+						<div class="print">
+
+                        <form id="GFG" action="generate-pdf" method="GET">
+                            <input type="hidden" name="username" value="{{ $username }}" />
+                            <input type="hidden" name="name" value="{{ $name }}" />
+                            <input type="hidden" name="streetName" value="{{ $streetName }}" />
+                            <input type="hidden" name="zipcode" value="{{ $zipcode }}" />
+                            <input type="hidden" name="email" value="{{ $email }}" />
+                            <a href="#" onclick="myFunction()">
+								<i class="fa fa-print"></i>
+								Print this receipt
+							</a>
+                        </form>
+							
+						</div>
 					</div>
 				</div>
 
@@ -95,6 +110,14 @@ $date = date('m/d/Y h:i:s a', time());
 			</div>
 		</div>
 	</div>
-</div>                 
+</div>                    
 </body>
-</html>
+<script>
+function myFunction() {
+    document.getElementById("GFG").submit();
+}
+</script>
+<script>
+var dt = new Date();
+document.getElementById('date-time').innerHTML=dt;
+</script>

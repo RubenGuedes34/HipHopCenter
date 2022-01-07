@@ -1,7 +1,7 @@
 
 
 Premium Offer 
-<form method="post" >
+<form method="G" action="{{ route('receive_pagamentos') }}" >
     <div>
         <div>
             <h4>
@@ -14,33 +14,30 @@ Premium Offer
             </ul>
         </div>
         <div>
-            <h4>Billing address</h4>
+                <div>
+                <label for="username">Username</label>
+                <input type="text" name="username" placeholder="" value="{{ auth()->user()->name }}" readonly> </input>
+                </div>
          
                 <div>
-                    <label for="name">Name</label>
+                    <label for="name">Full Name</label>
                     <?php 
                     ?>
-                    <input type="text" name="name" placeholder="" value="{{ auth()->user()->name }}" readonly> </input>
+                     <input type="text" class="form-control" placeholder="Insert your full name" required="" name="name"> </input>
                 </div>
            
-            <div>
-                <label for="streetName">Street</label>
-                    <div class="input-group-prepend">
-                    </div>
-                    <input type="text" class="form-control" placeholder="Insert your street name" required="" name="streetName"> </input>
-            </div>
-            <div>
-                <label for="zipcode">ZipCode</label>
-                <input type="text" class="form-control" placeholder="Insert your zip code" name="zipcode"></input>
-            </div>
-            <div>
-                <label for="doorNumber">Door Number</label>
-                <input type="text" class="form-control" placeholder="Insert the number of your bulding" name="doorNumber"> </input>
-            </div>
-            <div>
-                <label for="floor">Floor</label>
-                <input type="text" class="form-control" placeholder="Insert only if you live in a bulding" name="floor"></input>
-            </div>
+                <div>
+                    <label for="streetName">Street</label>
+                        <input type="text" class="form-control" placeholder="Insert your street name" required="" name="streetName"> </input>
+                </div>
+                <div>
+                    <label for="zipcode">ZipCode</label>
+                    <input type="text" class="form-control" placeholder="Insert your zip code" name="zipcode"></input>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" placeholder="" value="{{ auth()->user()->email }}" readonly> </input>
+                </div>
 
      
             <hr class="mb-4">

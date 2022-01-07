@@ -58,6 +58,11 @@ class HomeController extends Controller{
         return view("pagamentos");
     }
 
+    public function receive_pagamentos(){
+        return view("receive_pagamentos");
+    }
+   
+
     public function ajax(){
         return Artist::all();
     }
