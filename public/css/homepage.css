@@ -80,7 +80,7 @@ body{
 }
 
 .progressTime{
-    color: #000;
+    color: #074F0C;
     font-size: 11px;
     min-width: 40px;
     text-align: center;
@@ -98,14 +98,14 @@ body{
 }
 
 .progressBarbackground{
-    background-color: #404040;
+    background-color: #074F0C;
     height: 4px;
     width: 100%;
     border-radius: 2px;
 }
 
 .progress{
-    background-color: #a0a0a0;
+    background-color: #84CE6D;
     height: 4px;
     width: 0;
     border-radius: 2px;
@@ -186,21 +186,21 @@ body{
 
 
 .navItemLink {
-    color: #a0a0a0;
+    color: #074F0C;
     text-decoration: none;
 }
 
 .navItemLink:hover{
-    color: #fff;
+    color: #84CE6D;
 }
 
 .navItem .logout{
-    color: #a0a0a0;
+    color: #074F0C;
     text-decoration: none;
 }
 
 .navItem .logout:hover{
-    color: #fff;
+    color: #84CE6D;
 }
 
 .navItem i{
@@ -536,4 +536,26 @@ input:focus {
         font-size: 20px;
         font-weight: 800;
         text-align: center;
+}
+
+.paginacaoFeira .pagination{
+    justify-content: center;
+    padding: 5px;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    color: #074f0c;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #074F0C;
+    border-color: #074F0C;
 }

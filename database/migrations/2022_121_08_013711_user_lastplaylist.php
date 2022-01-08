@@ -15,7 +15,7 @@ class UserLastplaylist extends Migration
     {
         Schema::table('users', function(Blueprint $table)
         {
-             $table->foreign('id_lastPlaylist')->references('id')->on('playlists')->onUpdate('CASCADE');
+             $table->foreign('id_lastPlaylist')->references('id')->on('playlists');
         });
     }
 
