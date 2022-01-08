@@ -17,6 +17,6 @@ class IsBasic{
        if(auth()->user()->type==0 || auth()->user()->type==0){
            return $next($request);
        }
-       return redirect('home')->with('error',"You already payed.");
+       return redirect('homepage')->with('error',"You already payed.");
     }
 }
