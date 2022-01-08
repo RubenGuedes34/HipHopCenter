@@ -121,7 +121,16 @@ use App\Models\Artist;
 
 
 </div>
+<?php 
+$id_playlist=$playlist->id;
+$id_user= auth()->user()->id;
+DB::table('users')
+    ->where('id', $id_user)
+    ->update(
+        ['id_lastPlaylist' => $id_playlist]
+    );
 
+?>
      
 </div>
         <div id="mainViewContainer">

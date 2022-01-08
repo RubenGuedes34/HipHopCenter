@@ -178,7 +178,6 @@ use App\Models\Genero;
                             <br>
                             @foreach($playlists as $playlist)
                             <div class='gridViewItem' role='link' tabindex='0'>
-
                                 <div class='playlistImage'>
                                 <img src="{{ asset('storage/playlist/HipHopCenterLogo1.png') }}">
                                 </div>
@@ -196,7 +195,10 @@ use App\Models\Genero;
 
                             </div>
                             @endforeach
-		
+                            <?php   
+                            if(count($playlists)==0){
+                                echo "<h4>No community Playlists created!</h4>";
+                            }  ?>
 
 
 

@@ -6,7 +6,7 @@ use App\Models\Album;
 use App\Models\Artist;
 use App\Models\Playlist;
 use Illuminate\Http\Request;
-
+use DB;
 class PlaylistController extends Controller{
 
 
@@ -105,6 +105,13 @@ class PlaylistController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function destroy(Playlist $playlist){
+        $id_playlist=$playlist->id;
+        $id_user= auth()->user()->id;
+        DB::table('users')
+        ->where('id', $id_user)
+        ->update(
+        ['id_lastPlaylist' => null]
+    );
         $playlist->delete();
 
         return redirect()->route('yourmusic')

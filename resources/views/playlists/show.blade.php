@@ -151,7 +151,7 @@
                 </div>
             </div>
 
-
+<?php  if(count($playlist->musica)!=0){ ?>
     <table class="addSongst1">
         <thead>  
             <tr class="addSongst1head">
@@ -184,7 +184,9 @@
             @endforeach
         </tbody>
     </table>
-
+    <?php }else{
+         echo "<h4>No Songs added to your playlist! Add some bellow</h4>";
+    } ?>
 
 <h3>Hip-hop Center recomends:</h3>
 <table>

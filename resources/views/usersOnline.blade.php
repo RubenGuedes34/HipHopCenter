@@ -29,7 +29,8 @@
                                 <tr class="headerStatus">
                                     <th>Name</th>
                                     <th>Status</th>
-                                    <th>Last Song heard</th>
+                                    <th>Last Album heard</th>
+                                    <th>Last Playlist heard</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -43,7 +44,22 @@
                                                 <span class="text-secondary">Offline</span>
                                             @endif
                                         </td>
-                                        <td class="statusAct">idk bro</td>
+                                        <td class="statusAct"><?php
+                                        if($user->lastAlbum==''){
+                                            echo "No Albuns Heard";
+                                        } else{
+                                            echo $user->lastAlbum->nome;
+                                        }
+                                        
+                                        ?></td>
+                                         <td class="statusAct"><?php
+                                        if($user->lastPlaylist==''){
+                                            echo "No Playlists Heard";
+                                        } else{
+                                            echo $user->lastPlaylist->nome;
+                                        }
+                                        
+                                        ?></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

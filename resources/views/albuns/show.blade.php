@@ -1,6 +1,7 @@
 <?php
 use App\Models\Musica;
 use App\Models\Artist;
+
 ?>
 
 <!DOCTYPE html>
@@ -123,6 +124,17 @@ use App\Models\Artist;
 </div>
     
 </div>
+
+<?php 
+$id_album=$album->id;
+$id_user= auth()->user()->id;
+DB::table('users')
+    ->where('id', $id_user)
+    ->update(
+        ['id_lastAlbum' => $id_album]
+    );
+
+?>
 
         <div id="mainViewContainer">
             <div id="mainContent">          
@@ -253,7 +265,6 @@ use App\Models\Artist;
                 function timeFromOffset(mouse, progressBar) {
                     var percentage = mouse.offsetX / $(progressBar).width() * 100;
                     var seconds = audioElement.audio.duration * (percentage / 100);
-                    console.log(seconds);
                     audioElement.setTime(seconds);
                 }
 
@@ -408,6 +419,7 @@ use App\Models\Artist;
                              
                             <span class="nomeMusica">
                                 <span></span>
+
                             </span>
                             <span class="artistaMusica">
                                 <span></span>
@@ -484,11 +496,10 @@ use App\Models\Artist;
 
 
         </div>
-
+        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="{{ asset('js/script.js')   }}"> </script> 
-
-        
+     
      
        
 </body>

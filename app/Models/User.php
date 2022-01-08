@@ -23,6 +23,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
         'type',
         'is_admin',
+        'id_lastAlbum',
+        'id_lastPlaylist',
         
     ];
 
@@ -44,6 +46,14 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+    public function lastPlaylist()
+    {
+        return $this->belongsTo(Playlist::class, 'id_lastPlaylist', 'id');
+    }
+    public function lastAlbum()
+    {
+        return $this->belongsTo(Album::class, 'id_lastAlbum', 'id');
+    }
 
     public function messages(){
         return $this->hasMany(Message::class);
