@@ -27,7 +27,7 @@ use App\Models\Genero;
 <body>
 
     <div id="mainContainer">
-
+    <div class="toggle" onclick="toggleMenu()"></div>
     <div id="navBarContainer">
     <nav class="navBar">
 
@@ -173,9 +173,7 @@ use App\Models\Genero;
                                 echo "<h4>You Dont have Playlists created!</h4>";
                             }  ?>
                             <h2>Community Playlists</h2>
-                            <br>
-                            <br>
-                            <br>
+
                             @foreach($playlists as $playlist)
                             <div class='gridViewItem' role='link' tabindex='0'>
                                 <div class='playlistImage'>
@@ -210,4 +208,14 @@ use App\Models\Genero;
 	</div>
 
 </div>
+
+<script>
+        function toggleMenu(){
+            const menuToggle = document.querySelector('.toggle');
+            const navBarContainer = document.querySelector('#navBarContainer');
+            menuToggle.classList.toggle('active')
+            navBarContainer.classList.toggle('active')
+        }
+    </script>
+
 </body>

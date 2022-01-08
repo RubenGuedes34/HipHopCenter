@@ -579,7 +579,7 @@ input:focus {
       }
 
     .navBar{
-        margin-top: 150px;
+        margin-top: 60px;
         margin-left: 80px;
     }
 
@@ -641,5 +641,36 @@ input:focus {
       .header_fixed{
           padding: 0px;
           margin-left: 0%;
+      }
+
+      .playlistsContainer .gridViewContainer h2{
+        margin-top: 15px;
+        margin-left: 15px;
+        text-align: left;
+      }
+
+      .buttonItems .button {
+        display: block;
+        margin: 0;
+      }
+
+      .buttonItems{
+          margin-bottom: 20px;
+      }
+
+      .row{
+        margin-right: 80px;
+      }
+
+      .entityInfo{
+        margin-left: -160px;
+      }
+
+      .buttonSettings{
+        margin-right: 330px;
+      }
+
+      .userDetails{
+        margin-right: 100px;
       }
 }

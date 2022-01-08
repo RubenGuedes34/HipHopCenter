@@ -21,7 +21,7 @@
     
 <div id="mainContainer">
     <div id="topContainer">
-
+    <div class="toggle" onclick="toggleMenu()"></div>
     <div id="navBarContainer">
     <nav class="navBar">
 
@@ -148,6 +148,16 @@
     </div>
                     
 </div>
+
+<script>
+        function toggleMenu(){
+            const menuToggle = document.querySelector('.toggle');
+            const navBarContainer = document.querySelector('#navBarContainer');
+            menuToggle.classList.toggle('active')
+            navBarContainer.classList.toggle('active')
+        }
+    </script>
+
 </body>
 </html>
 
@@ -157,3 +167,6 @@
         update.innerHTML  = "Playlist created with success";
     }
 </script>
+
+
+
