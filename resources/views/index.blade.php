@@ -19,7 +19,7 @@
     <section>
         <div class="circle"></div>
         <header>
-            <a href="#"><img src="{{url('images/HipHopCenter.gif')}}" alt="HipHopCenterLogo"></a>
+            <a><img src="{{url('images/HipHopCenter.gif')}}" alt="HipHopCenterLogo"></a>
             <div class="toggle" onclick="toggleMenu()"></div>
             <ul class="navigation">
                 <li><a href="{{ route('autenticacao') }}">Iniciar Sessão</a></li>

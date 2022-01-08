@@ -15,7 +15,7 @@ section{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #FEF9E3;
+  background: #fff;
 }
 
 section .circle{
@@ -171,6 +171,14 @@ header .navigation li a{
     background-size: 30px;
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  header a img{
+    width: 300px;
+  }
+
+  .content {
+    margin-top: 305px;
   }
 
 }
