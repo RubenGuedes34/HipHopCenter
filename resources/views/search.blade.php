@@ -139,7 +139,7 @@ else {
 	<h4>Search for an artist, album or song</h4>
     <form Method="GET">
     <input type="text" name="term" class="searchInput" value="<?php echo $term; ?>" placeholder="Start typing...">
-    <input type="Submit" value="Search">
+    <input type="Submit" class="button green" value="Search">
     </form>
 </div>
         <div class="tracklistContainer">
