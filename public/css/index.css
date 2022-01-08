@@ -174,11 +174,15 @@ header .navigation li a{
   }
 
   header a img{
-    width: 300px;
+    width: 240px;
   }
 
   .content {
-    margin-top: 305px;
+    margin-top: 250px;
+  }
+
+  .content svg{
+    margin-top: 80px;
   }
 
 }
