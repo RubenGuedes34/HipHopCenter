@@ -559,3 +559,59 @@ input:focus {
     background-color: #074F0C;
     border-color: #074F0C;
 }
+
+@media (max-width: 991px){    
+
+    #navBarContainer{
+        display: none;
+    }
+
+    #mainViewContainer{
+        margin-left: 0px;
+    }
+
+    .toggle{
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background: url('../images/menu.png');
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        z-index: 10000;
+        padding: 30px;
+      }
+    
+    .toggle.active{
+        position: fixed;
+        right: 40px;
+        background: url('../images/close.webp');
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .recomenda {
+        margin-right: 2em;
+        height: 5em;
+      }
+
+      .searchContainer {
+        padding: 5px 5px;
+    }
+      .searchContainer h4{
+        font-size: 17px;
+      }
+
+      .searchContainer .searchInput {
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        color: #074F0C;
+        font-weight: 700;
+        font-size: 45px;
+        letter-spacing: 2px;
+      }
+      
+}
