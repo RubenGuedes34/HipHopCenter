@@ -25,7 +25,7 @@
         <div class="signin-signup">
           <form method="POST" action="{{ route('login') }}" class="sign-in-form">
             @csrf
-            <h2 class="title">Iniciar Sessão</h2>
+            <h2 class="title">Sign-in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input id="email" type="email" name="email" placeholder="Email" />
@@ -34,14 +34,14 @@
               <i class="fas fa-lock"></i>
               <input id="password" type="password" name="password" placeholder="Password" />
             </div>
-            <input type="submit" value="Iniciar Sessão" class="btn solid" />
+            <input type="submit" value="Login" class="btn solid" />
           </form>
 
 
 
           <form method="POST" action="{{ route('register') }}"class="sign-up-form">
           @csrf
-            <h2 class="title">Regista-te</h2>
+            <h2 class="title">Register</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input id="name" type="text" name="name" placeholder="Name" required  />
@@ -58,7 +58,7 @@
               <i class="fas fa-lock"></i>
               <input id="password-confirm" type="password" placeholder="Confirm Password" name="password_confirmation" required/>
             </div>
-            <input type="submit" class="btn" value="Registar" />    
+            <input type="submit" class="btn" value="Create" />    
           </form>
         </div>
       </div>
@@ -66,12 +66,12 @@
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
-            <h3>Ainda não fazes parte da nossa comunidade?</h3>
+            <h3>Haven't you joined our community yet?</h3>
             <p>
-            Regista-te na nossa página e desfruta de tudo que o Hip-hop Center tem para te dar!
+            Create an account for free and enjoy everything Hip-hop center has to offer!
             </p>
             <button class="btn transparent" id="sign-up-btn">
-              Registar
+              Register
             </button>
           </div>
           
@@ -79,12 +79,12 @@
         </div>
         <div class="panel right-panel">
           <div class="content">
-            <h3>Já fazes parte da nossa comunidade?</h3>
+            <h3>Have you joined our community already?</h3>
             <p>
-              Não percas tempo! Faz login para desfrutar de todas as features que o Hip-hop Center tem para te dar!
+              Don't waste time! Enter your account now and enjoy everything we made for you!
             </p>
             <button class="btn transparent" id="sign-in-btn">
-              Iniciar Sessão
+              Sign-in
             </button>
           </div>
           <img src="{{url('images/musicPlayer.png')}}" class="image" alt="Man Listening Good Music" />
