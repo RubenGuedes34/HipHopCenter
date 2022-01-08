@@ -22,7 +22,7 @@
             <a><img src="{{url('images/HipHopCenter.gif')}}" alt="HipHopCenterLogo"></a>
             <div class="toggle" onclick="toggleMenu()"></div>
             <ul class="navigation">
-                <li><a href="{{ route('autenticacao') }}">Iniciar Sessão</a></li>
+                <li><a href="{{ route('autenticacao') }}">Login</a></li>
             </ul>
         </header>
         <div class="content">

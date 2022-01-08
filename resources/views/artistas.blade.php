@@ -120,16 +120,16 @@
         <div id="mainViewContainer">
             <div id="mainContent">
                 
-                <h1 class="recomenda">Artistas do Hip-hop center</h1>
+                <h1 class="recomenda">Hip-hop center's Artists</h1>
 
                 <div class="header_fixed">
                     <table>
                         <thead>
                             <tr>
-                                <td>Nome do Artista</td>
-                                <td>Data de Nascimento</td>
+                                <td>Artist name</td>
+                                <td>Birthday</td>
                                 <td>Likes</td>
-                                <td>Visualizar</td>
+                                <td>View</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -140,7 +140,7 @@
                             <td>{{ $artist->Likes }}</td>
                             <td><a href="{{ route('artists.show',$artist->id)}}"> 
                                 <div class="headerButtons">
-                                <button class="button green">OUVIR</button>
+                                <button class="button green">PLAY</button>
                                 </div> </a></td>
                   
                         </tr>

@@ -155,12 +155,12 @@
     <table class="addSongst1">
         <thead>  
             <tr class="addSongst1head">
-                <th>Nome</th>
+                <th>Name</th>
                 <th>Likes</th>
-                <th>Duração</th>
-                <th>Artista</th>
+                <th>Duration</th>
+                <th>Artist</th>
                 <th>Album</th>
-                <th>Genero</th>
+                <th>Gender</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -192,12 +192,12 @@
 <table>
     <thead>
     <tr class="addSongst1head">
-        <th>Nome</th>
+        <th>Name</th>
         <th>Likes</th>
-        <th>Duração</th>
-        <th>Artista</th>
+        <th>Duration</th>
+        <th>Artist</th>
         <th>Album</th>
-        <th>Genero</th>
+        <th>Gender</th>
         <th>Action</th>
     </tr>    
     </thead>
