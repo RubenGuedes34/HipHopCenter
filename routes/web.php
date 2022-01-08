@@ -45,7 +45,7 @@ Route::get('/', function () {
 
 
 Route::get('/autenticacao',[HipHopCenterController::class,'autenticacao'])->name('autenticacao');
-Route::get('/homepage',[HomeController::class,'homepage'])->name('home')->middleware('last_user_activity')->middleware('verified');
+Route::get('/homepage',[HomeController::class,'homepage'])->name('home')->middleware('last_user_activity');
 Route::get('/pagamentos',[HomeController::class,'pagamentos'])->name('pagamentos')->middleware('is_basic');
 Route::get('/receive_pagamentos',[HomeController::class,'receive_pagamentos'])->name('receive_pagamentos')->middleware('is_basic');
 Route::get('/artistas',[HomeController::class,'artistas'])->name('artistas');
