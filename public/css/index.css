@@ -178,7 +178,15 @@ header .navigation li a{
   }
 
   .content {
-    margin-top: 250px;
+    margin-top: 300px;
+  }
+
+  .content .textBox h2{
+    font-size: 27px;
+  }
+
+  .content .textBox p{
+    font-size: 13.7px;
   }
 
   .content svg{
