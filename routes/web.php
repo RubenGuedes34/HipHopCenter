@@ -46,8 +46,8 @@ Route::get('/', function () {
 
 Route::get('/autenticacao',[HipHopCenterController::class,'autenticacao'])->name('autenticacao');
 Route::get('/homepage',[HomeController::class,'homepage'])->name('home')->middleware('last_user_activity')->middleware('verified');
-Route::get('/pagamentos',[HomeController::class,'pagamentos'])->name('pagamentos');
-Route::get('/receive_pagamentos',[HomeController::class,'receive_pagamentos'])->name('receive_pagamentos');
+Route::get('/pagamentos',[HomeController::class,'pagamentos'])->name('pagamentos')->middleware('is_basic');
+Route::get('/receive_pagamentos',[HomeController::class,'receive_pagamentos'])->name('receive_pagamentos')->middleware('is_basic');
 Route::get('/artistas',[HomeController::class,'artistas'])->name('artistas');
 Route::get('/searchpage',[HomeController::class,'search'])->name('search');
 Route::get('/yourmusic',[HomeController::class,'music'])->name('yourmusic');
@@ -59,7 +59,8 @@ Route::put('/userDetails/updatePassword/{user}', [HomeController::class,'updateP
 
 
 
-Auth::routes(['verify' => true]);
+Auth::routes();
+//Auth::routes(['verify' => true]);
 
 Route::get('/usersOnline',[UserController::class,'userOnlineStatus'])->name('usersOnline')->middleware('last_user_activity');
 Route::get('/users', [UserController::class,'index'])->name('users.index')->middleware('is_admin');
