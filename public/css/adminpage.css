@@ -76,3 +76,38 @@
     font-size: 15px;
     font-weight: 800;
 }
+
+
+.paginacaoFeira .pagination{
+    justify-content: center;
+    padding: 5px;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    color: #074f0c;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #074F0C;
+    border-color: #074F0C;
+}
+
+@media (max-width: 991px){  
+
+    .admin {
+        margin-top: 130px;
+    }
+
+    .titulozin{
+        margin-top: 130px;
+        font-size: 2em;
+    }
+}

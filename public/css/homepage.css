@@ -543,7 +543,7 @@ input:focus {
     padding: 5px;
 }
 
-.page-link {
+.paginacaoFeira .page-link {
     position: relative;
     display: block;
     color: #074f0c;
@@ -553,7 +553,7 @@ input:focus {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.page-item.active .page-link {
+.paginacaoFeira .page-item.active .page-link {
     z-index: 3;
     color: #fff;
     background-color: #074F0C;
@@ -673,4 +673,5 @@ input:focus {
       .userDetails{
         margin-right: 100px;
       }
+
 }

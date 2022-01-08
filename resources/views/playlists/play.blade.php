@@ -26,7 +26,7 @@ use App\Models\Artist;
     <title>Hip-hop Center</title>
 </head>
 <body>
-          
+<div class="toggle" onclick="toggleMenu()"></div>
      <div id="mainContainer">
 
 
@@ -203,7 +203,6 @@ DB::table('users')
 
         <?php
         $jsonArray = json_encode($resultArray);
-        print_r($jsonArray);
         ?>
 
         <script>
@@ -489,7 +488,14 @@ DB::table('users')
         <script src="{{ asset('js/script.js')   }}"> </script> 
 
         
-     
+        <script>
+        function toggleMenu(){
+            const menuToggle = document.querySelector('.toggle');
+            const navBarContainer = document.querySelector('#navBarContainer');
+            menuToggle.classList.toggle('active')
+            navBarContainer.classList.toggle('active')
+        }
+    </script>
        
 </body>
 
