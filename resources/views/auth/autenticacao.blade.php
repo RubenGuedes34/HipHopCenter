@@ -66,7 +66,7 @@
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
-            <h3>Haven't you joined our community yet?</h3>
+            <h3>Haven't joined our community yet?</h3>
             <p>
             Create an account for free and enjoy everything Hip-hop center has to offer!
             </p>
