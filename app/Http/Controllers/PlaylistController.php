@@ -5,6 +5,7 @@ use App\Models\Musica;
 use App\Models\Album;
 use App\Models\Artist;
 use App\Models\Playlist;
+use App\Models\User;
 use Illuminate\Http\Request;
 use DB;
 class PlaylistController extends Controller{
@@ -104,6 +105,19 @@ class PlaylistController extends Controller{
      * @param  \App\Models\Playlist  $playlist
      * @return \Illuminate\Http\Response
      */
+    public function destroy_admin(Playlist $playlist){
+        $id_playlist=$playlist->id;
+        $id_user= $playlist->user->id;
+        DB::table('users')
+        ->where('id', $id_user)
+        ->update(
+        ['id_lastPlaylist' => null]
+    );
+        $playlist->delete();
+
+        return redirect()->route('yourmusic')
+            ->with('success', 'Playlist deleted successfully');
+    }
     public function destroy(Playlist $playlist){
         $id_playlist=$playlist->id;
         $id_user= auth()->user()->id;

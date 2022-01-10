@@ -36,7 +36,7 @@
         <td>{{ $playlist->Likes }}</td>
         <td>{{ $playlist->user->name }}</td>
         <td>
-            <form action="{{ route('playlists.destroy',$playlist->id) }}" method="POST">
+            <form action="{{ route('playlists.destroy_admin',$playlist->id) }}" method="POST">
 
                 <a class="btn btn-info" href="{{ route('playlists.show',$playlist->id) }}">Show</a>
 

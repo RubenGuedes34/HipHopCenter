@@ -107,6 +107,7 @@ Route::get('/playlists/{playlist}/play', [PlaylistController::class,'play'])->na
 Route::get('/playlists/{playlist}/edit', [PlaylistController::class,'edit'])->name('playlists.edit');
 Route::put('/playlists/{playlist}', [PlaylistController::class,'update'])->name('playlists.update');
 Route::delete('/playlists/{playlist}', [PlaylistController::class,'destroy'])->name('playlists.destroy');
+Route::delete('/playlists_admin/{playlist}', [PlaylistController::class,'destroy_admin'])->name('playlists.destroy_admin');
 
 
 Route::get('/albuns', [AlbumController::class,'index'])->name('albuns.index');
