@@ -107,9 +107,8 @@ class PlaylistController extends Controller{
      */
     public function destroy_admin(Playlist $playlist){
         $id_playlist=$playlist->id;
-        $id_user= $playlist->user->id;
         DB::table('users')
-        ->where('id', $id_user)
+        ->where('id_lastPlaylist', $id_playlist)
         ->update(
         ['id_lastPlaylist' => null]
     );
@@ -123,6 +122,11 @@ class PlaylistController extends Controller{
         $id_user= auth()->user()->id;
         DB::table('users')
         ->where('id', $id_user)
+        ->update(
+        ['id_lastPlaylist' => null]
+    );
+        DB::table('users')
+        ->where('id_lastPlaylist', $id_playlist)
         ->update(
         ['id_lastPlaylist' => null]
     );
