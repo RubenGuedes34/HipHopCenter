@@ -20,8 +20,4 @@ class Genero extends Model
     {
         return $this->hasMany(Musica::class, 'id_genero', 'id');
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> edb26ad528f0a252d73399d5dcccf6309c635566
