@@ -30,7 +30,7 @@ use App\Models\Artist;
     <div id="mainContainer">
 
     <div id="topContainer">
-
+    <div class="toggle" onclick="toggleMenu()"></div>
     <div id="navBarContainer">
     <nav class="navBar">
 
@@ -195,7 +195,14 @@ use App\Models\Artist;
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="{{ asset('js/script.js')   }}"> </script> 
 
-        
+        <script>
+        function toggleMenu(){
+            const menuToggle = document.querySelector('.toggle');
+            const navBarContainer = document.querySelector('#navBarContainer');
+            menuToggle.classList.toggle('active')
+            navBarContainer.classList.toggle('active')
+        }
+    </script>
      
        
 </body>
