@@ -160,7 +160,7 @@
                 <th>Duration</th>
                 <th>Artist</th>
                 <th>Album</th>
-                <th>Gender</th>
+                <th>Genre</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -197,7 +197,7 @@
         <th>Duration</th>
         <th>Artist</th>
         <th>Album</th>
-        <th>Gender</th>
+        <th>Genre</th>
         <th>Action</th>
     </tr>    
     </thead>
@@ -221,8 +221,9 @@
     @endforeach
     </tbody>
 </table>
+<div class="paginacaoFeira addSongs">
 {{$musicas->appends(['musicas'=> $musicas->currentPage()])->links("pagination::bootstrap-4") }}  
-   
+</div>
  
   
             </div>

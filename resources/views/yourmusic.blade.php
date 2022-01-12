@@ -185,9 +185,6 @@ use App\Models\Genero;
                                 </div>
                             <div class='actions'>
                             <form method="POST">
-                            <a class="btn btn-primary">
-                                Owner:{{$playlist->user->name}}
-                                </a>
                                 <a class="btn btn-info" href="{{ route('playlists.play',$playlist->id) }}">Play</a>
                             </div>
 
