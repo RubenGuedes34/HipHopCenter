@@ -560,6 +560,11 @@ input:focus {
     border-color: #074F0C;
 }
 
+.paginacaoFeira.addSongs .pagination {
+    margin-right: 800px;
+}
+
+
 @media (max-width: 991px){    
 
     #navBarContainer{
@@ -673,5 +678,9 @@ input:focus {
       .userDetails{
         margin-right: 100px;
       }
+
+      .paginacaoFeira.addSongs .pagination {
+        margin-left: 200px;
+    }
 
 }
