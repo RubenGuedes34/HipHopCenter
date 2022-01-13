@@ -7,21 +7,19 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\User;
 
-class login extends TestCase
+class Playlists extends TestCase
 {
     /**
      * A basic feature test example.
      *
      * @return void
      */
-    public function test_login()
+    public function test_createPlaylists()
     {
         $user = user::where(['id'=> 4])->first();
         $this->actingAs($user);
-        $response = $this->get('/homepage');
+        $response = $this->get('/createPlaylist');
 
         $response->assertStatus(200);
     }
-
-
 }

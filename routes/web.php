@@ -51,7 +51,7 @@ Route::get('/receive_pagamentos',[HomeController::class,'receive_pagamentos'])->
 Route::get('/artistas',[HomeController::class,'artistas'])->name('artistas');
 Route::get('/searchpage',[HomeController::class,'search'])->name('search');
 Route::get('/yourmusic',[HomeController::class,'music'])->name('yourmusic');
-Route::get('/adminpage',[AdminController::class,'adminpage'])->name('adminpage');
+Route::get('/adminpage',[AdminController::class,'adminpage'])->name('adminpage')->middleware('is_admin');
 Route::get('/settings',[HomeController::class,'settings'])->name('settings');
 Route::get('/userDetails',[HomeController::class,'userDetails'])->name('userDetails');
 Route::put('/userDetails/updateUsername/{user}', [HomeController::class,'updateUsername'])->name('update');
@@ -73,7 +73,7 @@ Route::delete('/users/{user}', [UserController::class,'destroy'])->name('users.d
 
 
 
-Route::get('/artists', [ArtistController::class,'index'])->name('artists.index');
+Route::get('/artists', [ArtistController::class,'index'])->name('artists.index')->middleware('is_admin');
 Route::get('/artists/create', [ArtistController::class,'create'])->name('artists.create')->middleware('is_admin');
 Route::post('/artists', [ArtistController::class,'store'])->name('artists.store')->middleware('is_admin');
 Route::get('/artists/{artist}', [ArtistController::class,'show'])->name('artists.show');
@@ -82,7 +82,7 @@ Route::put('/artists/{artist}', [ArtistController::class,'update'])->name('artis
 Route::delete('/artists/{artist}', [ArtistController::class,'destroy'])->name('artists.destroy')->middleware('is_admin');
 
 
-Route::get('/musicas', [MusicaController::class,'index'])->name('musicas.index');
+Route::get('/musicas', [MusicaController::class,'index'])->name('musicas.index')->middleware('is_admin');
 Route::get('/musicas/create', [MusicaController::class,'create'])->name('musicas.create')->middleware('is_admin');
 Route::post('/musicas', [MusicaController::class,'store'])->name('musicas.store')->middleware('is_admin');
 Route::get('/musicas/{musica}', [MusicaController::class,'show'])->name('musicas.show');
@@ -98,7 +98,7 @@ Route::get('/playlists/{playlist}/associate', [PlaylistController::class,'associ
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-Route::get('/playlists', [PlaylistController::class,'index'])->name('playlists.index');
+Route::get('/playlists', [PlaylistController::class,'index'])->name('playlists.index')->middleware('is_admin');
 Route::get('/playlists/create', [PlaylistController::class,'create'])->name('playlists.create')->middleware('is_admin');
 Route::get('/createPlaylist', [PlaylistController::class,'createPlaylist'])->name('createPlaylist')->middleware('is_premium');
 Route::post('/playlists', [PlaylistController::class,'store'])->name('playlists.store');
@@ -110,7 +110,7 @@ Route::delete('/playlists/{playlist}', [PlaylistController::class,'destroy'])->n
 Route::delete('/playlists_admin/{playlist}', [PlaylistController::class,'destroy_admin'])->name('playlists.destroy_admin');
 
 
-Route::get('/albuns', [AlbumController::class,'index'])->name('albuns.index');
+Route::get('/albuns', [AlbumController::class,'index'])->name('albuns.index')->middleware('is_admin');
 Route::get('/albuns/create', [AlbumController::class,'create'])->name('albuns.create')->middleware('is_admin');
 Route::post('/albuns', [AlbumController::class,'store'])->name('albuns.store')->middleware('is_admin');
 Route::get('/albuns/{album}', [AlbumController::class,'show'])->name('albuns.show');
@@ -119,7 +119,7 @@ Route::put('/albuns/{album}', [AlbumController::class,'update'])->name('albuns.u
 Route::delete('/albuns/{album}', [AlbumController::class,'destroy'])->name('albuns.destroy')->middleware('is_admin');
 
 
-Route::get('/generos', 'App\Http\Controllers\GeneroController@index')->name('generos.index');
+Route::get('/generos', 'App\Http\Controllers\GeneroController@index')->name('generos.index')->middleware('is_admin');
 Route::get('/generos/create', 'App\Http\Controllers\GeneroController@create')->name('generos.create')->middleware('is_admin');
 Route::post('/generos', 'App\Http\Controllers\GeneroController@store')->name('generos.store')->middleware('is_admin');
 Route::get('/generos/{genero}', 'App\Http\Controllers\GeneroController@show')->name('generos.show');
