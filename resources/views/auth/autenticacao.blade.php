@@ -44,7 +44,7 @@
             <h2 class="title">Register</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input id="name" type="text" name="name" placeholder="Name" required  />
+              <input id="name" type="text" name="name" placeholder="Name" maxlength="15" required  />
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>

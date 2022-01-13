@@ -114,7 +114,7 @@
             <div class="userDetails">
                     <div class="container borderBottom">
                         <h1>Username</h1>
-                        <input type="text" name="name" class="form-control" placeholder="New username">
+                        <input type="text" name="name" class="form-control" placeholder="New username" maxlength="15">
                        
                         <span class="message"></span> 
                         
