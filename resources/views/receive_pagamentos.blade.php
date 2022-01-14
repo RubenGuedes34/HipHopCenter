@@ -4,28 +4,12 @@
 
 </head>
 <?php
-$username=$_GET['username'];
-$name=$_GET['name'];
-$streetName=$_GET['streetName'];
-$zipcode=$_GET['zipcode'];
-$email=$_GET['email'];
-
-if(auth()->user()->type==0){
-	$conn =  pg_connect("host=127.0.0.1 port=5432 dbname=HipHopCenter user=postgres password=postgres");
-	$query = 'UPDATE public."users" SET type = 1 WHERE "users"."id"='. auth()->user()->id;
-	$result = pg_query($conn,$query);
-
-    
-	if (!$result){
-		echo "Update failed!!";
-	}
-
-}
-
-
+$username=auth()->user()->name;
 ?>
 <body>
 <a href="{{ route('settings') }}"><button class="myButton">Back to Settings Page</button></a>
+<form id="GFG" action="generate-pdf" method="GET">
+<input type="hidden" name="username" value="{{ $username }}" />
 <div class="receipt-content">
     <div class="container bootstrap snippets bootdey">
 		<div class="row">
@@ -34,7 +18,7 @@ if(auth()->user()->type==0){
 					<div class="intro">
 						Hi <strong>{{ $username }}</strong>, 
 						<br>
-						This is the receipt for a payment of <strong>6.99€</strong> (EUR) for 2 year subscription of HipHopCenter
+						This is the receipt for a payment of <strong>6.99€</strong> (EUR) for 1 year subscription of HipHopCenter
 					</div>
 
 					<div class="payment-info">
@@ -55,13 +39,12 @@ if(auth()->user()->type==0){
 							<div class="col-sm-6">
 								<span>Client</span>
 								<strong>
-                                     {{ $name }}
-								</strong>
-								<p>
-                                    {{ $streetName }} <br>
-									{{ $zipcode }} <br>
-									{{ $email }}  <br>
-								</p>
+								<input type="text" class="form-control" placeholder="Insert your full name" required name="name"> </input>
+								</strong><br>
+								<input type="text" class="form-control" placeholder="Insert your street name" required name="streetName"> </input> <br>
+								<input type="text" class="form-control" placeholder="Insert your zip code" required name="zipcode"></input> <br>
+								<input type="text" name="email" placeholder="" value="{{ auth()->user()->email }}" readonly> </input>  <br>
+								
 							</div>
 						</div>
 					</div>
@@ -76,7 +59,7 @@ if(auth()->user()->type==0){
 						<div class="items">
 							<div class="row item">
 								<div class="col-xs-4 desc">
-									2 Year Subscription
+									1 Year Subscription
 								</div>
 								<div class="col-xs-5 amount text-right">
 									6.99€
@@ -96,18 +79,13 @@ if(auth()->user()->type==0){
 						</div>
 
 						<div class="print">
-
-                        <form id="GFG" action="generate-pdf" method="GET">
-                            <input type="hidden" name="username" value="{{ $username }}" />
-                            <input type="hidden" name="name" value="{{ $name }}" />
-                            <input type="hidden" name="streetName" value="{{ $streetName }}" />
-                            <input type="hidden" name="zipcode" value="{{ $zipcode }}" />
-                            <input type="hidden" name="email" value="{{ $email }}" />
+							
                             <a href="#" onclick="myFunction()">
 								<i class="fa fa-print"></i>
-								Print this receipt
+								<input type="submit" value="Print this receipt">	
+								
 							</a>
-                        </form>
+</form>
 							
 						</div>
 					</div>

@@ -10,13 +10,14 @@
 </head>
 <body>
 
-<h1 class="premiumH1">Premium Offer</h1>
+<h1 class="premiumH1">Please fill out this form in order to print your receipt</h1>
+
 
 <a href="{{ route('home') }}"><button class="myButton">Back to HomePage</button></a>
 
 <div class="container">
 
-    <form method="G" action="{{ route('receive_pagamentos') }}" >
+    <form method="Get" action="{{ route('receive_pagamentos') }}" >
 
         <div class="row">
 
@@ -32,8 +33,7 @@
                 </div>
                 <div class="inputBox">
                 <span>Full Name</span>
-                    <?php 
-                    ?>
+                 
                      <input type="text" class="form-control" placeholder="Insert your full name" required="" name="name"> </input>
                 </div>
 
@@ -61,12 +61,7 @@
             </div>
     
         </div>
-
-        <form action="" method="POST">
-                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_51I4PU2BsU9Mtmw64MPQcKvJzIGfCXWzg1CU0k7u9B39HIWjHiSd59pwmuGWPXSawnXe6EBVPhiTJ4Z7nNJZSwC8p00WiK1k3fi" data-amount="{{6.99 * 100}} " data-name="Online Store" data-description="Payment" data-locale="auto" data-currency="eur">
-                    </script>
-                </form>
-
+             <input type="Submit" value="See Receipt"></input>
     </form>
 
 </div>    
