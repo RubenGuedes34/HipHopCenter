@@ -26,6 +26,6 @@ class UserLastplaylist extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('UserLastplaylist');
     }
 }

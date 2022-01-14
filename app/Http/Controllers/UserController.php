@@ -64,12 +64,18 @@ class UserController extends Controller{
         $request->validate([
             'name' => ['required', 'string', 'max:15'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'confirmed'],
+            'pais' => ['required', 'string'],
+            'cidade' => ['required', 'string'],
+            'zipcode' => ['required', 'string'],
         ]);
 
         User::create([
             'name' => $request['name'],
             'email' => $request['email'],
+            'pais' => $request['pais'],
+            'cidade' => $request['cidade'],
+            'zipcode' => $request['zipcode'],
             'password' => Hash::make($request['password']),
         ]);
 
@@ -109,12 +115,18 @@ class UserController extends Controller{
             'name' => ['required', 'string', 'max:15'],
             'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'pais' => ['required', 'string'],
+            'cidade' => ['required', 'string'],
+            'zipcode' => ['required', 'string'],
             'type' => ['required', 'numeric', 'min:0','max:2'],
         ]);
         $user->update([
             'name' => $request['name'],
             'email' => $request['email'],
             'type' => $request['type'],
+            'pais' => $request['pais'],
+            'cidade' => $request['cidade'],
+            'zipcode' => $request['zipcode'],
             'password' =>$request['password'],
         ]);
 

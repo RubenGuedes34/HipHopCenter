@@ -47,6 +47,18 @@
               <input id="name" type="text" name="name" placeholder="Name" maxlength="15" required  />
             </div>
             <div class="input-field">
+            <i class="fas fa-globe"></i>
+              <input id="pais" type="text" name="pais" placeholder="Country" maxlength="15" required  />
+            </div>
+            <div class="input-field">
+            <i class="fas fa-city"></i>
+              <input id="cidade" type="text" name="cidade" placeholder="City" maxlength="15" required  />
+            </div>
+            <div class="input-field">
+            <i class="fas fa-home"></i>
+              <input id="zipcode" type="text" name="zipcode" placeholder="Zipcode" maxlength="15" required  />
+            </div>
+            <div class="input-field">
               <i class="fas fa-envelope"></i>
               <input id="email" type="email" name="email" placeholder="Email"  required />
             </div>

@@ -17,6 +17,10 @@ class CreateUsersTable extends Migration
             $table->id()->bigIncrements();
             $table->string('name')->unique();
             $table->string('email')->unique();
+            $table->string('pais')->unique();
+            $table->string('cidade')->unique();
+            $table->string('zip-Code')->unique();
+            $table->string('path'); 
             $table->unsignedBigInteger('id_lastAlbum')->nullable();
             $table->unsignedBigInteger('id_lastPlaylist')->nullable();
             $table->timestamp('email_verified_at')->nullable();
