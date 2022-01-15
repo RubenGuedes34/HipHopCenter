@@ -98,4 +98,12 @@ class ArtistController extends Controller{
         return redirect()->route('artists.index')
             ->with('success', 'Artist deleted successfully');
     }
+
+    /** AJAX METHOD GET ALBUMS  */
+    public function getArtistJson(Request $request){
+        $artistId = $request->artistId;
+        $artists = Artist::where('id',$artistId)->get();
+        $artists = json_decode($artists);
+        return response()->json(['data'=>$artists]);
+    }
 }

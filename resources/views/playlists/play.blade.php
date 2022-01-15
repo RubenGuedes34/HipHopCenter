@@ -12,16 +12,16 @@ use App\Models\Artist;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-   
-    
+
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{{url('css/homepage.css')}}">
-   
-   
+
+
 
     <title>Hip-hop Center</title>
 </head>
@@ -39,7 +39,7 @@ use App\Models\Artist;
                 <a href="{{ route('home') }}" class="logo">
                     <img src="{{url('images/HipHopCenter.gif')}}" alt="Logo">
                 </a>
-                
+
         </div>
 
         <div class="navItem">
@@ -48,13 +48,13 @@ use App\Models\Artist;
                 Search</a>
             </div>
 
-            <div class="navItem">  
+            <div class="navItem">
                 <a href="{{ route('home') }}" class="navItemLink">
                     <i class="fas fa-compact-disc"></i>
                     Albuns</a>
             </div>
 
-            <div class="navItem">  
+            <div class="navItem">
                 <a href="{{ route('artistas') }}" class="navItemLink">
                 <i class="fas fa-microphone"></i>
                     Artists</a>
@@ -72,7 +72,7 @@ use App\Models\Artist;
                                 <i class="fas fa-user"></i>
                                  {{ auth()->user()->name }}</a>
                         </div>
-                        <?php 
+                        <?php
                         if(auth()->user()->type==2){
                         ?>
                      <div class="navItem">
@@ -83,16 +83,16 @@ use App\Models\Artist;
                         <?php
                         }
                         ?>
-                        
+
                         <div class="navItem">
                             <a href="{{ route('usersOnline') }}" class="navItemLink">
                                 <i class="fas fa-user"></i>
                                 Users Status</a>
                         </div>
-                        
+
 
                         <div class="navItem">
-                        
+
                             <a class="logout"  href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
@@ -100,13 +100,13 @@ use App\Models\Artist;
                                             {{ __('Logout') }}
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">                                      
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
                             </div>
 
-                           
+
 
             </div>
 
@@ -123,7 +123,7 @@ use App\Models\Artist;
 </div>
 
 
-<?php 
+<?php
 $id_playlist=$playlist->id;
 $id_user= auth()->user()->id;
 DB::table('users')
@@ -133,10 +133,10 @@ DB::table('users')
     );
 
 ?>
-     
+
 </div>
         <div id="mainViewContainer">
-            <div id="mainContent">          
+            <div id="mainContent">
                 <div class="entityInfo">
                     <div class="leftSection">
                         <img src="{{ asset('storage/playlist/HipHopCenterLogo1.png') }}" alt="Capa de Album">
@@ -152,10 +152,10 @@ DB::table('users')
                 </div>
 
                 <div class="tracklistContainer">
-                   <ul class="tracklist">  
+                   <ul class="tracklist">
                        <?php
                        $aux=1;
-                       ?>                     
+                       ?>
                         @foreach($playlist->musica as $musica)
                         <?php $songIdArray = $playlist->musica; ?>
                         <li class="tracklistRow">
@@ -163,14 +163,14 @@ DB::table('users')
                                 <img src="{{ url('images/play-white.png') }}" alt="Play" class="play" onclick="setTrack({{$musica->id}}, tempPlaylist,true)">
                                <span class="trackNumber">
                                     <?php echo $aux; ?>
-                               </span> 
+                               </span>
                             </div>
 
                             <div class="trackInfo">
                                 <span class="nomeMusica">{{$musica->nome}}</span>
                             </div>
 
-                    
+
 
                             <div class="trackDuration">
                                 <span class="duration">
@@ -178,27 +178,27 @@ DB::table('users')
                                 </span>
                             </div>
 
-                        </li>  
-                        <?php $aux++; ?> 
-                               
+                        </li>
+                        <?php $aux++; ?>
+
                         @endforeach
-                        
+
                         <script>
                             var tempSongIds = "<?php echo json_encode($songIdArray); ?>";
                             tempPlaylist = JSON.parse(tempSongIds);
                         </script>
 
-                   </ul> 
+                   </ul>
                 </div>
 
-            </div>      
+            </div>
         </div>
-        
+
         <?php
         $resultArray= array();
         ?>
         @foreach($playlist->musica as $musica)
-        <?php 
+        <?php
         $resultArray[]=$musica->id;
         ?>
         @endforeach
@@ -214,11 +214,11 @@ DB::table('users')
                     audioElement = new Audio();
                     setTrack(newPlaylist[0], newPlaylist, false);
                     updateVolumeProgressBar(audioElement.audio);
-                    
+
                     $("#aTocarAgoraContainer").on("mousedown touchstart mousemove touchmove",function(e){
                          e.preventDefault();
                     });
-                   
+
                     $(".playbackBar .progressBar").mousedown(function() {
                             mouseDown = true;
                     });
@@ -242,23 +242,23 @@ DB::table('users')
                         if(mouseDown) {
                             var percentage=e.offsetX / $(this).width();
                             if(percentage >=0 && percentage<=1){
-                                audioElement.audio.volume=percentage; 
+                                audioElement.audio.volume=percentage;
                             }
-                            
+
                         }
                     });
 
                     $(".volumeBar .progressBar").mouseup(function(e) {
                         var percentage=e.offsetX / $(this).width();
                             if(percentage >=0 && percentage<=1){
-                                audioElement.audio.volume=percentage; 
+                                audioElement.audio.volume=percentage;
                             }
                     });
 
                     $(document).mouseup(function() {
                         mouseDown = false;
                     });
-                    
+
                 });
                 function timeFromOffset(mouse, progressBar) {
                     var percentage = mouse.offsetX / $(progressBar).width() * 100;
@@ -297,7 +297,7 @@ DB::table('users')
 
                 function setRepeat(){
                     if(repeat){
-                        repeat = false;                  
+                        repeat = false;
                         var imageName= "{{ url('images/repeat.png')}}"
                     }else{
                         repeat = true;
@@ -309,7 +309,7 @@ DB::table('users')
 
                 function setMute(){
                     if(audioElement.audio.muted){
-                        audioElement.audio.muted = false;                  
+                        audioElement.audio.muted = false;
                         var imageName= "{{ url('images/volume.png')}}"
                     }else{
                         audioElement.audio.muted = true;
@@ -358,20 +358,24 @@ DB::table('users')
 	                else {
 		                currentIndex = currentPlaylist.indexOf(trackId);
 	                }
-                    
-                    pauseSong();
 
-                    $.post("{{url('ajax/getSongJson.php')}}",{songId:trackId},function(data){
+                    pauseSong();
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                    });
+                    $.post("{{url('ajax/getSongJson')}}",{songId:trackId},function(data){
 
                         var track=JSON.parse(data);
 
                         $(".nomeMusica span").text(track.nome);
-                        
-                        $.post("{{url('ajax/getArtistJson.php')}}",{artistId:track.id_artista},function(data){
+
+                        $.post("{{url('ajax/getArtistJson')}}",{artistId:track.id_artista},function(data){
                             var artist=JSON.parse(data);
                             $(".artistaMusica span").text(artist.nome);
-                      
-                           });             
+
+                           });
  	 	                audioElement.setTrack(`{{ asset('storage/path/${track.path}')}}`,track);
                         playSong();
                     });
@@ -379,7 +383,7 @@ DB::table('users')
                     if(play){
                         audioElement.play();
                     }
-                   
+
                 }
                 function playSong() {
 
@@ -400,13 +404,13 @@ DB::table('users')
             <div id="aTocarAgoraBar">
 
                 <div id="aTocarAgoraEsquerda">
-                    <div class="content"> 
+                    <div class="content">
                         <span class="albumLink">
                             <img src="{{ asset('storage/playlist/HipHopCenterLogo1.png') }}" alt="album" class="albumArtwork">
                         </span>
 
                         <div class="infoMusica">
-                             
+
                             <span class="nomeMusica">
                                 <span></span>
                             </span>
@@ -422,7 +426,7 @@ DB::table('users')
 
                 <div id="aTocarAgoraCentro">
 
-                    <div class="content playerControls">   
+                    <div class="content playerControls">
                         <div class="buttons">
                             <button class="controlButton shuffle" title="Shuffle button" onclick="setShuffle()">
                                 <img src="{{ url('images/shuffle.png') }}" alt="shuffle">
@@ -473,7 +477,7 @@ DB::table('users')
                         <div class="progressBar">
                             <div class="progressBarbackground">
                                 <div class="progress">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -487,9 +491,9 @@ DB::table('users')
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        <script src="{{ asset('js/script.js')   }}"> </script> 
+        <script src="{{ asset('js/script.js')   }}"> </script>
 
-        
+
         <script>
         function toggleMenu(){
             const menuToggle = document.querySelector('.toggle');
@@ -498,7 +502,7 @@ DB::table('users')
             navBarContainer.classList.toggle('active')
         }
     </script>
-       
+
 </body>
 
 </html>
