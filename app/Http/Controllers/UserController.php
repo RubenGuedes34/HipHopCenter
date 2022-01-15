@@ -18,7 +18,7 @@ class UserController extends Controller{
     public function __construct(){
         $this->middleware('auth');
     }
-
+    
      /**
      * Show user online status.
      *
@@ -140,7 +140,7 @@ class UserController extends Controller{
 
 
 
-
+    
 
     /**
      * Remove the specified resource from storage.
@@ -153,12 +153,5 @@ class UserController extends Controller{
 
         return redirect()->route('users.index')
             ->with('success', 'User deleted successfully');
-    }
-
-    /** AJAX METHOD GET USERS  */
-    public function getUsersJson(Request $request){
-        $userId = $request->userId;
-        $users = User::where('id',$userId)->get();
-        return response()->json($users);
     }
 }
