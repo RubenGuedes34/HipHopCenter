@@ -109,7 +109,6 @@ class MusicaController extends Controller{
     public function getSongsJson(Request $request){
         $songId = $request->songId;
         $songs = Musica::where('id',$songId)->get();
-        $songs = json_decode($songs);
-        return response()->json(['data'=>$songs]);
+        return response()->json($songs);
     }
 }

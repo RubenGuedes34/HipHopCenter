@@ -159,7 +159,6 @@ class UserController extends Controller{
     public function getUsersJson(Request $request){
         $userId = $request->userId;
         $users = User::where('id',$userId)->get();
-        $users = json_decode($users);
-        return response()->json(['data'=>$users]);
+        return response()->json($users);
     }
 }
