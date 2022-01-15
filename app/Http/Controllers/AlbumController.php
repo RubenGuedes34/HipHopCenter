@@ -102,11 +102,11 @@ class AlbumController extends Controller{
 
     /** AJAX METHOD GET ALBUMS  */
     public function getAlbumJson(Request $request){
-        $albumId = $request->albuns_id;
+        $albumId = $request->albunsId;
         $albums = Album::where('id',$albumId)->get()->toArray();
         $albums  = json_encode($albums);
         echo $albums;
-        //return response()->json($albums);
+        //returnesponse()->json($albums);
     }
 
 }
