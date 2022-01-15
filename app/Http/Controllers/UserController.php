@@ -158,7 +158,7 @@ class UserController extends Controller{
     /** AJAX METHOD GET USERS  */
     public function getUsersJson(Request $request){
         $userId = $request->userId;
-        $users = User::where('id',$userId)->get()->toArray()
+        $users = User::where('id',$userId)->get()->toArray();
         $users = json_decode($users);
         return response()->json($users);
     }
