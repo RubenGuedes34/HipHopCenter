@@ -82,7 +82,7 @@ Route::get('/artists/{artist}', [ArtistController::class,'show'])->name('artists
 Route::get('/artists/{artist}/edit', [ArtistController::class,'edit'])->name('artists.edit')->middleware('is_admin');
 Route::put('/artists/{artist}', [ArtistController::class,'update'])->name('artists.update')->middleware('is_admin');
 Route::delete('/artists/{artist}', [ArtistController::class,'destroy'])->name('artists.destroy')->middleware('is_admin');
-Route::post('ajax/getArtistJson', [ArtistController::class,'getArtistJson'])->name('artists.json');
+
 
 Route::get('/musicas', [MusicaController::class,'index'])->name('musicas.index')->middleware('is_admin');
 Route::get('/musicas/create', [MusicaController::class,'create'])->name('musicas.create')->middleware('is_admin');
@@ -91,7 +91,14 @@ Route::get('/musicas/{musica}', [MusicaController::class,'show'])->name('musicas
 Route::get('/musicas/{musica}/edit', [MusicaController::class,'edit'])->name('musicas.edit')->middleware('is_admin');
 Route::put('/musicas/{musica}', [MusicaController::class,'update'])->name('musicas.update')->middleware('is_admin');
 Route::delete('/musicas/{musica}', [MusicaController::class,'destroy'])->name('musicas.destroy')->middleware('is_admin');
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////Ajaxcalls
+Route::post('ajax/getArtistJson', [ArtistController::class,'getArtistJson'])->name('artists.json');
 Route::post('ajax/getSongJson', [MusicaController::class,'getSongsJson'])->name('songs.json');
+Route::post('ajax/getAlbunsJson', [AlbumController::class,'getAlbumJson'])->name('albums.json');
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Route::get('/playlists/{playlist}/add', [PlaylistController::class,'add'])->name('playlists.add');
@@ -120,7 +127,7 @@ Route::get('/albuns/{album}', [AlbumController::class,'show'])->name('albuns.sho
 Route::get('/albuns/{album}/edit', [AlbumController::class,'edit'])->name('albuns.edit')->middleware('is_admin');
 Route::put('/albuns/{album}', [AlbumController::class,'update'])->name('albuns.update')->middleware('is_admin');
 Route::delete('/albuns/{album}', [AlbumController::class,'destroy'])->name('albuns.destroy')->middleware('is_admin');
-Route::post('ajax/getAlbunsJson', [AlbumController::class,'getAlbumJson'])->name('albums.json');
+
 
 Route::get('/generos', 'App\Http\Controllers\GeneroController@index')->name('generos.index')->middleware('is_admin');
 Route::get('/generos/create', 'App\Http\Controllers\GeneroController@create')->name('generos.create')->middleware('is_admin');

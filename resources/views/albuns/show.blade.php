@@ -371,24 +371,30 @@ DB::table('users')
                     $.post("{{url('ajax/getSongJson')}}",{songId:trackId},function(data){
 
                         var track=JSON.parse(data);
+                        console.log(track);
+                        
+                        $(".nomeMusica span").text(track[0].nome);
 
-                        $(".nomeMusica span").text(track.nome);
-
-                        $.post("{{url('ajax/getArtistJson')}}",{artistId:track.id_artista},function(data){
+                        $.post("{{url('ajax/getArtistJson')}}",{artistId:track[0].id_artista},function(data){
                             var artist=JSON.parse(data);
-                            $(".artistaMusica span").text(artist.nome);
+                            console.log(artist);
+                            console.log(artist[0].nome);
+                            //var artist = data;
+                            $(".artistaMusica span").text(artist[0].nome);
 
                            });
-                        $.post("{{url('ajax/getAlbunsJson')}}",{albunsId:track.id_album},function(data){
+                        $.post("{{url('ajax/getAlbunsJson')}}",{albunsId:track[0].id_album},function(data){
                             var album=JSON.parse(data);
-                            var capa=`{{ asset('storage/capa/${album.capa}')}}`;
+                            console.log(album);
+                            //var album = data;
+                            var capa=`{{ asset('storage/capa/${album[0].capa}')}}`;
                             $(".albumLink img").attr("src",capa);
                          });
 
 
 
 
- 	 	                audioElement.setTrack(`{{ asset('storage/path/${track.path}')}}`,track);
+ 	 	                audioElement.setTrack(`{{ asset('storage/path/${track[0].path}')}}`,track[0]);
                         playSong();
                     });
 

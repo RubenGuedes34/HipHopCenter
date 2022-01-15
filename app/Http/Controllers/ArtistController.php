@@ -103,7 +103,8 @@ class ArtistController extends Controller{
     public function getArtistJson(Request $request){
         $artistId = $request->artistId;
         $artists = Artist::where('id',$artistId)->get()->toArray();
-        $artists = json_decode($artists);
-        return response()->json($artists);
+        $artists = json_encode($artists);
+        echo $artists;
+        //return response()->json($artists);
     }
 }

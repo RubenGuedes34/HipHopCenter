@@ -104,8 +104,9 @@ class AlbumController extends Controller{
     public function getAlbumJson(Request $request){
         $albumId = $request->albuns_id;
         $albums = Album::where('id',$albumId)->get()->toArray();
-        $albums = json_decode($albums);
-        return response()->json($albums);
+        $albums  = json_encode($albums);
+        echo $albums;
+        //return response()->json($albums);
     }
 
 }
