@@ -138,4 +138,4 @@ Route::put('/generos/{genero}', 'App\Http\Controllers\GeneroController@update')-
 Route::delete('/generos/{genero}', 'App\Http\Controllers\GeneroController@destroy')->name('generos.destroy')->middleware('is_admin');
 
 
-Route::get('generate-pdf', [PDFController::class, 'generatePDF']);     //only admins to generate pdf's
+Route::get('generate-pdf', [PDFController::class, 'generatePDF']);    
