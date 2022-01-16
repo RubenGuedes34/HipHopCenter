@@ -16,7 +16,7 @@ class Playlists extends TestCase
      */
     public function test_createPlaylists()
     {
-        $user = user::where(['id'=> 4])->first();
+        $user = user::where(['id'=> 1])->first();
         $this->actingAs($user);
         $response = $this->get('/createPlaylist');
 

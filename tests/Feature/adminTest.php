@@ -16,7 +16,7 @@ class admin extends TestCase
      */
     public function test_AdminPageAccess()
     {
-        $user = user::where(['id'=> 4])->first();
+        $user = user::where(['id'=> 1])->first();
         $this->actingAs($user);
         $response = $this->get('/adminpage');
 
@@ -25,7 +25,7 @@ class admin extends TestCase
 
     public function test_ManageUsersAccess()
     {
-        $user = user::where(['id'=> 4])->first();
+        $user = user::where(['id'=> 1])->first();
         $this->actingAs($user);
         $response = $this->get('/users');
 
@@ -34,7 +34,7 @@ class admin extends TestCase
 
     public function test_ManageArtistsAccess()
     {
-        $user = user::where(['id'=> 4])->first();
+        $user = user::where(['id'=> 1])->first();
         $this->actingAs($user);
         $response = $this->get('/artists');
 
@@ -43,7 +43,7 @@ class admin extends TestCase
 
     public function test_ManageMusicsAccess()
     {
-        $user = user::where(['id'=> 4])->first();
+        $user = user::where(['id'=> 1])->first();
         $this->actingAs($user);
         $response = $this->get('/musicas');
 
@@ -52,7 +52,7 @@ class admin extends TestCase
 
     public function test_ManagePlaylistsAccess()
     {
-        $user = user::where(['id'=> 4])->first();
+        $user = user::where(['id'=> 1])->first();
         $this->actingAs($user);
         $response = $this->get('/playlists');
 
@@ -61,7 +61,7 @@ class admin extends TestCase
 
     public function test_ManageAlbunsAccess()
     {
-        $user = user::where(['id'=> 4])->first();
+        $user = user::where(['id'=> 1])->first();
         $this->actingAs($user);
         $response = $this->get('/albuns');
 
@@ -70,7 +70,7 @@ class admin extends TestCase
 
     public function test_ManageGenreAccess()
     {
-        $user = user::where(['id'=> 4])->first();
+        $user = user::where(['id'=> 1])->first();
         $this->actingAs($user);
         $response = $this->get('/generos');
 
