@@ -30,7 +30,6 @@ class CreateUsersTable extends Migration
             ->on('albums')
             ->onUpdate('CASCADE')
             ->onDelete('RESTRICT');
-        
         });
     }
     

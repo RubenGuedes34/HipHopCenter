@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\Playlist;
 use Illuminate\Database\Seeder;
 
 class PlaylistsSeeder extends Seeder
@@ -12,9 +12,7 @@ class PlaylistsSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        
-
+    {      
         $playlists = [
             [
                 'id' => 1,

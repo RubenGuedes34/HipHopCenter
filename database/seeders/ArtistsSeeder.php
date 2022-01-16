@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Seeders;
+use App\Models\Artist;
 
 use Illuminate\Database\Seeder;
 
@@ -17,7 +18,7 @@ class ArtistsSeeder extends Seeder
             [
                 'id' => 1,
                 'nome' => 'Nas',
-                'Data_de_nascimento' => NULL,
+                'Data_de_nascimento' => now(),
                 'Likes'=> 332,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -25,7 +26,7 @@ class ArtistsSeeder extends Seeder
             [
                 'id' => 2,
                 'nome' => 'Kanye West',
-                'Data_de_nascimento' => NULL,
+                'Data_de_nascimento' => now(),
                 'Likes'=> 3233,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -33,7 +34,7 @@ class ArtistsSeeder extends Seeder
             [
                 'id' => 3,
                 'nome' => 'Maria Leal',
-                'Data_de_nascimento' => NULL,
+                'Data_de_nascimento' => now(),
                 'Likes'=> 1,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -41,7 +42,7 @@ class ArtistsSeeder extends Seeder
             [
                 'id' => 4,
                 'nome' => 'Tony Carreira',
-                'Data_de_nascimento' => NULL,
+                'Data_de_nascimento' => now(),
                 'Likes'=> 89,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -49,7 +50,7 @@ class ArtistsSeeder extends Seeder
             [
                 'id' => 5,
                 'nome' => 'Xutos & Pontapés',
-                'Data_de_nascimento' => NULL,
+                'Data_de_nascimento' => now(),
                 'Likes'=> 89,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -57,7 +58,7 @@ class ArtistsSeeder extends Seeder
             [
                 'id' => 6,
                 'nome' => 'Eminem',
-                'Data_de_nascimento' => NULL,
+                'Data_de_nascimento' => now(),
                 'Likes'=> 33333,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -65,7 +66,7 @@ class ArtistsSeeder extends Seeder
             [
                 'id' => 7,
                 'nome' => '2pac',
-                'Data_de_nascimento' => NULL,
+                'Data_de_nascimento' => now(),
                 'Likes'=> 500000,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -73,7 +74,7 @@ class ArtistsSeeder extends Seeder
             [
                 'id' => 8,
                 'nome' => 'B.I.G',
-                'Data_de_nascimento' => NULL,
+                'Data_de_nascimento' => now(),
                 'Likes'=> 333,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -81,11 +82,11 @@ class ArtistsSeeder extends Seeder
             [
                 'id' => 9,
                 'nome' => 'Wu-Tang Clan',
-                'Data_de_nascimento' => NULL,
+                'Data_de_nascimento' => now(),
                 'Likes'=> 89,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ],
+            ]
 
         ];
         Artist::insert($artists);

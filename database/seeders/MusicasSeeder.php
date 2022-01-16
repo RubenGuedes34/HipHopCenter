@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\Musica;
 use Illuminate\Database\Seeder;
 
 class MusicasSeeder extends Seeder
@@ -373,7 +373,7 @@ class MusicasSeeder extends Seeder
                 'id_genero' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ],
+            ]
 
         ];
         Musica::insert($musicas);

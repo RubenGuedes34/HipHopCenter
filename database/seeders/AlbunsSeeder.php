@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\Album;
 use Illuminate\Database\Seeder;
 
 class AlbunsSeeder extends Seeder
@@ -94,7 +94,7 @@ class AlbunsSeeder extends Seeder
                 'capa' => 'enterthewutang.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
-            ],
+            ]
 
         ];
         Album::insert($albums);

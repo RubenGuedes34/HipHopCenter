@@ -1,8 +1,9 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\Genero;
 use Illuminate\Database\Seeder;
+
 
 class GenerosSeeder extends Seeder
 {
