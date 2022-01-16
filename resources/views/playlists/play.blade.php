@@ -125,16 +125,7 @@ use App\Models\Artist;
 </div>
 
 
-<?php
-$id_playlist=$playlist->id;
-$id_user= auth()->user()->id;
-DB::table('users')
-    ->where('id', $id_user)
-    ->update(
-        ['id_lastPlaylist' => $id_playlist]
-    );
 
-?>
 
 </div>
         <div id="mainViewContainer">
@@ -371,14 +362,14 @@ DB::table('users')
 
                         var track=JSON.parse(data);
 
-                        $(".nomeMusica span").text(track.nome);
+                        $(".nomeMusica span").text(track[0].nome);
 
-                        $.post("{{url('ajax/getArtistJson')}}",{artistId:track.id_artista},function(data){
+                        $.post("{{url('ajax/getArtistJson')}}",{artistId:track[0].id_artista},function(data){
                             var artist=JSON.parse(data);
                             $(".artistaMusica span").text(artist.nome);
 
                            });
- 	 	                audioElement.setTrack(`{{ asset('storage/path/${track.path}')}}`,track);
+ 	 	                audioElement.setTrack(`{{ asset('storage/path/${track[0].path}')}}`,track);
                         playSong();
                     });
 

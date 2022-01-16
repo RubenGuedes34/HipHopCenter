@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="text-center">
-                <h2>Pay for Event</h2>
+                <h2>Subscribe Premium</h2>
                 <br>
             </div>
         </div>
@@ -76,7 +76,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-control total btn btn-primary">
-                            Total: <span class="amount">$35</span>
+                            Total: <span class="amount">6.99€</span>
                         </div>
                     </div>
                 </div>

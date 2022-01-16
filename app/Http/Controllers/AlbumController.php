@@ -6,6 +6,7 @@ use App\Models\Musica;
 use App\Models\Album;
 use App\Models\Artist;
 use Illuminate\Http\Request;
+use DB;
 
 class AlbumController extends Controller{
 
@@ -60,6 +61,13 @@ class AlbumController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function show(Album $album){
+    $id_album=$album->id;
+    $id_user= auth()->user()->id;
+    DB::table('users')
+    ->where('id', $id_user)
+    ->update(
+        ['id_lastAlbum' => $id_album]
+    );
         return view('albuns.show', compact('album'));
     }
 

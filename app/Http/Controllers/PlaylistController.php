@@ -137,6 +137,15 @@ class PlaylistController extends Controller{
     }
 
     public function play(Playlist $playlist){
+
+    $id_playlist=$playlist->id;
+    $id_user= auth()->user()->id;
+    DB::table('users')
+    ->where('id', $id_user)
+    ->update(
+        ['id_lastPlaylist' => $id_playlist]
+    );
+
         $musicas = Musica::all();
         return view('playlists.play', compact('playlist','musicas'));    
     }

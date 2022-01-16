@@ -128,16 +128,6 @@ use App\Models\Artist;
 
 </div>
 
-<?php
-$id_album=$album->id;
-$id_user= auth()->user()->id;
-DB::table('users')
-    ->where('id', $id_user)
-    ->update(
-        ['id_lastAlbum' => $id_album]
-    );
-
-?>
 
         <div id="mainViewContainer">
             <div id="mainContent">
@@ -371,8 +361,6 @@ DB::table('users')
                     $.post("{{url('ajax/getSongJson')}}",{songId:trackId},function(data){
 
                         var track=JSON.parse(data);
-                        console.log(track);
-                        
                         $(".nomeMusica span").text(track[0].nome);
 
                         $.post("{{url('ajax/getArtistJson')}}",{artistId:track[0].id_artista},function(data){
