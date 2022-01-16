@@ -15,7 +15,7 @@ class AlbunsSeeder extends Seeder
     {
         $albums = [
             [
-                'id' => 1,
+                'id' => 2,
                 'nome' => 'Illmatic',
                 'Likes'=> 33,
                 'id_artista' => 1,
@@ -24,7 +24,7 @@ class AlbunsSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'id' => 2,
+                'id' => 1,
                 'nome' => 'Kanye West Best Songs',
                 'Likes'=> 89,
                 'id_artista' => 2,
