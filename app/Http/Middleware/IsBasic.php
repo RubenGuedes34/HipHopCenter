@@ -14,7 +14,7 @@ class IsBasic{
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next){
-       if(auth()->user()->type==0 || auth()->user()->type==0){
+       if(auth()->user()->type==0){
            return $next($request);
        }
        return redirect('homepage')->with('error',"You already payed.");

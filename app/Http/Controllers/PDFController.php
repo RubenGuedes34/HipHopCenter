@@ -7,12 +7,10 @@ use PDF;
 
 class PDFController extends Controller
 {
-    public function generatePDF(){       //min 1.30 video
-        $data = [
-            #dados da bd para enviar
-        ];
+    public function generatePDF(){       
+ 
 
-        $pdf = PDF::loadView('pdf.myPDF', $data);
+        $pdf = PDF::loadView('pdf.myPDF');
 
         return $pdf->download('myPDF.pdf');
     }

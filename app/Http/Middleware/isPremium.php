@@ -19,6 +19,6 @@ class IsPremium
        if(auth()->user()->type==1 || auth()->user()->type==2){
            return $next($request);
        }
-       return redirect('pagamentos')->with('error',"You dont have Premium access.");
+       return redirect('stripe')->with('error',"You dont have Premium access.");
     }
 }

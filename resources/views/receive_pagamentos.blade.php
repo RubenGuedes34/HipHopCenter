@@ -1,15 +1,17 @@
+<?php
+$username=$_GET['username'];
+$name=$_GET['name'];
+$streetName=$_GET['streetName'];
+$zipcode=$_GET['zipcode'];
+$email=$_GET['email'];
+?>
 <head>
 
 <link rel="stylesheet" type="text/css" href="{{url('css/receipt.css')}}">
 
 </head>
-<?php
-$username=auth()->user()->name;
-?>
 <body>
 <a href="{{ route('settings') }}"><button class="myButton">Back to Settings Page</button></a>
-<form id="GFG" action="generate-pdf" method="GET">
-<input type="hidden" name="username" value="{{ $username }}" />
 <div class="receipt-content">
     <div class="container bootstrap snippets bootdey">
 		<div class="row">
@@ -39,12 +41,13 @@ $username=auth()->user()->name;
 							<div class="col-sm-6">
 								<span>Client</span>
 								<strong>
-								<input type="text" class="form-control" placeholder="Insert your full name" required name="name"> </input>
-								</strong><br>
-								<input type="text" class="form-control" placeholder="Insert your street name" required name="streetName"> </input> <br>
-								<input type="text" class="form-control" placeholder="Insert your zip code" required name="zipcode"></input> <br>
-								<input type="text" name="email" placeholder="" value="{{ auth()->user()->email }}" readonly> </input>  <br>
-								
+                                     {{ $name }}
+								</strong>
+								<p>
+                                    {{ $streetName }} <br>
+									{{ $zipcode }} <br>
+									{{ $email }}  <br>
+								</p>
 							</div>
 						</div>
 					</div>
@@ -79,13 +82,18 @@ $username=auth()->user()->name;
 						</div>
 
 						<div class="print">
-							
+
+                        <form id="GFG" action="generate-pdf" method="GET">
+                            <input type="hidden" name="username" value="{{ $username }}" />
+                            <input type="hidden" name="name" value="{{ $name }}" />
+                            <input type="hidden" name="streetName" value="{{ $streetName }}" />
+                            <input type="hidden" name="zipcode" value="{{ $zipcode }}" />
+                            <input type="hidden" name="email" value="{{ $email }}" />
                             <a href="#" onclick="myFunction()">
 								<i class="fa fa-print"></i>
-								<input type="submit" value="Print this receipt">	
-								
+								Print this receipt
 							</a>
-</form>
+                        </form>
 							
 						</div>
 					</div>

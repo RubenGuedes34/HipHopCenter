@@ -114,7 +114,7 @@
             <?php 
                         if(auth()->user()->type==0){
                         ?>
-                        <button class="button settings"><a href="{{ route('pagamentos') }}"> PAY PREMIUM </a></button>
+                        <button class="button settings"><a href="{{ route('stripe') }}"> PAY PREMIUM </a></button>
                         <?php
                         }
                         ?>

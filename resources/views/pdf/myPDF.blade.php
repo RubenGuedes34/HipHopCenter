@@ -245,7 +245,7 @@ $date = date('m/d/Y h:i:s a', time());
 					<div class="intro">
 						Hi <strong>{{ $username }}</strong>, 
 						<br>
-						This is the receipt for a payment of <strong>6.99€</strong> (EUR) for 2 year subscription of HipHopCenter
+						This is the receipt for a payment of <strong>6.99€</strong> (EUR) for 1 year subscription of HipHopCenter
 					</div>
 
 					<div class="payment-info">
@@ -283,14 +283,14 @@ $date = date('m/d/Y h:i:s a', time());
 					<div class="line-items">
 						<div class="headers clearfix">
 							<div class="row">
-								<div class="col-xs-4">Description:2 Year Subscription</div>
+								<div class="col-xs-4">Description:1 Year Subscription</div>
 								<div class="col-xs-5 text-right">Amount:6.99€</div>
 							</div>
 						</div>
 						<div class="items">
 							<div class="row item">
 								<div class="col-xs-4 desc">
-									2 Year Subscription
+									1 Year Subscription
 								</div>
 								<div class="col-xs-5 amount text-right">
 									6.99€
