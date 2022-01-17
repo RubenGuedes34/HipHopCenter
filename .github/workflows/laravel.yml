@@ -10,7 +10,31 @@ jobs:
   laravel-tests:
 
     runs-on: ubuntu-latest
-
+    services:
+      # label used to access the service container
+      postgres:
+        # Docker Hub image
+        image: postgres:latest
+        # service environment variables
+        # POSTGRES_HOST is postgres
+        env:
+          # optional (defaults to postgres)
+          POSTGRES_DB: HipHopCenter
+          # required
+          POSTGRES_PASSWORD: postgres
+          # optional (defaults to 5432)
+          POSTGRES_PORT: 5432
+          # optional (defaults to postgres)
+          POSTGRES_USER: postgres
+        ports:
+          # maps tcp port 5432 on service container to the host
+          - 5432:5432
+        # set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     steps:
     - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
       with:
@@ -28,8 +52,20 @@ jobs:
       run: |
         mkdir -p database
         touch database/database.sqlite
-    - name: Execute tests (Unit and Feature tests) via PHPUnit
+    - name: migrate database
+  # Set environment
       env:
-        DB_CONNECTION: sqlite
-        DB_DATABASE: database/database.sqlite
+        DB_HOST: localhost
+        DB_DATABASE: HipHopCenter
+        DB_PORT: 5432
+        DB_USERNAME: postgres
+        DB_PASSWORD: postgres
+
+      run: php artisan migrate --force
+    - name: database seed
+      run: php artisan db:seed --force
+    - name: pdf
+      run: composer require barryvdh/laravel-dompdf
+    - name: Execute tests (Unit and Feature tests) via PHPUnit
+      run: vendor/bin/phpunit
       
