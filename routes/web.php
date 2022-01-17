@@ -16,6 +16,7 @@ use App\Http\Controllers\PDFController;
 use App\Http\Controllers\StripeController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,7 +33,6 @@ Route::get('/', function () {
 
     return view('index');
 });
-
 
 
 

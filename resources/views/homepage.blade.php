@@ -98,6 +98,11 @@ s0.parentNode.insertBefore(s1,s0);
                                 <i class="fas fa-user"></i>
                                 Users Status</a>
                         </div>
+                        <div class="navItem">
+                            <a href="{{ route(env('CHATIFY_ROUTES_PREFIX', 'chatify')) }}" class="navItemLink">
+                            <i class="far fa-comment-dots"></i>
+                                Chat with Users</a>
+                        </div>
                         
 
                         <div class="navItem">
