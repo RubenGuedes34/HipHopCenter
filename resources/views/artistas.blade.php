@@ -84,6 +84,11 @@
                                 <i class="fas fa-user"></i>
                                 Users Status</a>
                         </div>
+                        <div class="navItem">
+                            <a href="{{ route(env('CHATIFY_ROUTES_PREFIX', 'chatify')) }}" class="navItemLink">
+                            <i class="fas fa-comment-dots"></i>
+                                Chat</a>
+                        </div>
                         
 
                         <div class="navItem">
