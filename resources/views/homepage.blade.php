@@ -100,8 +100,8 @@ s0.parentNode.insertBefore(s1,s0);
                         </div>
                         <div class="navItem">
                             <a href="{{ route(env('CHATIFY_ROUTES_PREFIX', 'chatify')) }}" class="navItemLink">
-                            <i class="far fa-comment-dots"></i>
-                                Chat with Users</a>
+                            <i class="fas fa-comment-dots"></i>
+                                Chat</a>
                         </div>
                         
 
