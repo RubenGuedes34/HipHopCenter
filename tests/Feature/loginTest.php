@@ -56,7 +56,7 @@ class login extends TestCase
     }
 
     public function test_editUser(){
-        $user = User::find(4);
+        $user = User::find(1);
         $user->name = "Ruben";
         $user->save();
         $this->assertDatabaseHas(User::class, ['name' => 'Ruben']);
