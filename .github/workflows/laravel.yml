@@ -60,5 +60,11 @@ jobs:
         DB_PORT: 5432
         DB_USERNAME: postgres
         DB_PASSWORD: postgres
+    - name: Run migrations and tests
+      run: |
+        php artisan migrate --force
+        vendor/bin/phpunit
+    - name: database seed
+      run: php artisan db:seed --force
     - name: pdf
       run: composer require barryvdh/laravel-dompdf
