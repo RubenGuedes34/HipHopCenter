@@ -22,11 +22,11 @@ class pdf extends TestCase
     public function testGenerateInvoice()
     {
         // Arrange
-        $username = 'Tomas';
-        $name = 'Tomas Oliveira';
-        $streetName = 'Cardielos';
+        $username = 'Ruben';
+        $name = 'Ruben Guedes';
+        $streetName = 'Porto';
         $zipcode = '4925-340';
-        $email = 'tomasoliveira1018@gmail.com';
+        $email = 'rubenguedes34@gmail.com';
 
         // Act
         $invoice = $this->generateInvoice($username, $name, $streetName, $zipcode, $email);
