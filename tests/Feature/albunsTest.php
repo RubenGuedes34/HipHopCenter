@@ -20,4 +20,5 @@ class albuns extends TestCase
         $this->assertDatabaseHas(Album::class, ['nome' => 'Maria Leal Hit Songs']);
     }
 
+
 }
