@@ -83,5 +83,3 @@ jobs:
       run: composer require barryvdh/laravel-dompdf
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       run: vendor/bin/phpunit
-      - name: pdf
-      run: composer require barryvdh/laravel-dompdf
