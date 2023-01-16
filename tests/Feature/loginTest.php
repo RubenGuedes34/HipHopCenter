@@ -52,14 +52,14 @@ class login extends TestCase
     }
 
     public function test_dbUserExists(){
-        $this->assertDatabaseHas(User::class, ['email' => 'rubenguedes34@gmail.com']);
+        $this->assertDatabaseHas(User::class, ['email' => 'tomasoliveira1018@gmail.com']);
     }
 
     public function test_editUser(){
         $user = User::find(1);
-        $user->name = "Ruben";
+        $user->name = "Ruben2";
         $user->save();
-        $this->assertDatabaseHas(User::class, ['name' => 'Ruben']);
+        $this->assertDatabaseHas(User::class, ['name' => 'Ruben2']);
     }
 
     public function test_deleteUser(){
